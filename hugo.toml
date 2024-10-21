@@ -1,5 +1,5 @@
 title = "Ronan Blog"
-baseURL = "https://blog.ronan.us.kg/"
+baseURL = "https://echozap.github.io//"
 
 [module]
   [[module.imports]]
