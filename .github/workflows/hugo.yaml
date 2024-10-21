@@ -44,7 +44,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
-          fetch-depth: 0
+          fetch-depth: 0	  
+	  - name: Build Hugo
+        run: |
+          cd ${{ github.workspace }}
+          hugo
+      - name: Install Algolia Dependencies
+        run: |
+          cd ${{ github.workspace }}/algolia
+          npm install
+      - name: Upload Data to Algolia
+        run: |
+          npm run data-upload -- -f ${{ github.workspace }}/public/index.json -a GT5UPRMBE6 -k 87644968371f1a5022cab82884d45462 -n blog
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
