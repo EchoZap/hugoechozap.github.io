@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Show and Tell on Ronan Blog</title>
-    <link>http://localhost:1313/tags/show-and-tell/</link>
-    <description>Recent content in Show and Tell on Ronan Blog</description>
+    <title>Posts on Ronan Blog</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Ronan Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 01 Nov 2021 18:10:14 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/show-and-tell/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ssh 免密登录</title>
       <link>http://localhost:1313/posts/ssh-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</link>

@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "theme.css",
-	"sourceRoot": "/Users/iaa/Desktop/hugoechozap.github.io",
+	"sourceRoot": "/Users/iaa/Desktop/echozap.github.io",
 	"sources": [
 		"themes/bilberry-hugo-theme/v4/assets/sass/theme.scss",
 		"themes/bilberry-hugo-theme/v4/assets/sass/_vendor/normalize.scss",
