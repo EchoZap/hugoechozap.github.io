@@ -55,7 +55,8 @@ jobs:
           npm install
       - name: Upload Data to Algolia
         run: |
-          npm run data-upload -- -f ${{ github.workspace }}/public/index.json -a GT5UPRMBE6 -k 87644968371f1a5022cab82884d45462 -n blog
+          cd ${{ github.workspace }}/algolia
+          npm run data-upload -- -f ../public/index.json -a GT5UPRMBE6 -k 87644968371f1a5022cab82884d45462 -n blog
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
