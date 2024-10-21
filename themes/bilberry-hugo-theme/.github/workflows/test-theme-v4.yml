@@ -1,0 +1,27 @@
+name: Test Theme v4
+
+on:
+  push:
+    branches: '*'
+    paths:
+      - 'v4/**'
+  pull_request:
+    branches: '*'
+    paths:
+      - 'v4/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.125.7'
+          extended: true
+
+      - name: Run tests
+        run: ./v4/tests/exampleSite/test-theme.sh

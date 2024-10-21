@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lednerb on My cool new Blog</title>
+    <link>https://example.com/author/lednerb/</link>
+    <description>Recent content in Lednerb on My cool new Blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Nov 2021 18:10:14 +0100</lastBuildDate>
+    <atom:link href="https://example.com/author/lednerb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Support and Discussions</title>
+      <link>https://example.com/article/support-and-discussions/</link>
+      <pubDate>Mon, 01 Nov 2021 18:10:14 +0100</pubDate>
+      <guid>https://example.com/article/support-and-discussions/</guid>
+      <description>&lt;p&gt;Support for this theme is provided through the &lt;a href=&#34;https://github.com/Lednerb/bilberry-hugo-theme/issues&#34;&gt;Issues&lt;/a&gt; and &lt;a href=&#34;https://github.com/Lednerb/bilberry-hugo-theme/discussions&#34;&gt;Discussions&lt;/a&gt; sections of the project.&#xA;Please use the &lt;strong&gt;Issues&lt;/strong&gt; section if you would like to report a defect or bug. For any other requests, use the &lt;strong&gt;Discussions&lt;/strong&gt; section.&lt;/p&gt;&#xA;&lt;p&gt;Please use the following guidelines if you want to start a discussion:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;For any questions regarding a specific feature, or if you need help using or customizing the theme, use the &lt;strong&gt;Questions &amp;amp; Answers&lt;/strong&gt; (Q&amp;amp;A) category.&lt;/li&gt;&#xA;&lt;li&gt;For a new feature or any other improvements, use the &lt;strong&gt;Ideas&lt;/strong&gt; category.&lt;/li&gt;&#xA;&lt;li&gt;To showcase your blog or website powered by Bilberry theme, use the &lt;strong&gt;Show and tell&lt;/strong&gt; category.&lt;/li&gt;&#xA;&lt;li&gt;For any other inquiries, please use the &lt;strong&gt;General&lt;/strong&gt; type discussion.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>My Trip to Scotland</title>
+      <link>https://example.com/gallery/my-trip-to-scotland/</link>
+      <pubDate>Mon, 01 Nov 2021 18:01:26 +0100</pubDate>
+      <guid>https://example.com/gallery/my-trip-to-scotland/</guid>
+      <description>&lt;p&gt;In June 2017 I&amp;rsquo;ve visited Scotland with my best friend for two weeks.&#xA;We drove a lot through the beautiful countryside and saw a lot of different animals: cattle, deer, birds, dolphins, and sheep. Sheep everywhere!&lt;/p&gt;&#xA;&lt;p&gt;At one beautiful camping site, we saw cattle in fog in the very early morning and took a picture of it. The image now has the title &amp;ldquo;Rindviecher im Nebel&amp;rdquo;, a quite funny German phrase that means cattle in the fog.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Installing Bilberry Theme</title>
+      <link>https://example.com/code/installing-bilberry-theme/</link>
+      <pubDate>Mon, 01 Nov 2021 09:31:27 +0100</pubDate>
+      <guid>https://example.com/code/installing-bilberry-theme/</guid>
+      <description>&lt;p&gt;You will find all information to setup this theme with your hugo site&#xA;on the official &lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://github.com/Lednerb/bilberry-hugo-theme&#34;&gt;Github Repository&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

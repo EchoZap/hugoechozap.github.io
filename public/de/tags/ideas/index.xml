@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ideas on Mein cooler neuer Blog</title>
+    <link>https://example.com/de/tags/ideas/</link>
+    <description>Recent content in Ideas on Mein cooler neuer Blog</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <lastBuildDate>Mon, 01 Nov 2021 18:10:14 +0100</lastBuildDate>
+    <atom:link href="https://example.com/de/tags/ideas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unterstützung und Diskussionen</title>
+      <link>https://example.com/de/article/support-and-discussions/</link>
+      <pubDate>Mon, 01 Nov 2021 18:10:14 +0100</pubDate>
+      <guid>https://example.com/de/article/support-and-discussions/</guid>
+      <description>&lt;p&gt;Unterstützung für dieses Theme erhalten Sie über &lt;a href=&#34;https://github.com/Lednerb/bilberry-hugo-theme/issues&#34;&gt;GitHub Issues&lt;/a&gt; und &lt;a href=&#34;https://github.com/Lednerb/bilberry-hugo-theme/discussions&#34;&gt;GitHub Discussions&lt;/a&gt;.&#xA;Bitte verwenden Sie &lt;strong&gt;GitHub Issues&lt;/strong&gt;, wenn Sie einen Fehler melden möchten. Für alle anderen Anfragen verwenden Sie &lt;strong&gt;GitHub Discussions&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Bitte verwenden Sie die folgenden Kategorien, wenn Sie eine Diskussion beginnen möchten:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Wenn Sie Fragen zu einer bestimmten Funktion haben oder Hilfe bei der Verwendung oder Anpassung des Designs benötigen, verwenden Sie die Kategorie &lt;strong&gt;Q&amp;amp;A&lt;/strong&gt; (Fragen &amp;amp; Antworten).&lt;/li&gt;&#xA;&lt;li&gt;Verwenden Sie für einen neuen Funktionsvorschlag oder andere Verbesserungen die Kategorie &lt;strong&gt;Ideas&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Verwenden Sie die Kategorie &lt;strong&gt;Show and tell&lt;/strong&gt;, um Ihren Blog oder Ihre Website mit dem Thema Bilberry zu präsentieren.&lt;/li&gt;&#xA;&lt;li&gt;Für alle anderen Anfragen nutzen Sie bitte die &lt;strong&gt;General&lt;/strong&gt; Typendiskussion.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

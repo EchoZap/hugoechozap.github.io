@@ -1,0 +1,84 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mein cooler neuer Blog</title>
+    <link>https://example.com/de/</link>
+    <description>Recent content on Mein cooler neuer Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Wed, 15 Dec 2021 10:45:44 +0200</lastBuildDate>
+    
+        <atom:link href="https://example.com/de/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://example.com/de/status/bilberry-theme-released/</link>
+      <pubDate>Wed, 15 Dec 2021 10:45:44 +0200</pubDate>
+      
+      <guid>https://example.com/de/status/bilberry-theme-released/</guid>
+      <description>&lt;p&gt;Ich freue mich, die Veröffentlichung des Bilberry Hugo-Themes ankündigen zu können.
+Dieses Premium-Theme wird unter einer Open-Source-Lizenz (&lt;a href=&#34;https://github.com/Lednerb/bilberry-hugo-theme/blob/master/LICENSE.md&#34;&gt;MIT&lt;/a&gt;) veröffentlicht und Sie können es kostenlos verwenden.
+Ich habe viel Zeit gebraucht, um dieses Thema zu erstellen und zu verfeinern.
+Dieses Theme ist eine Gemeinschaftsarbeit &lt;a href=&#34;https://github.com/Lednerb/bilberry-hugo-theme/graphs/contributors&#34;&gt;zahlreicher Freiwilliger&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Unterstützung und Diskussionen</title>
+      <link>https://example.com/de/article/support-and-discussions/</link>
+      <pubDate>Mon, 01 Nov 2021 18:10:14 +0100</pubDate>
+      
+      <guid>https://example.com/de/article/support-and-discussions/</guid>
+      <description>&lt;p&gt;Unterstützung für dieses Theme erhalten Sie über &lt;a href=&#34;https://github.com/Lednerb/bilberry-hugo-theme/issues&#34;&gt;GitHub Issues&lt;/a&gt; und &lt;a href=&#34;https://github.com/Lednerb/bilberry-hugo-theme/discussions&#34;&gt;GitHub Discussions&lt;/a&gt;.
+Bitte verwenden Sie &lt;strong&gt;GitHub Issues&lt;/strong&gt;, wenn Sie einen Fehler melden möchten. Für alle anderen Anfragen verwenden Sie &lt;strong&gt;GitHub Discussions&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Bitte verwenden Sie die folgenden Kategorien, wenn Sie eine Diskussion beginnen möchten:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wenn Sie Fragen zu einer bestimmten Funktion haben oder Hilfe bei der Verwendung oder Anpassung des Designs benötigen, verwenden Sie die Kategorie &lt;strong&gt;Q&amp;amp;A&lt;/strong&gt; (Fragen &amp;amp; Antworten).&lt;/li&gt;
+&lt;li&gt;Verwenden Sie für einen neuen Funktionsvorschlag oder andere Verbesserungen die Kategorie &lt;strong&gt;Ideas&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Verwenden Sie die Kategorie &lt;strong&gt;Show and tell&lt;/strong&gt;, um Ihren Blog oder Ihre Website mit dem Thema Bilberry zu präsentieren.&lt;/li&gt;
+&lt;li&gt;Für alle anderen Anfragen nutzen Sie bitte die &lt;strong&gt;General&lt;/strong&gt; Typendiskussion.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Meine Reise nach Schottland</title>
+      <link>https://example.com/de/gallery/my-trip-to-scotland/</link>
+      <pubDate>Mon, 01 Nov 2021 18:01:26 +0100</pubDate>
+      
+      <guid>https://example.com/de/gallery/my-trip-to-scotland/</guid>
+      <description>&lt;p&gt;Im Juni 2017 habe ich mit meinem besten Freund Schottland für 2 Wochen besucht und bereist.
+Wir fuhren viel durch das schöne Land und sahen eine Reihe verschiedener Tiere: Rinder, Hirsche, Vögel, Delfine und Schafe. Überall Schafe!&lt;/p&gt;
+&lt;p&gt;Auf einem schönen, kleinen Campingplatz sahen wir am frühen Morgen Rinder im Nebel und machten ein Foto. Dieses Bild hat seither den Titel &amp;ldquo;Rindviecher im Nebel&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Wir fuhren mit dem Auto durch den Eurotunnel Calais-Folkstone nach Großbritannien und fuhren die Westküste nach Norden und besuchten die Isle of Skye - eine wunderschöne Insel, die man in seinem Leben auf jeden Fall gesehen haben sollte. Dann ging es weiter Richtung Norden nach Durness, wo wir den Straßen nach Osten folgten, entlang an den Küsten und via Single-Track-Roads nach Lindisfarne.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kilez More - Leben und Tod des Imperialismus</title>
+      <link>https://example.com/de/video/kilez-more-leben-und-tod-des-imperialismus/</link>
+      <pubDate>Mon, 01 Nov 2021 16:23:40 +0100</pubDate>
+      
+      <guid>https://example.com/de/video/kilez-more-leben-und-tod-des-imperialismus/</guid>
+      <description>&lt;p&gt;Kilez More ist ein großartiger österreichischer Musiker.
+Die meisten seiner Songs haben einen politischen Hintergrund und geniale Texte!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kilez More - New World Order</title>
+      <link>https://example.com/de/audio/kilez-more-new-world-order/</link>
+      <pubDate>Mon, 01 Nov 2021 16:12:47 +0100</pubDate>
+      
+      <guid>https://example.com/de/audio/kilez-more-new-world-order/</guid>
+      <description>&lt;p&gt;Mit dem &lt;code&gt;audio&lt;/code&gt; Post Type kann sehr einfach ein Spotify, SoundCloud, TuneIn oder Mixcloud Player integriert werden.&lt;/p&gt;
+&lt;p&gt;Falls kein Player integriert werden soll, kann optional ein Titelbild mit Hilfe der &lt;code&gt;featuredImage&lt;/code&gt; Option in der Markdown Datei verwendet werden.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Albert Einstein - Sinn Des Lebens</title>
+      <link>https://example.com/de/quote/einstein-sinn-des-lebens/</link>
+      <pubDate>Mon, 01 Nov 2021 14:40:32 +0100</pubDate>
+      
+      <guid>https://example.com/de/quote/einstein-sinn-des-lebens/</guid>
+      <description>&lt;p&gt;Der Sinn des Lebens besteht nicht darin ein erfolgreicher Mensch zu sein, sondern ein wertvoller.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

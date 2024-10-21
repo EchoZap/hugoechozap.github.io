@@ -1,0 +1,45 @@
+[categories]
+other = "Categorías"
+
+[authors]
+other = "Autores"
+
+[tags]
+other = "Etiquetas"
+
+[socialMedia]
+other = "Redes sociales"
+
+[latestPosts]
+other = "Últimas publicaciones"
+
+[search]
+other = "Buscar ..."
+
+[noSearchResults]
+other = "No se ha encontrado nada."
+
+[olderPosts]
+other = "Publicaciones más antiguas"
+
+[newerPosts]
+other = "Publicaciones más recientes"
+
+[continueReading]
+other = "Seguir leyendo"
+
+[otherLanguages]
+other = "Otros idiomas"
+
+[readingTime]
+one = "Tardarás 1 minuto en leerlo"
+other = "Tardarás {{ .Count }} minutos en leerlo"
+
+[tableOfContents]
+other = "Tabla de contenidos"
+
+[series]
+other = "Series"
+
+[archive]
+other = "Archivo"

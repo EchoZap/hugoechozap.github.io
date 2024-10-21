@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Mein cooler neuer Blog</title>
+    <link>https://example.com/de/page/</link>
+    <description>Recent content in Pages on Mein cooler neuer Blog</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <lastBuildDate>Mon, 01 Nov 2021 13:18:45 +0100</lastBuildDate>
+    <atom:link href="https://example.com/de/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Über Bilberry</title>
+      <link>https://example.com/de/page/about-bilberry/</link>
+      <pubDate>Mon, 01 Nov 2021 13:18:45 +0100</pubDate>
+      <guid>https://example.com/de/page/about-bilberry/</guid>
+      <description>&lt;p&gt;Bilberry ist ein Premium Theme für den &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo Static Website Builder&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Das Theme beinhaltet viele Features wie bspw.:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Integration für die &lt;a href=&#34;https://algolia.com&#34;&gt;Algolia-Suche&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Integration für &lt;a href=&#34;https://disqus.com&#34;&gt;Disqus Kommentare&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Gravatar-Integration oder eigenes Profilbild im Header&lt;/li&gt;&#xA;&lt;li&gt;Tastaturunterstützung für die Suche (&lt;code&gt;s&lt;/code&gt; Taste drücken, etwas Schreiben, per &lt;code&gt;enter&lt;/code&gt; bestätigen oder mit &lt;code&gt;esc&lt;/code&gt; abbrechen)&lt;/li&gt;&#xA;&lt;li&gt;Responsive Design - optimiert für Desktop und mobile Geräte&lt;/li&gt;&#xA;&lt;li&gt;Volle Unterstützung für Übersetzungen (en, de, fr, ru, es bereits integriert!)&lt;/li&gt;&#xA;&lt;li&gt;Volle Unterstützung für mehrsprachige Seiten&lt;/li&gt;&#xA;&lt;li&gt;Verschiedene Post-Types (&lt;code&gt;article&lt;/code&gt;, &lt;code&gt;audio&lt;/code&gt;, &lt;code&gt;code&lt;/code&gt;, &lt;code&gt;gallery&lt;/code&gt;, &lt;code&gt;link&lt;/code&gt;, &lt;code&gt;page&lt;/code&gt;, &lt;code&gt;picture&lt;/code&gt;, &lt;code&gt;quote&lt;/code&gt;, &lt;code&gt;video&lt;/code&gt;)&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Einfache Konfiguration und Erweiterung um persönliche Typen&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;em&gt;Dieses Theme ist eine Adaption des Lingonberry Themes von &lt;a href=&#34;http://www.andersnoren.se/teman/lingonberry-wordpress-theme/&#34;&gt;Anders Norén&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Github</title>
+      <link>https://example.com/de/page/github/</link>
+      <pubDate>Mon, 01 Nov 2021 13:17:56 +0100</pubDate>
+      <guid>https://example.com/de/page/github/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

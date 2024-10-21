@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statuses on Mein cooler neuer Blog</title>
+    <link>https://example.com/de/status/</link>
+    <description>Recent content in Statuses on Mein cooler neuer Blog</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <lastBuildDate>Wed, 15 Dec 2021 10:45:44 +0200</lastBuildDate>
+    <atom:link href="https://example.com/de/status/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://example.com/de/status/bilberry-theme-released/</link>
+      <pubDate>Wed, 15 Dec 2021 10:45:44 +0200</pubDate>
+      <guid>https://example.com/de/status/bilberry-theme-released/</guid>
+      <description>&lt;p&gt;Ich freue mich, die Veröffentlichung des Bilberry Hugo-Themes ankündigen zu können.&#xA;Dieses Premium-Theme wird unter einer Open-Source-Lizenz (&lt;a href=&#34;https://github.com/Lednerb/bilberry-hugo-theme/blob/master/LICENSE.md&#34;&gt;MIT&lt;/a&gt;) veröffentlicht und Sie können es kostenlos verwenden.&#xA;Ich habe viel Zeit gebraucht, um dieses Thema zu erstellen und zu verfeinern.&#xA;Dieses Theme ist eine Gemeinschaftsarbeit &lt;a href=&#34;https://github.com/Lednerb/bilberry-hugo-theme/graphs/contributors&#34;&gt;zahlreicher Freiwilliger&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
