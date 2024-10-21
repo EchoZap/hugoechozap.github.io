@@ -39,9 +39,9 @@ disqusShortname = ""
 
   # Enable / Disable algolia search
   algolia_search    = true
-  algolia_appId     = "7O9UI7ESA2"
-  algolia_apiKey    = "88a72ef2b09a393c44843a4804f27f66"
-  algolia_indexName = "Ronan-Hugo"
+  algolia_appId     = "GT5UPRMBE6"
+  algolia_apiKey    = "9499608ea45258a283445ca59ad50c14"
+  algolia_indexName = "blog"
   # Set this option to false if you want to search within all articles in all languages at once
   algolia_currentLanguageOnly = true
 
