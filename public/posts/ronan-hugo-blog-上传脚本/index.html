@@ -15,32 +15,31 @@
     <title>
         
            
-               Posts &vert; Ronan Blog
+               Ronan-Hugo-Blog 上传脚本 &vert; Ronan Blog
            
         
     </title>
-    <meta itemprop="name" content="Posts">
-    <meta itemprop="description" content="Posts - Bilberry Premium Theme for Hugo.">
+    <meta itemprop="name" content="Ronan-Hugo-Blog 上传脚本">
+    <meta itemprop="description" content="Ronan-Hugo-Blog 上传脚本 - Bilberry Premium Theme for Hugo.">
     <meta property="og:site_name" content="Ronan Blog">
 
-    <meta property="og:url" content="http://localhost:1313/posts/">
+    <meta property="og:url" content="http://localhost:1313/posts/ronan-hugo-blog-%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
   <meta property="og:site_name" content="Ronan Blog">
-  <meta property="og:title" content="Posts">
-  <meta property="og:description" content="Bilberry Premium Theme for Hugo.">
+  <meta property="og:title" content="Ronan-Hugo-Blog 上传脚本">
+  <meta property="og:description" content="在76-78行填入相应信息即可
+import os from datetime import datetime from github import Github class HugoBlog: def __init__(self, owner=None, repo=None, token=None): self.owner = owner self.repo = repo self.token = token g = Github(self.token) self.repo = g.get_repo(f&#34;{self.owner}/{self.repo}&#34;) # 检查是否提供了必要的参数 if not self.owner or not self.repo or not self.token: raise ValueError(&#34;必须指定 owner, repo 和 token&#34;) def create_new_file_in_the_repo(self, file_path, content): # 第一个参数：要上传到仓库的哪个路径; 第二个参数：commit 信息; 第三个参数：上传文档正文; 第四个参数：上传的分支 self.repo.create_file(f&#34;{file_path}&#34;, f&#34;Added {file_path}&#34;, content, branch=&#34;main&#34;) def get_post_paths(self): directory = input(&#34;请输入文章目录：&#34;) file_paths = [] for filename in os.listdir(directory): if filename.endswith(&#39;.md&#39;) or filename.endswith(&#39;.txt&#39;): # 包含前缀路径的文件路径 file_path = os.path.join(directory, filename) file_paths.append(file_path) return file_paths def generate_md_front_matter(self, post_path, categories_input, author=&#34;Ronan&#34;): # 获取不带前缀路径和后缀名的文件名 title = os.path.splitext(os.path.basename(post_path))[0] # 获取当前实时时间，格式化为指定格式 date: 2024-10-21T21:10:51.719748 current_time = datetime.now().isoformat() # 处理用户输入的 categories categories = [cat.strip().capitalize() for cat in categories_input.split(&#39;,&#39;)] # 生成 MD 头部内容 front_matter = f&#34;&#34;&#34;--- title: &#34;{title}&#34; date: {current_time} categories: {categories} author: &#34;{author}&#34; --- &#34;&#34;&#34; return front_matter def append_front_matter_to_md_file(self, front_matter, post_path:str): # file.md 所在的目录 “/root/path” dir_name, base_name = os.path.split(post_path) # 无后缀名的 file file_name, file_ext = os.path.splitext(base_name) final_path = f&#34;content/posts/{base_name}&#34; # 读取源文件内容 with open(post_path, &#34;r&#34;, encoding=&#39;utf-8&#39;) as f: source_body = f.read() # 将前言追加到 md 文档中 final_content = front_matter &#43; source_body return final_content, final_path def main(): blog = HugoBlog( owner = &#34; &#34;, repo = &#34;&#34;, token = &#34;&#34; ) status = input(&#34;\n 1.上传单篇文章 \n 2.批量上传 \n 按下对应数字并回车可选择相应功能：&#34;) categories_input = input(&#34;请输入标签，用,隔开：&#34;) match status: case &#34;1&#34;: post_path = input(&#34;请输入文章路径：&#34;) front_matter = blog.generate_md_front_matter(post_path, categories_input) final_content, final_path = blog.append_front_matter_to_md_file(front_matter, post_path) blog.create_new_file_in_the_repo(final_path, final_content) case &#34;2&#34;: post_paths = blog.get_post_paths() for post_path in post_paths: front_matter = blog.generate_md_front_matter(post_path, categories_input) final_content, final_path = blog.append_front_matter_to_md_file(front_matter, post_path) blog.create_new_file_in_the_repo(final_path, final_content) if __name__ == &#34;__main__&#34;: main()">
   <meta property="og:locale" content="en">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
 
 
     
 
 
     
-    <link href="http://localhost:1313/posts/index.xml" rel="alternate" type="application/rss+xml" title="Ronan Blog" />
-    <link href="http://localhost:1313/posts/index.xml" rel="feed" type="application/rss+xml" title="Ronan Blog" />
-    
 
     
-    <link rel="canonical" href="http://localhost:1313/posts/">
+    <link rel="canonical" href="http://localhost:1313/posts/ronan-hugo-blog-%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
     
 
     
@@ -128,11 +127,9 @@
 
     <div class="main container">
         
-    
-    
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="http://localhost:1313/posts/ronan-hugo-blog-%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="http://localhost:1313/posts/ronan-hugo-blog-%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
 
@@ -170,6 +167,8 @@
     </div>
 
     
+        
+
         <p>在76-78行填入相应信息即可</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
@@ -274,8 +273,6 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
 </span></span><span style="display:flex;"><span>    main()
 </span></span></code></pre></div>
-
-        
     
 </div>
 
@@ -290,18 +287,20 @@
 
 </article>
 
-            
-        </div>
-    
-
-    
-    <div class="paginator">
-        
-
         
     </div>
 
+    
+        <div id="comments-container">
+            
+            
 
+            
+
+            
+
+        </div>
+    
 
     </div>
 
@@ -377,8 +376,7 @@
                 
                 by Lednerb
             </a>
-            -
-            <a href="http://localhost:1313/posts/index.xml">rss</a>
+            
         </div>
         <div class="author">
             <a href="https://github.com/Lednerb/bilberry-hugo-theme"

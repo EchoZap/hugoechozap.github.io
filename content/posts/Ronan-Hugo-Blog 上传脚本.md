@@ -1,11 +1,9 @@
 ---
 title: "Ronan-Hugo-Blog 上传脚本"
-date: 2024-10-21T21:43:38.857958
-categories: ['Docs']
-author: "Ronan"
+data: 2021-12-1
+categories: ["Docs"]
+auther: "Ronan"
 ---
-使用方法：
-
 在76-78行填入相应信息即可
 
 ```python
@@ -111,5 +109,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```

@@ -148,7 +148,7 @@
         
     <div class="article-wrapper u-cf">
         
-            <a class="bubble" href="http://localhost:1313/posts/ssh-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/">
+            <a class="bubble" href="http://localhost:1313/posts/ronan-hugo-blog-%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
 
@@ -157,15 +157,15 @@
 
     <div class="content">
     <h1 class="article-title">
-        <a href="http://localhost:1313/posts/ssh-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/">
-            ssh 免密登录
+        <a href="http://localhost:1313/posts/ronan-hugo-blog-%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
+            Ronan-Hugo-Blog 上传脚本
         </a>
     </h1>
 
     <div class="meta">
         
             
-                <span class="date moment">2021-11-01</span>
+                <span class="date moment">0001-01-01</span>
             
         
 
@@ -176,119 +176,129 @@
                 
                     
                     
-                        <a href="http://localhost:1313/categories/travelling/">Travelling</a>
-                    
-                
-                    
-                    
-                        <a href="http://localhost:1313/categories/holidays/">Holidays</a>
+                        <a href="http://localhost:1313/categories/docs/">Docs</a>
                     
                 
             </span>
         
 
-        
-            <span class="author">
-                
-                
-                    <a href="http://localhost:1313/author/ronan/">Ronan</a>
-                
-            </span>
         
     </div>
 
     
-        <h1 id="1创建密钥">1创建密钥</h1>
-<p>在本地主机终端输入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-keygen
-</span></span></code></pre></div><p>之后一路回车，不出意外的话，你将看到以下内容</p>
-<p>
-<a href="https://imgs.ronan.us.kg/ssh-keygen.png" data-dimbox data-dimbox-caption="img">
-  <img alt="img" src="https://imgs.ronan.us.kg/ssh-keygen.png"/>
-</a>
-</p>
-<p>恭喜，你已经完成第一步！</p>
-<hr>
-<h1 id="2检查密钥是否创建成功">2检查密钥是否创建成功</h1>
-<p>在终端输入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ls .ssh
-</span></span></code></pre></div><p>看到以下内容</p>
-<p>
-<a href="https://imgs.ronan.us.kg/ls_.ssh.png" data-dimbox data-dimbox-caption="img">
-  <img alt="img" src="https://imgs.ronan.us.kg/ls_.ssh.png"/>
-</a>
-</p>
-<p>看到其中有<code>id_ed25519</code>(私钥))<strong>其中的ed25519在不同设备可能会有不同，有的可能是id_rsa</strong>、<code>id_ed25519.pub</code>(公钥)两个文件，恭喜，你已经完成第二步了，离成功更近了！</p>
-<hr>
-<h1 id="3将公钥复制到远程主机">3将公钥复制到远程主机</h1>
-<p>在终端键入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-copy-id -i &lt;~/.ssh/id_ed25519.pub&gt; &lt;username&gt;@&lt;remote_ip&gt;
-</span></span></code></pre></div><p>其中的<code>&lt;~/.ssh/id_ed25519.pub&gt;</code> 是公钥所处的路径，<code>&lt;username&gt;</code>是用户名，<code>&lt;remote_ip&gt;</code>是主机名或IP 地址。</p>
-<p>这条命令会将公钥保存到远程主机的 <code>~/.ssh/authorized_keys</code> 文件中。</p>
-<p>恭喜你，现在可以不再每次登录都需要输入密码了！！！</p>
-<hr>
-<h1 id="4问题排查">4问题排查</h1>
-<p>有时候因为之前的服务器重装了系统，但是在本地主机仍然保存着之前的私钥，所以在重新登录远程服务器时会遇到以下问题</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>❯ ssh root@&lt;your_remote_ip&gt;
+        <p>在76-78行填入相应信息即可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> github <span style="color:#f92672">import</span> Github
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span></span><span style="display:flex;"><span>@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
-</span></span><span style="display:flex;"><span>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span></span><span style="display:flex;"><span>IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
-</span></span><span style="display:flex;"><span>Someone could be eavesdropping on you right now <span style="color:#f92672">(</span>man-in-the-middle attack<span style="color:#f92672">)</span>!
-</span></span><span style="display:flex;"><span>It is also possible that a host key has just been changed.
-</span></span><span style="display:flex;"><span>The fingerprint <span style="color:#66d9ef">for</span> the ED25519 key sent by the remote host is
-</span></span><span style="display:flex;"><span>SHA256:voGkOAiSibnvAWCsXNasOzsmdMnc2ff7MHE2jsZRfSE.
-</span></span><span style="display:flex;"><span>Please contact your system administrator.
-</span></span><span style="display:flex;"><span>Add correct host key in /Users/iaa/.ssh/known_hosts to get rid of this message.
-</span></span><span style="display:flex;"><span>Offending ED25519 key in /Users/iaa/.ssh/known_hosts:28
-</span></span><span style="display:flex;"><span>Host key <span style="color:#66d9ef">for</span> aby.ronan.cloudns.ch has changed and you have requested strict checking.
-</span></span><span style="display:flex;"><span>Host key verification failed.
-</span></span></code></pre></div><h2 id="41解决方法">4.1解决方法</h2>
-<p>运行以下命令来删除旧的主机密钥</p>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HugoBlog</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, owner<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, repo<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, token<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>owner <span style="color:#f92672">=</span> owner
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>repo <span style="color:#f92672">=</span> repo
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>token <span style="color:#f92672">=</span> token
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        g <span style="color:#f92672">=</span> Github(self<span style="color:#f92672">.</span>token)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>repo <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>get_repo(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>owner<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>repo<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 检查是否提供了必要的参数</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>owner <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>repo <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>token:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;必须指定 owner, repo 和 token&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_new_file_in_the_repo</span>(self, file_path, content):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 第一个参数：要上传到仓库的哪个路径; 第二个参数：commit 信息; 第三个参数：上传文档正文; 第四个参数：上传的分支</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>repo<span style="color:#f92672">.</span>create_file(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Added </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, content, branch<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_post_paths</span>(self):
+</span></span><span style="display:flex;"><span>        directory <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入文章目录：&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        file_paths <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> filename <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(directory):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.md&#39;</span>) <span style="color:#f92672">or</span> filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.txt&#39;</span>):
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 包含前缀路径的文件路径</span>
+</span></span><span style="display:flex;"><span>                file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(directory, filename)
+</span></span><span style="display:flex;"><span>                file_paths<span style="color:#f92672">.</span>append(file_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> file_paths
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_md_front_matter</span>(self, post_path, categories_input, author<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ronan&#34;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 获取不带前缀路径和后缀名的文件名</span>
+</span></span><span style="display:flex;"><span>        title <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>basename(post_path))[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 获取当前实时时间，格式化为指定格式 date: 2024-10-21T21:10:51.719748</span>
+</span></span><span style="display:flex;"><span>        current_time <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>isoformat()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 处理用户输入的 categories</span>
+</span></span><span style="display:flex;"><span>        categories <span style="color:#f92672">=</span> [cat<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> cat <span style="color:#f92672">in</span> categories_input<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;,&#39;</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 生成 MD 头部内容</span>
+</span></span><span style="display:flex;"><span>        front_matter <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;---
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">title: &#34;</span><span style="color:#e6db74">{</span>title<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">date: </span><span style="color:#e6db74">{</span>current_time<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">categories: </span><span style="color:#e6db74">{</span>categories<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">author: &#34;</span><span style="color:#e6db74">{</span>author<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">---
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> front_matter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">append_front_matter_to_md_file</span>(self, front_matter, post_path:str):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># file.md 所在的目录 “/root/path”</span>
+</span></span><span style="display:flex;"><span>        dir_name, base_name <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>split(post_path)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 无后缀名的 file</span>
+</span></span><span style="display:flex;"><span>        file_name, file_ext <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(base_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        final_path <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;content/posts/</span><span style="color:#e6db74">{</span>base_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 读取源文件内容</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(post_path, <span style="color:#e6db74">&#34;r&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>            source_body <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 将前言追加到 md 文档中</span>
+</span></span><span style="display:flex;"><span>        final_content <span style="color:#f92672">=</span> front_matter <span style="color:#f92672">+</span> source_body
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> final_content, final_path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    blog <span style="color:#f92672">=</span> HugoBlog(
+</span></span><span style="display:flex;"><span>        owner <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>,
+</span></span><span style="display:flex;"><span>        repo <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    status <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 1.上传单篇文章 </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 2.批量上传 </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 按下对应数字并回车可选择相应功能：&#34;</span>)
+</span></span><span style="display:flex;"><span>    categories_input <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入标签，用,隔开：&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">match</span> status:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;1&#34;</span>:
+</span></span><span style="display:flex;"><span>            post_path <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入文章路径：&#34;</span>)
+</span></span><span style="display:flex;"><span>            front_matter <span style="color:#f92672">=</span> blog<span style="color:#f92672">.</span>generate_md_front_matter(post_path, categories_input)
+</span></span><span style="display:flex;"><span>            final_content, final_path <span style="color:#f92672">=</span> blog<span style="color:#f92672">.</span>append_front_matter_to_md_file(front_matter, post_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            blog<span style="color:#f92672">.</span>create_new_file_in_the_repo(final_path, final_content)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;2&#34;</span>:
+</span></span><span style="display:flex;"><span>            post_paths <span style="color:#f92672">=</span> blog<span style="color:#f92672">.</span>get_post_paths()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> post_path <span style="color:#f92672">in</span> post_paths:
+</span></span><span style="display:flex;"><span>                front_matter <span style="color:#f92672">=</span> blog<span style="color:#f92672">.</span>generate_md_front_matter(post_path, categories_input)
+</span></span><span style="display:flex;"><span>                final_content, final_path <span style="color:#f92672">=</span> blog<span style="color:#f92672">.</span>append_front_matter_to_md_file(front_matter, post_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                blog<span style="color:#f92672">.</span>create_new_file_in_the_repo(final_path, final_content)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div>
 
-        
-            <a href="http://localhost:1313/posts/ssh-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/" class="more">Continue reading</a>
         
     
 </div>
 
     
-<div class="footer">
+<div class="footer no-tags">
 
 
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/support/">Support</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/discussions/">Discussions</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/qa/">Q&amp;A</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/ideas/">Ideas</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/show-and-tell/">Show and Tell</a>
-                    
-                
-            </div>
-        </div>
     
 
     
@@ -324,7 +334,7 @@
                 
                 
                     <li>
-                        <a href="http://localhost:1313/posts/ssh-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/">ssh 免密登录</a>
+                        <a href="http://localhost:1313/posts/ronan-hugo-blog-%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">Ronan-Hugo-Blog 上传脚本</a>
                     </li>
                 
             </ul>
@@ -341,13 +351,7 @@
                 
                 <li>
                 
-                    <a href="http://localhost:1313/categories/holidays/">Holidays (1)</a>
-                
-                </li>
-                
-                <li>
-                
-                    <a href="http://localhost:1313/categories/travelling/">Travelling (1)</a>
+                    <a href="http://localhost:1313/categories/docs/">Docs (1)</a>
                 
                 </li>
                 

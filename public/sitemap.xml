@@ -2,52 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/author/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/discussions/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/holidays/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ideas/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/qa/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/author/ronan/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/show-and-tell/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/ssh-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/support/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/travelling/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/archive/</loc>
   </url><url>
     <loc>http://localhost:1313/archive.de/</loc>
   </url><url>
+    <loc>http://localhost:1313/author/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/docs/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/ronan-hugo-blog-%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/</loc>
+  </url><url>
     <loc>http://localhost:1313/series/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>
