@@ -1,5 +1,5 @@
 ---
-title: "2024-9-12-「图床」上传脚本，基于 cloudflare R2 对象存储"
+title: "「图床」上传脚本，基于 cloudflare R2 对象存储"
 date: 2024-10-21T21:56:41.335773
 categories: ['Docs']
 author: "Ronan"
