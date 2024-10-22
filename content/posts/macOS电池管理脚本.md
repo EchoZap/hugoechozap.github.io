@@ -6,7 +6,7 @@ author: "Ronan"
 ---
 将以下内容保存为 `power_manager.sh` 并放入系统环境变量的路径中，接下来可通过 `nohup /path/power_manager.sh &` 来实现后台运行
 
-```bash
+```shell
 #!/bin/zsh
 
 # 关闭休眠
