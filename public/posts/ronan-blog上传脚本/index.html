@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               Ronan Blog上传脚本 &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="Ronan Blog上传脚本">
+    <meta itemprop="description" content="Ronan Blog上传脚本 - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/ronan-blog%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="Ronan Blog上传脚本">
+  <meta property="og:description" content="用法 在代码的最后几行空白引号里填入相应信息 注意 create_new_file_in_the_repo 函数里的 branch=&#34;main&#34; 参数，根据自身仓库分支修改 import os from datetime import datetime from github import Github class HuxBlog: def __init__(self, owner=None, repo=None, token=None): self.owner = owner self.repo = repo self.token = token g = Github(self.token) self.repo = g.get_repo(f&#34;{self.owner}/{self.repo}&#34;) # 检查是否提供了必要的参数 if not self.owner or not self.repo or not self.token: raise ValueError(&#34;必须指定 owner, repo 和 token&#34;) else: self.start_upload() def start_upload(self): status = input(&#34;\n 1.上传单篇文章 \n 2.批量上传 \n 按下对应数字并回车可选择相应功能：&#34;) self.tags = input(&#34;请输入标签，用,隔开：&#34;) match status: case &#34;1&#34;: post_path = input(&#34;请输入文章路径：&#34;) including_time_file_name, content = self.prepare_post_file(post_path) self.create_new_file_in_the_repo(including_time_file_name, content) case &#34;2&#34;: post_paths = self.get_post_paths() for post_path in post_paths: including_time_file_name, content = self.prepare_post_file(post_path) self.create_new_file_in_the_repo(including_time_file_name, content) def create_new_file_in_the_repo(self, file_path, content): # 第一个参数：要上传到仓库的哪个路径; 第二个参数：commit 信息; 第三个参数：上传文档正文; 第四个参数：上传的分支 self.repo.create_file(f&#34;{file_path}&#34;, f&#34;Added {file_path}&#34;, content, branch=&#34;main&#34;) def get_post_paths(self): directory = input(&#34;请输入文章目录：&#34;) file_paths = [] for filename in os.listdir(directory): if filename.endswith(&#39;.md&#39;) or filename.endswith(&#39;.txt&#39;): # 包含前缀路径的文件路径 file_path = os.path.join(directory, filename) file_paths.append(file_path) return file_paths def prepare_post_file(self, post_path:str) -&gt; tuple[_posts/YYYY-MM-DD-file.md:str, front_matter &#43; source_body:str]: # 获取当前日期并格式化为“YYYY-MM-DD-” current_date = datetime.now().strftime(&#39;%Y-%m-%d&#39;) title = os.path.splitext(os.path.basename(post_path))[0] # 检查文件名是否已经以“YYYY-MM-DD-”格式开头 if title.startswith(current_date): print(f&#34;{post_path}的文件名已包含日期，如需继续上传请先清除文件名前的日期&#34;) else: # file.md 所在的目录 “/root/path” dir_name, base_name = os.path.split(post_path) # 无后缀名的 file file_name, file_ext = os.path.splitext(base_name) # 构建 YYYY-MM-DD-file.md ,没有前置路径 over_time_name = f&#34;_posts/{current_date}-{file_name}{file_ext}&#34; # 构建/root/path/YYYY-MM-DD-file.md absolute_path_file = os.path.join(dir_name, over_time_name) tag_list = [tag.strip() for tag in self.tags.split(&#39;,&#39;)] # 生成前言部分 front_matter = f&#34;&#34;&#34;--- layout: post title: &#34;{title}&#34; author: &#34;Ronan&#34; header-style: text tags: &#34;&#34;&#34; for tag in tag_list: front_matter &#43;= f&#34; - {tag}\n&#34; front_matter &#43;= &#34;---\n\n&#34; # 读取源文件内容 with open(post_path, &#34;r&#34;, encoding=&#39;utf-8&#39;) as f: source_body = f.read() # 构建要写入的内容 meta_content = front_matter &#43; source_body return over_time_name, meta_content if __name__ == &#34;__main__&#34;: blog = HuxBlog( owner = &#34;&#34;, repo = &#34;&#34;, token = &#34;&#34; )">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-22T13:23:56+08:00">
+    <meta property="article:modified_time" content="2024-10-22T13:23:56+08:00">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/ronan-blog%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/ronan-blog%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/ronan-blog%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
+            Ronan Blog上传脚本
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/tools/">Tools</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <h1 id="用法">用法</h1>
+<ul>
+<li>在代码的最后几行空白引号里填入相应信息</li>
+<li><strong>注意</strong> <code>create_new_file_in_the_repo</code> 函数里的 <code>branch=&quot;main&quot;</code> 参数，根据自身仓库分支修改</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> github <span style="color:#f92672">import</span> Github
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HuxBlog</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, owner<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, repo<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, token<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>owner <span style="color:#f92672">=</span> owner
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>repo <span style="color:#f92672">=</span> repo
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>token <span style="color:#f92672">=</span> token
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        g <span style="color:#f92672">=</span> Github(self<span style="color:#f92672">.</span>token)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>repo <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>get_repo(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>owner<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>repo<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 检查是否提供了必要的参数</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>owner <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>repo <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>token:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;必须指定 owner, repo 和 token&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>start_upload()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">start_upload</span>(self):
+</span></span><span style="display:flex;"><span>        status <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 1.上传单篇文章 </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 2.批量上传 </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 按下对应数字并回车可选择相应功能：&#34;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>tags <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入标签，用,隔开：&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">match</span> status:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;1&#34;</span>:
+</span></span><span style="display:flex;"><span>                post_path <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入文章路径：&#34;</span>)
+</span></span><span style="display:flex;"><span>                including_time_file_name, content <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>prepare_post_file(post_path)
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>create_new_file_in_the_repo(including_time_file_name, content)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;2&#34;</span>:
+</span></span><span style="display:flex;"><span>                post_paths <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_post_paths()
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> post_path <span style="color:#f92672">in</span> post_paths:
+</span></span><span style="display:flex;"><span>                    including_time_file_name, content <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>prepare_post_file(post_path)
+</span></span><span style="display:flex;"><span>                    self<span style="color:#f92672">.</span>create_new_file_in_the_repo(including_time_file_name, content)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_new_file_in_the_repo</span>(self, file_path, content):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 第一个参数：要上传到仓库的哪个路径; 第二个参数：commit 信息; 第三个参数：上传文档正文; 第四个参数：上传的分支</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>repo<span style="color:#f92672">.</span>create_file(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Added </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, content, branch<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_post_paths</span>(self):
+</span></span><span style="display:flex;"><span>        directory <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入文章目录：&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        file_paths <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> filename <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(directory):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.md&#39;</span>) <span style="color:#f92672">or</span> filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.txt&#39;</span>):
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 包含前缀路径的文件路径</span>
+</span></span><span style="display:flex;"><span>                file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(directory, filename)
+</span></span><span style="display:flex;"><span>                file_paths<span style="color:#f92672">.</span>append(file_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> file_paths
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">prepare_post_file</span>(self, post_path:str) <span style="color:#f92672">-&gt;</span> tuple[_posts<span style="color:#f92672">/</span>YYYY<span style="color:#f92672">-</span>MM<span style="color:#f92672">-</span>DD<span style="color:#f92672">-</span>file<span style="color:#f92672">.</span>md:str, front_matter <span style="color:#f92672">+</span> source_body:str]:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 获取当前日期并格式化为“YYYY-MM-DD-”</span>
+</span></span><span style="display:flex;"><span>        current_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        title <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>basename(post_path))[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 检查文件名是否已经以“YYYY-MM-DD-”格式开头</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> title<span style="color:#f92672">.</span>startswith(current_date):
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>post_path<span style="color:#e6db74">}</span><span style="color:#e6db74">的文件名已包含日期，如需继续上传请先清除文件名前的日期&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># file.md 所在的目录 “/root/path”</span>
+</span></span><span style="display:flex;"><span>            dir_name, base_name <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>split(post_path)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 无后缀名的 file</span>
+</span></span><span style="display:flex;"><span>            file_name, file_ext <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(base_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 构建 YYYY-MM-DD-file.md ,没有前置路径</span>
+</span></span><span style="display:flex;"><span>            over_time_name <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;_posts/</span><span style="color:#e6db74">{</span>current_date<span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">{</span>file_name<span style="color:#e6db74">}{</span>file_ext<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 构建/root/path/YYYY-MM-DD-file.md</span>
+</span></span><span style="display:flex;"><span>            absolute_path_file <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(dir_name, over_time_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        tag_list <span style="color:#f92672">=</span> [tag<span style="color:#f92672">.</span>strip() <span style="color:#66d9ef">for</span> tag <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>tags<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;,&#39;</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 生成前言部分</span>
+</span></span><span style="display:flex;"><span>        front_matter <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;---
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">layout: post
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">title: &#34;</span><span style="color:#e6db74">{</span>title<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">author: &#34;Ronan&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">header-style: text
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">tags:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> tag <span style="color:#f92672">in</span> tag_list:
+</span></span><span style="display:flex;"><span>            front_matter <span style="color:#f92672">+=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;  - </span><span style="color:#e6db74">{</span>tag<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        front_matter <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;---</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 读取源文件内容</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(post_path, <span style="color:#e6db74">&#34;r&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>            source_body <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 构建要写入的内容</span>
+</span></span><span style="display:flex;"><span>        meta_content <span style="color:#f92672">=</span> front_matter <span style="color:#f92672">+</span> source_body
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> over_time_name, meta_content
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    blog <span style="color:#f92672">=</span> HuxBlog(
+</span></span><span style="display:flex;"><span>        owner <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        repo <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span></code></pre></div><!-- raw HTML omitted -->
+
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

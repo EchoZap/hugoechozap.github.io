@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               Docs &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="Docs">
+    <meta itemprop="description" content="Docs - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/categories/docs/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="Docs">
+  <meta property="og:description" content="Bilberry Premium Theme for Hugo.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+
+    
+
+
+    
+    <link href="https://blog.ronan.us.kg/categories/docs/index.xml" rel="alternate" type="application/rss+xml" title="Ronan Blog" />
+    <link href="https://blog.ronan.us.kg/categories/docs/index.xml" rel="feed" type="application/rss+xml" title="Ronan Blog" />
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/categories/docs/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/python%E6%89%93%E5%8C%85%E7%A8%8B%E5%BA%8F/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/python%E6%89%93%E5%8C%85%E7%A8%8B%E5%BA%8F/">
+            「python」打包程序
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1 id="通过pyinstaller打包">通过pyinstaller打包</h1>
+<p>要将Python脚本打包成一个独立运行的应用程序，可以使用工具PyInstaller，其可以将Python脚本打包成一个可执行文件 (.exe) 。这样生成的应用程序不依赖于系统上的任何库，可以在没有Python环境的计算机上运行。一般使用pyinstaller将py文件打包成可执行文件。</p>
+<blockquote>
+<p>[!warning]</p>
+<p><strong>通过该方法打包的程序不具备跨平台性</strong> ：如果你需要在其他操作系统上运行该程序（例如在Windows上开发并希望在macOS或Linux上运行），你需要在目标平台上执行上述步骤。PyInstaller 无法直接生成跨平台的可执行文件。</p>
+</blockquote>
+<h3 id="1-安装-pyinstaller">1. 安装 PyInstaller</h3>
+<p>首先，确保你已经安装了 PyInstaller。如果没有，可以使用以下命令进行安装：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pip3 install pyinstaller
+</span></span></code></pre></div><h3 id="2-打包-python-脚本">2. 打包 Python 脚本</h3>
+<p>在终端或命令提示符下，导航到包含你的 Python 脚本的目录，并运行以下命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pyinstaller <span style="color:#f92672">--</span>onefile script_name<span style="color:#f92672">.</span>py
+</span></span></code></pre></div><p>将 <code>script_name.py</code> 替换为你要打包的脚本文件名。<code>--onefile</code> 参数将所有的依赖和脚本打包成一个单一的可执行文件。</p>
+<h3 id="3-查找生成的可执行文件">3. 查找生成的可执行文件</h3>
+<p>打包完成后，PyInstaller 会在当前目录下生成一个 <code>dist</code> 文件夹，其中包含你的可执行文件。你可以将这个文件复制到其他没有 Python 环境的系统上运行。</p>
+<h3 id="4-处理依赖项">4. 处理依赖项</h3>
+<p>如果你的脚本有特定的依赖项（如额外的Python库），PyInstaller 会自动检测并打包它们。但如果有某些依赖项没有正确处理，你可能需要使用 <code>--hidden-import</code> 参数手动指定。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pyinstaller <span style="color:#f92672">--</span>onefile <span style="color:#f92672">--</span>hidden<span style="color:#f92672">-</span>import<span style="color:#f92672">=&lt;</span>module_name<span style="color:#f92672">&gt;</span> script_name<span style="color:#f92672">.</span>py
+</span></span></code></pre></div>
+
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/2024-9-12-%E5%9B%BE%E5%BA%8A%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%9F%BA%E4%BA%8E-cloudflare-r2-%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/2024-9-12-%E5%9B%BE%E5%BA%8A%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%9F%BA%E4%BA%8E-cloudflare-r2-%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/">
+            2024-9-12-「图床」上传脚本，基于 cloudflare R2 对象存储
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>使用之前需要通过 <code>pip install boto3</code> 安装 boto3 库。</p>
+<p>使用方法：<code>usage: python imgs.py input_file</code></p>
+<p>在 <code>7-10</code> 行填入相应信息并将代码保存为 imgs.py：</p>
+<ul>
+<li>
+<p><code>account_id</code>：账户 id</p>
+<p>
+<a href="https://imgs.ronan.us.kg/cloudflare_R2_account_id.png" data-dimbox data-dimbox-caption="cloudflare_R2_account_id">
+  <img alt="cloudflare_R2_account_id" src="https://imgs.ronan.us.kg/cloudflare_R2_account_id.png"/>
+</a>
+</p>
+</li>
+<li>
+<p><code>access_key_id</code>：s3客户端访问密钥</p>
+</li>
+<li>
+<p><code>secret_access_key</code>：s3客户端机密访问密钥</p>
+<p>
+<a href="https://imgs.ronan.us.kg/cloudflare_R2_S3_API_Token.png" data-dimbox data-dimbox-caption="cloudflare_R2_S3_API_Token">
+  <img alt="cloudflare_R2_S3_API_Token" src="https://imgs.ronan.us.kg/cloudflare_R2_S3_API_Token.png"/>
+</a>
+</p>
+</li>
+<li>
+<p><code>bucket_name</code>：R2 存储桶名称</p>
+<p>
+<a href="https://imgs.ronan.us.kg/cloudflare_R2_bucket_name.png" data-dimbox data-dimbox-caption="cloudflare_R2_bucket_name">
+  <img alt="cloudflare_R2_bucket_name" src="https://imgs.ronan.us.kg/cloudflare_R2_bucket_name.png"/>
+</a>
+</p>
+</li>
+</ul>
+<p>可以直接运行脚本或者将脚本<a href="https://blog.ronan.us.kg/2024/09/02/python-%E6%89%93%E5%8C%85%E7%A8%8B%E5%BA%8F/">打包为应用程序</a>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> boto3
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> botocore.exceptions <span style="color:#f92672">import</span> ClientError
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> argparse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cloudflare R2 配置</span>
+</span></span><span style="display:flex;"><span>account_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#75715e"># 这里填入账户 id</span>
+</span></span><span style="display:flex;"><span>access_key_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#75715e"># 这里填写 S3 客户端的‘访问密钥’</span>
+</span></span><span style="display:flex;"><span>secret_access_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#75715e">#这里填写 S3 客户端的‘机密访问密钥’</span>
+</span></span><span style="display:flex;"><span>bucket_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#75715e"># 这里填入你要上传文件到哪个 R2 存储桶的名称</span>
+</span></span><span style="display:flex;"><span>endpoint_url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://</span><span style="color:#e6db74">{</span>account_id<span style="color:#e6db74">}</span><span style="color:#e6db74">.r2.cloudflarestorage.com&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建 S3 客户端</span>
+</span></span><span style="display:flex;"><span>s3 <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#39;s3&#39;</span>,
+</span></span><span style="display:flex;"><span>                endpoint_url<span style="color:#f92672">=</span>endpoint_url,
+</span></span><span style="display:flex;"><span>                aws_access_key_id<span style="color:#f92672">=</span>access_key_id,
+</span></span><span style="display:flex;"><span>                aws_secret_access_key<span style="color:#f92672">=</span>secret_access_key)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_file</span>(file_path, object_name<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    上传文件到 Cloudflare R2 存储桶
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :param file_path: 要上传的本地文件路径
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :param object_name: 在 R2 中的对象名称，如果不指定则使用文件名
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :return: 如果上传成功返回 True，否则返回 False
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> object_name <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        object_name <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>basename(file_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        s3<span style="color:#f92672">.</span>upload_file(file_path, bucket_name, object_name)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;File </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> uploaded successfully as </span><span style="color:#e6db74">{</span>object_name<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">https://imgs.ronan.us.kg/</span><span style="color:#e6db74">{</span>object_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> ClientError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error uploading file </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;传入本地或网络图片路径，即可上传到 cloudflare R2 对象存储桶&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#34;local_file_path&#34;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;本地图片路径&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    args <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    upload_file(args<span style="color:#f92672">.</span>local_file_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div>
+
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/javassript%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/javassript%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+            JavasSript常用方法
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1 id="获取-dom-节点">获取 DOM 节点</h1>
+<h3 id="1选择匹配到的第一个元素">1.选择匹配到的第一个元素</h3>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;css选择器&#39;</span>)
+</span></span></code></pre></div><p><strong>参数：</strong></p>
+<p>包含一个或多个有效的css选择器 <strong>字符串</strong> ，查看 <a href="https://www.runoob.com/cssref/css-selectors.html">更多css选择器</a>。</p>
+<p><strong>返回值：</strong></p>
+<p>CSS选择器匹配的第一个元素，<strong>一个HTML Element对象</strong>。</p>
+<h3 id="2选择匹配的多个元素">2.选择匹配的多个元素</h3>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;CSS选择器&#39;</span>)
+</span></span></code></pre></div><p><strong>参数：</strong></p>
+<p>包含一个或多个有效的css选择器 <strong>字符串</strong> ，查看 <a href="https://www.runoob.com/cssref/css-selectors.html">更多css选择器</a>。</p>
+<p><strong>返回值：</strong></p>
+<p>CSS选择器匹配的 <strong>NodeList 对象集合</strong></p>
+<p><strong>示例：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">headings</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;h1, h2, h3, h4, h5, h6&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">headings</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">textContent</span>);
+</span></span></code></pre></div><p>这将打印出 h1 标签里的文本内容。</p>
+<h3 id="总结">总结</h3>
+<p>1.获取页面中的标签我们最终常用那两种方式?</p>
+<blockquote>
+<p>querySelectorAll()</p>
+<p>querySelector()</p>
+</blockquote>
+<p>2.他们两者的区别是什么?</p>
+<blockquote>
+<p>querySelector() 只能选择一个元素，可以直接操作</p>
+<p>querySelectorAll() 可以选择多个元素，得到的是伪数组，需要遍历得每一个元素</p>
+</blockquote>
+<p>3.他们两者小括号里面的参数有神马注意事项</p>
+<blockquote>
+<p>里面写css选择</p>
+<p><strong>必须是字符串，也就是必须加引号</strong></p>
+</blockquote>
+<h1 id="更新-dom-节点">更新 DOM 节点</h1>
+<h3 id="1innertext方法">1.innerText方法</h3>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">对象</span>.<span style="color:#a6e22e">innerText</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;strong&gt;这不会变成粗体&lt;/strong&gt;&#39;</span>
+</span></span></code></pre></div><p><strong>注意：</strong></p>
+<ul>
+<li>通过该方法插入的只是字符串(纯文本信息)，不能识别 html 标签</li>
+</ul>
+<h3 id="2innerhtml方法最常用">2.innerHtml方法（最常用）</h3>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">对象</span>.<span style="color:#a6e22e">innerHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;strong&gt;这里可以变成粗体&lt;/strong&gt;&#39;</span>
+</span></span></code></pre></div><p>该方法可以识别 html 标签，或者可以用于插入 css 样式。</p>
+<p><strong>示例：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">对象</span>.<span style="color:#a6e22e">innerHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    div {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        width: 300px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        border: 25px solid green;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        padding: 25px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        margin: 25px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;</span>
+</span></span></code></pre></div><h1 id="创建和插入节点">创建和插入节点</h1>
+<h3 id="1创建节点并添加属性">1.创建节点并添加属性</h3>
+<p><strong>创建节点语法：</strong></p>
+
+        
+            <a href="https://blog.ronan.us.kg/posts/javassript%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+
+    
+    <div class="paginator">
+        
+            <a href="/categories/docs/page/5/" class="older"><i class="fa fa-angle-double-left"></i> Older posts</a>
+        
+
+        
+            <a href="/categories/docs/page/3/" class="newer">Newer posts <i class="fa fa-angle-double-right"></i></a>
+        
+    </div>
+
+
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            -
+            <a href="https://blog.ronan.us.kg/categories/docs/index.xml">rss</a>
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

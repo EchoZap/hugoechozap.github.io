@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               JavasSript常用方法 &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="JavasSript常用方法">
+    <meta itemprop="description" content="JavasSript常用方法 - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/javassript%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="JavasSript常用方法">
+  <meta property="og:description" content="获取 DOM 节点 1.选择匹配到的第一个元素 语法：
+document.querySelector(&#39;css选择器&#39;) 参数：
+包含一个或多个有效的css选择器 字符串 ，查看 更多css选择器。
+返回值：
+CSS选择器匹配的第一个元素，一个HTML Element对象。
+2.选择匹配的多个元素 语法：
+document.querySelectorAll(&#39;CSS选择器&#39;) 参数：
+包含一个或多个有效的css选择器 字符串 ，查看 更多css选择器。
+返回值：
+CSS选择器匹配的 NodeList 对象集合
+示例：
+const headings = document.querySelectorAll(&#39;h1, h2, h3, h4, h5, h6&#39;); console.log(headings[0].textContent); 这将打印出 h1 标签里的文本内容。
+总结 1.获取页面中的标签我们最终常用那两种方式?
+querySelectorAll()
+querySelector()
+2.他们两者的区别是什么?
+querySelector() 只能选择一个元素，可以直接操作
+querySelectorAll() 可以选择多个元素，得到的是伪数组，需要遍历得每一个元素
+3.他们两者小括号里面的参数有神马注意事项
+里面写css选择
+必须是字符串，也就是必须加引号
+更新 DOM 节点 1.innerText方法 语法：
+对象.innerText = &#39;&lt;strong&gt;这不会变成粗体&lt;/strong&gt;&#39; 注意：
+通过该方法插入的只是字符串(纯文本信息)，不能识别 html 标签 2.innerHtml方法（最常用） 语法：
+对象.innerHtml = &#39;&lt;strong&gt;这里可以变成粗体&lt;/strong&gt;&#39; 该方法可以识别 html 标签，或者可以用于插入 css 样式。
+示例：
+对象.innerHtml = &#39; div { width: 300px; border: 25px solid green; padding: 25px; margin: 25px; } &#39; 创建和插入节点 1.创建节点并添加属性 创建节点语法：">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-22T13:29:04+08:00">
+    <meta property="article:modified_time" content="2024-10-22T13:29:04+08:00">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/javassript%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/javassript%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/javassript%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+            JavasSript常用方法
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <h1 id="获取-dom-节点">获取 DOM 节点</h1>
+<h3 id="1选择匹配到的第一个元素">1.选择匹配到的第一个元素</h3>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;css选择器&#39;</span>)
+</span></span></code></pre></div><p><strong>参数：</strong></p>
+<p>包含一个或多个有效的css选择器 <strong>字符串</strong> ，查看 <a href="https://www.runoob.com/cssref/css-selectors.html">更多css选择器</a>。</p>
+<p><strong>返回值：</strong></p>
+<p>CSS选择器匹配的第一个元素，<strong>一个HTML Element对象</strong>。</p>
+<h3 id="2选择匹配的多个元素">2.选择匹配的多个元素</h3>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;CSS选择器&#39;</span>)
+</span></span></code></pre></div><p><strong>参数：</strong></p>
+<p>包含一个或多个有效的css选择器 <strong>字符串</strong> ，查看 <a href="https://www.runoob.com/cssref/css-selectors.html">更多css选择器</a>。</p>
+<p><strong>返回值：</strong></p>
+<p>CSS选择器匹配的 <strong>NodeList 对象集合</strong></p>
+<p><strong>示例：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">headings</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;h1, h2, h3, h4, h5, h6&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">headings</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">textContent</span>);
+</span></span></code></pre></div><p>这将打印出 h1 标签里的文本内容。</p>
+<h3 id="总结">总结</h3>
+<p>1.获取页面中的标签我们最终常用那两种方式?</p>
+<blockquote>
+<p>querySelectorAll()</p>
+<p>querySelector()</p>
+</blockquote>
+<p>2.他们两者的区别是什么?</p>
+<blockquote>
+<p>querySelector() 只能选择一个元素，可以直接操作</p>
+<p>querySelectorAll() 可以选择多个元素，得到的是伪数组，需要遍历得每一个元素</p>
+</blockquote>
+<p>3.他们两者小括号里面的参数有神马注意事项</p>
+<blockquote>
+<p>里面写css选择</p>
+<p><strong>必须是字符串，也就是必须加引号</strong></p>
+</blockquote>
+<h1 id="更新-dom-节点">更新 DOM 节点</h1>
+<h3 id="1innertext方法">1.innerText方法</h3>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">对象</span>.<span style="color:#a6e22e">innerText</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;strong&gt;这不会变成粗体&lt;/strong&gt;&#39;</span>
+</span></span></code></pre></div><p><strong>注意：</strong></p>
+<ul>
+<li>通过该方法插入的只是字符串(纯文本信息)，不能识别 html 标签</li>
+</ul>
+<h3 id="2innerhtml方法最常用">2.innerHtml方法（最常用）</h3>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">对象</span>.<span style="color:#a6e22e">innerHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;strong&gt;这里可以变成粗体&lt;/strong&gt;&#39;</span>
+</span></span></code></pre></div><p>该方法可以识别 html 标签，或者可以用于插入 css 样式。</p>
+<p><strong>示例：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">对象</span>.<span style="color:#a6e22e">innerHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    div {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        width: 300px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        border: 25px solid green;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        padding: 25px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        margin: 25px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;</span>
+</span></span></code></pre></div><h1 id="创建和插入节点">创建和插入节点</h1>
+<h3 id="1创建节点并添加属性">1.创建节点并添加属性</h3>
+<p><strong>创建节点语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;元素&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//创建一个 p 标签
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;p&#39;</span>)
+</span></span></code></pre></div><p><strong>添加节点属性语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">对象</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;属性&#39;</span>,<span style="color:#e6db74">&#39;属性值&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//为 p 标签添加一个 id ， id 值为 js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;p&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;id&#39;</span>,<span style="color:#e6db74">&#39;js&#39;</span>)
+</span></span></code></pre></div><h3 id="2插入节点">2.插入节点</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">对象</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#e6db74">&#39;节点&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//一个 p 标签插入到页面的 body 标签里面
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;body&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#e6db74">&#39;p&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//也可以直接使用一行代码搞定
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">appendChild</span>(<span style="color:#e6db74">&#39;p&#39;</span>)
+</span></span></code></pre></div><h1 id="修改元素样式属性">修改元素样式属性</h1>
+<h3 id="1通过style属性操作css">1.通过style属性操作css</h3>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">对象</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">样式属性</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">值</span>
+</span></span></code></pre></div><p><strong>示例：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">box</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.box&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;100px&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//多组单词(也就是属性有-链接符)采用小驼峰命名法 例如style里的 background-color 属性
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">backgroundColor</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pink&#39;</span>
+</span></span></code></pre></div><h3 id="2通过类名classname操作css">2.通过类名(className)操作css</h3>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// active是一个css类名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">元素</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;active&#39;</span>
+</span></span></code></pre></div><p><strong>注意：</strong></p>
+<ul>
+<li>由于class是关键字，所以使用className去代替</li>
+<li>className是使用新值换旧值，如果需要添加一个类，需要保留之前的类名</li>
+</ul>
+<p>也就是说，假设之前已有一个类名是 nav ，如果使用上面的方法，active 会把 nav 直接覆盖。要在保留 nav 类的基础上追加 active 类，可以使用以下方法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">元素</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;nav active&#39;</span>
+</span></span></code></pre></div><h3 id="3通过-classlist-操作类控制-css">3.通过 classList 操作类控制 css</h3>
+<ul>
+<li>为了解决 className 容易覆盖以前的类名，我们可以通过 classList 方式追加和删除类名</li>
+</ul>
+<p><strong>语法：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 追加一个类
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">元素</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;类名&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 删除一个类
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">元素</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;类名&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 切换一个类
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">元素</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#39;类名&#39;</span>)
+</span></span></code></pre></div>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

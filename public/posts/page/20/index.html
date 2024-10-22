@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               Posts &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="Posts">
+    <meta itemprop="description" content="Posts - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="Posts">
+  <meta property="og:description" content="Bilberry Premium Theme for Hugo.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+
+    
+
+
+    
+    <link href="https://blog.ronan.us.kg/posts/index.xml" rel="alternate" type="application/rss+xml" title="Ronan Blog" />
+    <link href="https://blog.ronan.us.kg/posts/index.xml" rel="feed" type="application/rss+xml" title="Ronan Blog" />
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/typora%E5%9B%BE%E5%BA%8A%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/typora%E5%9B%BE%E5%BA%8A%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
+            Typora图床自动上传脚本
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/tools/">Tools</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <blockquote>
+<p>[!caution]
+typroa的图片上传脚本，针对<a href="https://github.com/cf-pages/Telegraph-Image">Telegraph-Image</a>项目，适用于macOS和Linux系统。</p>
+</blockquote>
+<p>以下准备了两种方法，分别是python脚本以及bash脚本，由于Windows通常对于bash没有很好的支持，而macOS以及Linux常常内置了完整的bash，所以大家根据自己实际情况选用合适自己的方式：</p>
+<h1 id="对于bash脚本">对于Bash脚本</h1>
+<h2 id="使用前准备">使用前准备</h2>
+<p>在使用bash脚本之前需要安装jq，<em>jq是一个命令行json处理器，网络上有大量资料，这里不再赘述</em> ，以下是安装方法：</p>
+<ul>
+<li>macOS</li>
+</ul>
+<pre tabindex="0"><code>brew install jq
+</code></pre><ul>
+<li>Linux：</li>
+</ul>
+<pre tabindex="0"><code># Debian/Ubuntu
+apt install jq -y
+</code></pre><h2 id="脚本配置">脚本配置</h2>
+<blockquote>
+<p>[!caution]
+<strong>注意</strong>：网址url后不需要加 / ，因为这可能会报错。就比如我的图床网址是https://wpb.pages.dev，但是在复制时浏览器总会添加https://wpb.pages.dev/，最后的/一定不能要！！！</p>
+</blockquote>
+<p>在桌面(可随意指定自己想要放置的目录)新建一个 ui.sh 文件，将以下代码复制并保存到sh文件中，在sh代码中找到这一行并且在引号里填入自己的图床url：</p>
+<pre tabindex="0"><code># 自定义URL部分
+base_url=&#34;&#34;
+</code></pre><ul>
+<li>sh 脚本代码</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用帮助信息</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> display_help <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Usage: </span>$0<span style="color:#e6db74"> [file1] [file2] ... [fileN]&#34;</span>
+</span></span><span style="display:flex;"><span>    echo
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;This script uploads images to a specified server and returns their URLs.&#34;</span>
+</span></span><span style="display:flex;"><span>    echo
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Options:&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;  --help    Display this help message and exit&#34;</span>
+</span></span><span style="display:flex;"><span>    echo
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Example:&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;  </span>$0<span style="color:#e6db74"> image1.jpg image2.png&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 检查是否需要显示帮助信息</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;--help&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    display_help
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 自定义URL部分</span>
+</span></span><span style="display:flex;"><span>base_url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 检查是否安装了jq</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! command -v jq &amp;&gt; /dev/null; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Error: jq is not installed. Please install jq before running this script. &#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;You can install jq using the following command:&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;brew install jq [macOS]&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 用于存储图片URL的数组</span>
+</span></span><span style="display:flex;"><span>image_urls<span style="color:#f92672">=()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 循环读取参数</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file_path in <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 发送上传图片请求，关闭curl输出</span>
+</span></span><span style="display:flex;"><span>    response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl --location --request POST <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>base_url<span style="color:#e6db74">}</span><span style="color:#e6db74">/upload&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --header <span style="color:#e6db74">&#39;User-Agent: Apifox/1.0.0 (https://apifox.com)&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --form <span style="color:#e6db74">&#34;file=@\&#34;</span><span style="color:#e6db74">${</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">\&#34;&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --silent<span style="color:#66d9ef">)</span>  <span style="color:#75715e"># 添加 --silent 选项以关闭输出</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 检查请求是否成功</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $? -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 解析返回的JSON并拼接图片URL</span>
+</span></span><span style="display:flex;"><span>        img_url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>base_url<span style="color:#e6db74">}</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$response<span style="color:#e6db74">&#34;</span> | jq -r <span style="color:#e6db74">&#39;.[0].src&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 存储图片URL到数组</span>
+</span></span><span style="display:flex;"><span>        image_urls<span style="color:#f92672">+=(</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>img_url<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 请求失败，输出错误信息并退出脚本</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Upload Failed&#34;</span>
+</span></span><span style="display:flex;"><span>        exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 所有请求成功后输出成功信息</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Upload Success&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 输出所有图片URL</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> url in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>image_urls[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h2 id="typroa配置">Typroa配置</h2>
+<p>记住脚本的位置，如:</p>
+
+        
+            <a href="https://blog.ronan.us.kg/posts/typora%E5%9B%BE%E5%BA%8A%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/platformio%E7%83%A7%E5%BD%95%E5%A4%B1%E8%B4%A551%E7%B3%BB%E5%88%97%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/platformio%E7%83%A7%E5%BD%95%E5%A4%B1%E8%B4%A551%E7%B3%BB%E5%88%97%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+            PlatformIO烧录失败(51系列)解决方法
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h2 id="遭遇问题">遭遇问题</h2>
+<p><em><strong>platformIO一直卡在烧录程序中，导致开发版一直处于断电状态</strong></em>
+
+<a href="https://imgs.ronan.us.kg/PIO1.png" data-dimbox data-dimbox-caption="问题">
+  <img alt="问题" src="https://imgs.ronan.us.kg/PIO1.png"/>
+</a>
+</p>
+<h2 id="解决方法">解决方法</h2>
+<p>将main.py里的这一行注释即可
+
+<a href="https://imgs.ronan.us.kg/PIO2.png" data-dimbox data-dimbox-caption="解决1">
+  <img alt="解决1" src="https://imgs.ronan.us.kg/PIO2.png"/>
+</a>
+</p>
+<p>该文件在以下路径
+<code>~/.platformio/platforms/intel_mcs51/builder/main.py</code>
+
+<a href="https://imgs.ronan.us.kg/PIO3.png" data-dimbox data-dimbox-caption="解决2">
+  <img alt="解决2" src="https://imgs.ronan.us.kg/PIO3.png"/>
+</a>
+</p>
+
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/vscode%E6%90%AD%E5%BB%BA%E7%94%A8%E4%BA%8E8051%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84sdcc%E7%8E%AF%E5%A2%83/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/vscode%E6%90%AD%E5%BB%BA%E7%94%A8%E4%BA%8E8051%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84sdcc%E7%8E%AF%E5%A2%83/">
+            vscode搭建用于8051单片机的sdcc环境
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1 id="查找sdcc以及8051头文件位置">查找sdcc以及8051头文件位置</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>❯ which sdcc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin//sdcc
+</span></span></code></pre></div><p>这将列出sdcc的安装位置。接下来找到关于MCS51的头文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>❯ find /opt/homebrew -name <span style="color:#e6db74">&#34;8051.h&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>/opt/homebrew/Cellar/sdcc/4.4.0/share/sdcc/include/mcs51/8051.h
+</span></span></code></pre></div><h1 id="include-8051h-报错解决方案">#include &lt;8051.h&gt; 报错解决方案</h1>
+<p>接下来，我们需要配置 VSCode 的 IntelliSense 以包含头文件目录。</p>
+<h4 id="1-创建或编辑-c_cpp_propertiesjson">1 创建或编辑 <code>c_cpp_properties.json</code></h4>
+<p>打开你的项目，然后创建或编辑 <code>.vscode/c_cpp_properties.json</code> 文件，并添加头文件目录。</p>
+<p>例如，假设头文件在 <code>/opt/homebrew/Cellar/sdcc/&lt;版本号&gt;/share/sdcc/include/mcs51/</code>，你可以这样配置：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;configurations&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Mac&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;includePath&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;${workspaceFolder}/**&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;/opt/homebrew/Cellar/sdcc/&lt;版本号&gt;/share/sdcc/include/mcs51/&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;defines&#34;</span>: [],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;macFrameworkPath&#34;</span>: [],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;compilerPath&#34;</span>: <span style="color:#e6db74">&#34;/opt/homebrew/bin/sdcc&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;cStandard&#34;</span>: <span style="color:#e6db74">&#34;c11&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;cppStandard&#34;</span>: <span style="color:#e6db74">&#34;c++17&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;intelliSenseMode&#34;</span>: <span style="color:#e6db74">&#34;macos-clang-x64&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>请将 <code>&lt;版本号&gt;</code> 替换为实际的 SDCC 版本号。</p>
+<h4 id="2重启-vscode">2.重启 VSCode</h4>
+<p>完成配置后，重启 VSCode 以应用更改。</p>
+<h1 id="编译代码">编译代码</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sdcc main.c
+</span></span></code></pre></div><p>之后会获得一个<code>.ihx</code>文件，通过以下命令将其链接为<code>hex</code>文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>packihx <span style="color:#f92672">(</span>your_main.ihx<span style="color:#f92672">)</span> &gt; <span style="color:#f92672">(</span>your_main.hex<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h1 id="烧录程序">烧录程序</h1>
+<blockquote>
+<p>[!note]
+烧录程序使用的是stcgal<br>
+可以通过 <code>pip install stcgal</code> 来安装</p>
+
+        
+            <a href="https://blog.ronan.us.kg/posts/vscode%E6%90%AD%E5%BB%BA%E7%94%A8%E4%BA%8E8051%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84sdcc%E7%8E%AF%E5%A2%83/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+
+    
+    <div class="paginator">
+        
+            <a href="/posts/page/21/" class="older"><i class="fa fa-angle-double-left"></i> Older posts</a>
+        
+
+        
+            <a href="/posts/page/19/" class="newer">Newer posts <i class="fa fa-angle-double-right"></i></a>
+        
+    </div>
+
+
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            -
+            <a href="https://blog.ronan.us.kg/posts/index.xml">rss</a>
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

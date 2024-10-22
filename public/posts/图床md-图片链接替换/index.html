@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               「图床」md 图片链接替换 &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="「图床」md 图片链接替换">
+    <meta itemprop="description" content="「图床」md 图片链接替换 - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/%E5%9B%BE%E5%BA%8Amd-%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%E6%9B%BF%E6%8D%A2/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="「图床」md 图片链接替换">
+  <meta property="og:description" content="在 main 函数的 old_domain 为旧的图片链接，new_domain 是新的图片链接，根据自身情况填写。
+将以下代码保存为 re.py ,使用方法：usage: re.py [-h] input_dir，参数是一个目录路径。
+import os import argparse import re class LinkReplace: def __init__(self, old_domain=None, new_domain=None, input_dir=None): self.old_domain = old_domain self.new_domain = new_domain self.input_dir = input_dir if not self.old_domain or not self.new_domain or not self.input_dir: raise ValueError(&#34;Both old_domain and new_domain must be provided&#34;) def replace_ibl_in_md(self): # 替换 md 文档的图片链接 # 匹配 Markdown 文件中的图片链接的正则表达式 image_pattern = re.compile(r&#39;!\[.*?\]\((.*?)\)&#39;) for file_name in os.listdir(self.input_dir): # 拼接完整的文件路径 file_path = os.path.join(self.input_dir, file_name) if file_path.endswith(&#39;md&#39;): # 打开并读取文件内容 with open(file_path, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f: content = f.read() # 查找符合条件的图片链接 links = image_pattern.findall(content) modified = False # 遍历找到的链接 for link in links: if self.old_domain in link: # 只替换包含 old_domain 的链接 updated_link = link.replace(self.old_domain, self.new_domain) content = content.replace(link, updated_link) modified = True # 如果内容有更改，则写回文件 if modified: with open(file_path, &#39;w&#39;, encoding=&#39;utf-8&#39;) as f: f.write(content) print(f&#34;Updated links in: {file_path}&#34;) def get_ibl_in_md(self): # 输出 md 文档中所有的图片链接 # 匹配 Markdown 文件中的图片链接的正则表达式 image_pattern = re.compile(r&#39;!\[.*?\]\((.*?)\)&#39;) for file_name in os.listdir(self.input_dir): # 拼接完整的文件路径 file_path = os.path.join(self.input_dir, file_name) if file_path.endswith(&#39;md&#39;): # 打开并读取文件内容 with open(file_path, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f: content = f.read() # 查找符合条件的图片链接 link = image_pattern.findall(content) if link: print(f&#34;{file_path}: {link}&#34;) def main(): parser = argparse.ArgumentParser(description=&#34;传入一个目录，替换目录下所有 md 文档的图片链接&#34;) parser.add_argument(&#34;input_dir&#34;, help=&#34;输入目录路径&#34;) args = parser.parse_args() # 要替换的域名 old_domain = &#34;&#34; new_domain = &#34;&#34; lr = LinkReplace(old_domain, new_domain, args.input_dir) lr.replace_ibl_in_md() lr.get_ibl_in_md() if __name__ == &#34;__main__&#34;: main()">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-22T13:28:20+08:00">
+    <meta property="article:modified_time" content="2024-10-22T13:28:20+08:00">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/%E5%9B%BE%E5%BA%8Amd-%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%E6%9B%BF%E6%8D%A2/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/%E5%9B%BE%E5%BA%8Amd-%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%E6%9B%BF%E6%8D%A2/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/%E5%9B%BE%E5%BA%8Amd-%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%E6%9B%BF%E6%8D%A2/">
+            「图床」md 图片链接替换
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>在 main 函数的 old_domain 为旧的图片链接，new_domain 是新的图片链接，根据自身情况填写。</p>
+<p>将以下代码保存为 <code>re.py</code> ,使用方法：<code>usage: re.py [-h] input_dir</code>，参数是一个目录路径。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> argparse
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LinkReplace</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, old_domain<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, new_domain<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, input_dir<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>old_domain <span style="color:#f92672">=</span> old_domain
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>new_domain <span style="color:#f92672">=</span> new_domain
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>input_dir <span style="color:#f92672">=</span> input_dir
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>old_domain <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>new_domain <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>input_dir:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;Both old_domain and new_domain must be provided&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">replace_ibl_in_md</span>(self): <span style="color:#75715e"># 替换 md 文档的图片链接</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 匹配 Markdown 文件中的图片链接的正则表达式</span>
+</span></span><span style="display:flex;"><span>        image_pattern <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;!\[.*?\]\((.*?)\)&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> file_name <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(self<span style="color:#f92672">.</span>input_dir):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 拼接完整的文件路径</span>
+</span></span><span style="display:flex;"><span>            file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(self<span style="color:#f92672">.</span>input_dir, file_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> file_path<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;md&#39;</span>):
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 打开并读取文件内容</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">with</span> open(file_path, <span style="color:#e6db74">&#39;r&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>                    content <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 查找符合条件的图片链接</span>
+</span></span><span style="display:flex;"><span>                links <span style="color:#f92672">=</span> image_pattern<span style="color:#f92672">.</span>findall(content)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                modified <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 遍历找到的链接</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> link <span style="color:#f92672">in</span> links:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>old_domain <span style="color:#f92672">in</span> link:
+</span></span><span style="display:flex;"><span>                        <span style="color:#75715e"># 只替换包含 old_domain 的链接</span>
+</span></span><span style="display:flex;"><span>                        updated_link <span style="color:#f92672">=</span> link<span style="color:#f92672">.</span>replace(self<span style="color:#f92672">.</span>old_domain, self<span style="color:#f92672">.</span>new_domain)
+</span></span><span style="display:flex;"><span>                        content <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>replace(link, updated_link)
+</span></span><span style="display:flex;"><span>                        modified <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e"># 如果内容有更改，则写回文件</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> modified:
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">with</span> open(file_path, <span style="color:#e6db74">&#39;w&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>                            f<span style="color:#f92672">.</span>write(content)
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Updated links in: </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_ibl_in_md</span>(self): <span style="color:#75715e"># 输出 md 文档中所有的图片链接</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 匹配 Markdown 文件中的图片链接的正则表达式</span>
+</span></span><span style="display:flex;"><span>        image_pattern <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;!\[.*?\]\((.*?)\)&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> file_name <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(self<span style="color:#f92672">.</span>input_dir):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 拼接完整的文件路径</span>
+</span></span><span style="display:flex;"><span>            file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(self<span style="color:#f92672">.</span>input_dir, file_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> file_path<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;md&#39;</span>):
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 打开并读取文件内容</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">with</span> open(file_path, <span style="color:#e6db74">&#39;r&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>                    content <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 查找符合条件的图片链接</span>
+</span></span><span style="display:flex;"><span>                link <span style="color:#f92672">=</span> image_pattern<span style="color:#f92672">.</span>findall(content)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> link:
+</span></span><span style="display:flex;"><span>                    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>link<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;传入一个目录，替换目录下所有 md 文档的图片链接&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#34;input_dir&#34;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;输入目录路径&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    args <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 要替换的域名</span>
+</span></span><span style="display:flex;"><span>    old_domain <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    new_domain <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    lr <span style="color:#f92672">=</span> LinkReplace(old_domain, new_domain, args<span style="color:#f92672">.</span>input_dir)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    lr<span style="color:#f92672">.</span>replace_ibl_in_md()
+</span></span><span style="display:flex;"><span>    lr<span style="color:#f92672">.</span>get_ibl_in_md()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

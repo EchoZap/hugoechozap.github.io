@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               「Gmeek」文章插入html标签以及图片源地址渲染 &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="「Gmeek」文章插入html标签以及图片源地址渲染">
+    <meta itemprop="description" content="「Gmeek」文章插入html标签以及图片源地址渲染 - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/gmeek%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5html%E6%A0%87%E7%AD%BE%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E6%BA%90%E5%9C%B0%E5%9D%80%E6%B8%B2%E6%9F%93/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="「Gmeek」文章插入html标签以及图片源地址渲染">
+  <meta property="og:description" content="1.图片使用创建文章(issue)时输入的原始链接。 通过markdown添加的图片，确实包含data-canonical-src图片的真正地址。这个只需要通过一小段js插件就能实现，而且不会误判在code中的内容被替换。
+所有文章页实现替换Camo，在config.json中添加如下配置
+&#34;script&#34;:&#34;&lt;script&gt;document.querySelectorAll(&#39;a&#39;).forEach(anchor =&gt; {const img = anchor.querySelector(&#39;img&#39;);if (img &amp;&amp; img.hasAttribute(&#39;data-canonical-src&#39;)) {const canonicalSrc = img.getAttribute(&#39;data-canonical-src&#39;);anchor.setAttribute(&#39;href&#39;, canonicalSrc);img.setAttribute(&#39;src&#39;, canonicalSrc);img.removeAttribute(&#39;data-canonical-src&#39;);}});&lt;/script&gt;&#34;, 单篇文章页替换Camo，在文章页最后一行添加
+&lt;!-- ##{&#34;script&#34;:&#34;&lt;script&gt;document.querySelectorAll(&#39;a&#39;).forEach(anchor =&gt; {const img = anchor.querySelector(&#39;img&#39;);if (img &amp;&amp; img.hasAttribute(&#39;data-canonical-src&#39;)) {const canonicalSrc = img.getAttribute(&#39;data-canonical-src&#39;);anchor.setAttribute(&#39;href&#39;, canonicalSrc);img.setAttribute(&#39;src&#39;, canonicalSrc);img.removeAttribute(&#39;data-canonical-src&#39;);}});&lt;/script&gt;&#34;}## --&gt; 2.通过html插入音乐、图片和视频等 使用方式 在需要添加html标签的位置使用 行内代码 方式，并且后面紧跟着 Gmeek-html，然后才是html标签。
+[!note] 大白话：在创建文章（issue）时，写着写着想插入一张图片就可以通过两个反引号 `` 包裹住Gmeek-html以及html标签(也就是只需要将其中的src改为自己要插入的图片链接)
+图片img `Gmeek-html&lt;img src=&#34;https://picsum.photos/200&#34;&gt;` 内嵌框架iframe-网站 `Gmeek-html&lt;iframe src=&#34;https://music.meekdai.com/#61&#34; width=&#34;100%&#34; height=&#34;460px&#34; frameborder=&#34;0&#34; allowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;` 内嵌框架iframe-歌曲 `Gmeek-html&lt;iframe style=&#39;border-radius:12px&#39; src=&#39;https://open.spotify.com/embed/track/0U3fV7K4WFfVRgLGEAKh3g?utm_source=generator&#39; width=&#39;100%&#39; height=&#39;152&#39; frameBorder=&#39;0&#39; allowfullscreen=&#39;&#39; allow=&#39;autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture&#39; loading=&#39;lazy&#39;&gt;&lt;/iframe&gt;` Gmeek-html&lt;iframe style=&#39;border-radius:12px&#39; src=&#39;//music.163.com/outchain/player?type=2&amp;id=545590290&amp;auto=1&#39; width=&#39;100%&#39; height=&#39;152&#39; frameBorder=&#39;0&#39; allowfullscreen=&#39;&#39; allow=&#39;autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture&#39; loading=&#39;lazy&#39;&gt;&lt;/iframe&gt;">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-22T13:28:43+08:00">
+    <meta property="article:modified_time" content="2024-10-22T13:28:43+08:00">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/gmeek%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5html%E6%A0%87%E7%AD%BE%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E6%BA%90%E5%9C%B0%E5%9D%80%E6%B8%B2%E6%9F%93/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/gmeek%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5html%E6%A0%87%E7%AD%BE%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E6%BA%90%E5%9C%B0%E5%9D%80%E6%B8%B2%E6%9F%93/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/gmeek%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5html%E6%A0%87%E7%AD%BE%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E6%BA%90%E5%9C%B0%E5%9D%80%E6%B8%B2%E6%9F%93/">
+            「Gmeek」文章插入html标签以及图片源地址渲染
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <h1 id="1图片使用创建文章issue时输入的原始链接">1.图片使用创建文章(issue)时输入的原始链接。</h1>
+<p>通过markdown添加的图片，确实包含data-canonical-src图片的真正地址。这个只需要通过一小段js插件就能实现，而且不会误判在code中的内容被替换。<br>
+所有文章页实现替换Camo，在config.json中添加如下配置</p>
+<pre tabindex="0"><code>&#34;script&#34;:&#34;&lt;script&gt;document.querySelectorAll(&#39;a&#39;).forEach(anchor =&gt; {const img = anchor.querySelector(&#39;img&#39;);if (img &amp;&amp; img.hasAttribute(&#39;data-canonical-src&#39;)) {const canonicalSrc = img.getAttribute(&#39;data-canonical-src&#39;);anchor.setAttribute(&#39;href&#39;, canonicalSrc);img.setAttribute(&#39;src&#39;, canonicalSrc);img.removeAttribute(&#39;data-canonical-src&#39;);}});&lt;/script&gt;&#34;,
+</code></pre><p>单篇文章页替换Camo，在文章页最后一行添加</p>
+<pre tabindex="0"><code>&lt;!-- ##{&#34;script&#34;:&#34;&lt;script&gt;document.querySelectorAll(&#39;a&#39;).forEach(anchor =&gt; {const img = anchor.querySelector(&#39;img&#39;);if (img &amp;&amp; img.hasAttribute(&#39;data-canonical-src&#39;)) {const canonicalSrc = img.getAttribute(&#39;data-canonical-src&#39;);anchor.setAttribute(&#39;href&#39;, canonicalSrc);img.setAttribute(&#39;src&#39;, canonicalSrc);img.removeAttribute(&#39;data-canonical-src&#39;);}});&lt;/script&gt;&#34;}## --&gt;
+</code></pre><h1 id="2通过html插入音乐图片和视频等">2.通过html插入音乐、图片和视频等</h1>
+<h3 id="使用方式">使用方式</h3>
+<p>在需要添加html标签的位置使用 <code>行内代码</code> 方式，并且后面紧跟着 <code>Gmeek-html</code>，然后才是html标签。</p>
+<blockquote>
+<p>[!note]
+大白话：在创建文章（issue）时，写着写着想插入一张图片就可以通过两个反引号 `` 包裹住Gmeek-html以及html标签(也就是只需要将其中的src改为自己要插入的图片链接)</p>
+</blockquote>
+<ul>
+<li>图片img</li>
+</ul>
+<pre tabindex="0"><code>`Gmeek-html&lt;img src=&#34;https://picsum.photos/200&#34;&gt;`
+</code></pre><ul>
+<li>内嵌框架iframe-网站</li>
+</ul>
+<pre tabindex="0"><code>`Gmeek-html&lt;iframe src=&#34;https://music.meekdai.com/#61&#34; width=&#34;100%&#34; height=&#34;460px&#34; frameborder=&#34;0&#34; allowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;`
+</code></pre><ul>
+<li>内嵌框架iframe-歌曲</li>
+</ul>
+<pre tabindex="0"><code>`Gmeek-html&lt;iframe style=&#39;border-radius:12px&#39; src=&#39;https://open.spotify.com/embed/track/0U3fV7K4WFfVRgLGEAKh3g?utm_source=generator&#39; width=&#39;100%&#39; height=&#39;152&#39; frameBorder=&#39;0&#39; allowfullscreen=&#39;&#39; allow=&#39;autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture&#39; loading=&#39;lazy&#39;&gt;&lt;/iframe&gt;`
+</code></pre><p><code>Gmeek-html&lt;iframe style='border-radius:12px' src='//music.163.com/outchain/player?type=2&amp;id=545590290&amp;auto=1' width='100%' height='152' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'&gt;&lt;/iframe&gt;</code></p>
+<ul>
+<li>内嵌框架iframe-视频</li>
+</ul>
+<pre tabindex="0"><code>`Gmeek-html&lt;iframe src=&#34;//player.bilibili.com/player.html?isOutside=true&amp;aid=1604800941&amp;bvid=BV1qm421M7Xs&amp;cid=1557311907&amp;p=1&amp;autoplay=0&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34; width=&#34;100%&#34; height=&#34;460px&#34;&gt;&lt;/iframe&gt;`
+</code></pre><!-- raw HTML omitted -->
+
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

@@ -4,10 +4,10 @@
   
 <html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
 
-<head prefix="og: http://ogp.me/ns#"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="siteBaseUrl" content="http://localhost:1313/">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
     <meta name="author" content="Ronan">
     <meta name="description" content="Bilberry Premium Theme for Hugo.">
     <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
@@ -23,7 +23,7 @@
     <meta itemprop="description" content="Docs - Bilberry Premium Theme for Hugo.">
     <meta property="og:site_name" content="Ronan Blog">
 
-    <meta property="og:url" content="http://localhost:1313/categories/docs/">
+    <meta property="og:url" content="https://blog.ronan.us.kg/categories/docs/">
   <meta property="og:site_name" content="Ronan Blog">
   <meta property="og:title" content="Docs">
   <meta property="og:description" content="Bilberry Premium Theme for Hugo.">
@@ -35,12 +35,12 @@
 
 
     
-    <link href="http://localhost:1313/categories/docs/index.xml" rel="alternate" type="application/rss+xml" title="Ronan Blog" />
-    <link href="http://localhost:1313/categories/docs/index.xml" rel="feed" type="application/rss+xml" title="Ronan Blog" />
+    <link href="https://blog.ronan.us.kg/categories/docs/index.xml" rel="alternate" type="application/rss+xml" title="Ronan Blog" />
+    <link href="https://blog.ronan.us.kg/categories/docs/index.xml" rel="feed" type="application/rss+xml" title="Ronan Blog" />
     
 
     
-    <link rel="canonical" href="http://localhost:1313/categories/docs/">
+    <link rel="canonical" href="https://blog.ronan.us.kg/categories/docs/">
     
 
     
@@ -49,7 +49,8 @@
 
 
 
-    <link id="theme-css" rel="stylesheet" href="http://localhost:1313/theme.css" media="screen">
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
 
 
 
@@ -132,7 +133,7 @@
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="http://localhost:1313/posts/ronan-hugo-blog-%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
 
@@ -141,15 +142,15 @@
 
     <div class="content">
     <h1 class="article-title">
-        <a href="http://localhost:1313/posts/ronan-hugo-blog-%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">
-            Ronan-Hugo-Blog 上传脚本
+        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">
+            PyInstaller将Python应用打包为Android应用程序
         </a>
     </h1>
 
     <div class="meta">
         
             
-                <span class="date moment">0001-01-01</span>
+                <span class="date moment">2024-10-22</span>
             
         
 
@@ -160,120 +161,277 @@
                 
                     
                     
-                        <a href="http://localhost:1313/categories/docs/">Docs</a>
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
                     
                 
             </span>
         
 
         
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
     </div>
 
     
-        <p>在76-78行填入相应信息即可</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> github <span style="color:#f92672">import</span> Github
+        <p>在移动应用开发中，Python虽然不如Java或Kotlin那样广泛使用，但仍有一部分开发者偏爱使用Python进行开发。PyInstaller是一个将Python应用打包成独立可执行文件的工具，它支持多种操作系统，包括Windows、Linux和macOS。更为重要的是，通过一些额外的配置和工具，PyInstaller还能够将Python应用打包成Android APK文件，使得Python应用能在Android设备上运行。</p>
+<h3 id="1-安装pyinstaller">1. 安装PyInstaller</h3>
+<p>首先，你需要确保你的开发环境中已经安装了Python和pip。然后，你可以通过pip来安装PyInstaller。打开命令行或终端，输入以下命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip install pyinstaller
+</span></span></code></pre></div><h3 id="2-准备你的python应用">2. 准备你的Python应用</h3>
+<p>在打包之前，你需要确保你的Python应用能够正常运行，并且所有依赖都已经正确安装。此外，你的应用应该能够在一个没有图形用户界面的环境中运行，因为Android设备可能没有图形界面。</p>
+<h3 id="3-使用pyinstaller打包应用">3. 使用PyInstaller打包应用</h3>
+<p>在你的Python应用所在的目录下，打开命令行或终端，输入以下命令来打包你的应用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pyinstaller --onefile --name<span style="color:#f92672">=</span>your_app_name your_app_script.py
+</span></span></code></pre></div><p>这里，<code>--onefile</code>选项表示将你的应用打包成一个单独的可执行文件，<code>--name</code>选项用于指定打包后的应用名称，<code>your_app_script.py</code>则是你的应用的主脚本文件。</p>
+<h3 id="4-配置android打包">4. 配置Android打包</h3>
+<p>要将Python应用打包成Android APK文件，你需要使用一个名为<code>python-for-android</code>的工具。你可以通过pip来安装它：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip install python-for-android
+</span></span></code></pre></div><p>安装完成后，你可以在<code>python-for-android</code>的目录下找到一个名为<code>buildozer.spec</code>的配置文件。你需要编辑这个文件来配置你的应用。</p>
+<p>在<code>buildozer.spec</code>文件中，你需要设置以下几个关键项：</p>
+<ul>
+<li><code>title</code>: 你的应用的名称</li>
+<li><code>package.name</code>: 你的应用的Python包名</li>
+<li><code>package.domain</code>: 你的应用的网站<a href="https://cloud.baidu.com/product/bcd.html">域名</a>（可选）</li>
+<li><code>source.include_exts</code>: 需要包含的文件扩展名，例如<code>.py</code>, <code>.kv</code>, <code>.atlas</code>等</li>
+<li><code>requirements</code>: 你的应用所依赖的Python库和模块</li>
+</ul>
+<h3 id="5-使用buildozer打包apk">5. 使用Buildozer打包APK</h3>
+<p>配置完成后，你可以在命令行或终端中运行以下命令来打包你的应用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>buildozer init
+</span></span><span style="display:flex;"><span>buildozer android debug
+</span></span></code></pre></div><p>第一个命令会初始化Buildozer的配置，第二个命令则会开始打包过程。打包完成后，你会在<code>bin/</code>目录下找到一个名为<code>your_app_name-0.1-debug.apk</code>的文件，这就是你的Android应用APK文件。</p>
+<h3 id="6-在android设备上安装apk">6. 在Android设备上安装APK</h3>
+<p>最后，你可以将这个APK文件安装到你的Android设备上。你可以通过ADB工具来安装，也可以在设备上使用文件管理器来安装。</p>
+<h3 id="结语">结语</h3>
+<p>通过以上步骤，你就可以使用PyInstaller将你的Python应用打包成Android APK文件，并在Android设备上运行了。虽然这个过程相对复杂，但是一旦你掌握了它，你就可以轻松地将你的Python应用部署到更多的平台上，让更多的人使用你的应用了。</p>
+
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">
+            「Gmeek」上传脚本(单篇或批量)
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <blockquote>
+<p>[!caution]</p>
+<p><strong>注意：</strong> 该脚本仅适用于通过Gmeek项目搭建的博客网站
+在开始使用之前，需要创建 github 的个人 Token</p>
+</blockquote>
+<h1 id="1创建github个人token">1.创建github个人Token</h1>
+<p>1.在 GitHub 上任何页面的<strong>右上角</strong>，单击您的<code>个人资料照片</code>，然后单击 <code>Settings</code>。<br>
+2.在左侧边栏中，单击 <code>Developer settings（开发人员设置）</code>。<br>
+3.在左侧边栏中的 <strong>Personal access tokens （个人访问令牌）</strong> 下，单击 <code>Tokens （classic）</code>。<br>
+4.选择 <code>Generate new token（生成新令牌）</code>，然后单击 <code>Generate new token （classic）</code>。<br>
+5.在 <strong>Note</strong> 字段中，为您的令牌指定一个描述性名称。<br>
+6.要为您的令牌指定过期时间，请选择 <strong>Expiration（过期）</strong>，然后选择默认选项或单击 Custom（自定义）以输入日期。<br>
+7.选择要授予此令牌的范围。要使用令牌从命令行访问存储库，请选择 <code>repo</code> ( <strong>这里一定要打上勾！！！</strong> ) 。没有分配范围的令牌只能访问公共信息。<br>
+8.滑动到底部，单击 <code>Generate token</code><br>
+9.<strong>将新令牌复制到剪贴板并且保管好，令牌只出现一次，一定要保管好！一定要保管好！一定要保管好！</strong>。</p>
+<h1 id="2使用方法">2.使用方法</h1>
+<p>以下有两个方法，分为sh脚本和python脚本：</p>
+<blockquote>
+<p>[!tip]
+<strong>建议：</strong>
+Linux与mac系统使用 sh 脚本，Windows使用py脚本体验更佳
+也可根据喜好自行采用</p>
+</blockquote>
+<h2 id="21配置脚本">2.1配置脚本</h2>
+<h3 id="对于-sh-脚本">对于 sh 脚本</h3>
+<blockquote>
+<p>[!important]</p>
+<p>使用前需确认以下：</p>
+<ul>
+<li>系统已安装curl</li>
+<li>系统已安装jq</li>
+<li>系统可使用bash</li>
+</ul>
+</blockquote>
+<p>curl、jq 安装方法由于系统不同，方法多样，所以具体安装方法可以自行查找&hellip;</p>
+<p>在代码开始的前几行，找到以下几个值，在引号里填入自己的信息：</p>
+<ul>
+<li><code>TOKEN</code>  为自己创建的Token值</li>
+<li><code>OWNER</code> 为自己的github用户名</li>
+<li><code>REPO</code> 为自己的Gmeek博客仓库名，一般是 <code>xxx.github.io</code></li>
+</ul>
+<h3 id="对于-py-脚本">对于 py 脚本</h3>
+<p>1.在开始使用之前，需要安装 <code>requests</code> 模块</p>
+
+        
+            <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">
+            「platformIO」printf 重映像、串口打印数据
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>在 <code>keil</code> 环境中使用 printf 通过串口打印数据：</p>
+<ul>
+<li>
+<p>在 main.c 引入<code>stdio.h</code></p>
+</li>
+<li>
+<p>重写<code>fputc</code>函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// keil arm环境，如果你要用printf函数，就必须重写fputc函数，并且在魔术棒里面勾选使用Micro LIB
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fputc</span>(<span style="color:#66d9ef">int</span> ch, FILE <span style="color:#f92672">*</span>f)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">USART_SendData</span>(USART1, ch);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">USART_GetFlagStatus</span>(USART1, USART_FLAG_TC) <span style="color:#f92672">==</span> RESET);<span style="color:#75715e">//循环的判断串口是否发送完数据
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> ch;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>完成以上配置即可在 main 函数中使用 printf 函数通过串口打印数据。</p>
+</li>
+</ul>
+<p>在 <code>arm-***-gcc</code> 环境使用 printf 通过串口打印数据：</p>
+<ul>
+<li>
+<p>不需要引入<code>stdio.h</code>头文件</p>
+</li>
+<li>
+<p>直接在 main.c 中重写<code>_write</code>方法即可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// gcc 编译环境重写该方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//这是一种写法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">_write</span>( <span style="color:#66d9ef">int</span> fd, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>pBuffer, <span style="color:#66d9ef">int</span> size) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> ((USART1<span style="color:#f92672">-&gt;</span>SR<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">0x40</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>);		<span style="color:#75715e">// 等待串口发送完毕
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        USART1<span style="color:#f92672">-&gt;</span>DR <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint8_t</span>) pBuffer[i];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> size;
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HugoBlog</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, owner<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, repo<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, token<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>owner <span style="color:#f92672">=</span> owner
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>repo <span style="color:#f92672">=</span> repo
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>token <span style="color:#f92672">=</span> token
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        g <span style="color:#f92672">=</span> Github(self<span style="color:#f92672">.</span>token)
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>repo <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>get_repo(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>owner<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>repo<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 检查是否提供了必要的参数</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>owner <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>repo <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>token:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;必须指定 owner, repo 和 token&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_new_file_in_the_repo</span>(self, file_path, content):
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 第一个参数：要上传到仓库的哪个路径; 第二个参数：commit 信息; 第三个参数：上传文档正文; 第四个参数：上传的分支</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>repo<span style="color:#f92672">.</span>create_file(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Added </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, content, branch<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_post_paths</span>(self):
-</span></span><span style="display:flex;"><span>        directory <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入文章目录：&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        file_paths <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> filename <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(directory):
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.md&#39;</span>) <span style="color:#f92672">or</span> filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.txt&#39;</span>):
-</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 包含前缀路径的文件路径</span>
-</span></span><span style="display:flex;"><span>                file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(directory, filename)
-</span></span><span style="display:flex;"><span>                file_paths<span style="color:#f92672">.</span>append(file_path)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> file_paths
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_md_front_matter</span>(self, post_path, categories_input, author<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ronan&#34;</span>):
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 获取不带前缀路径和后缀名的文件名</span>
-</span></span><span style="display:flex;"><span>        title <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>basename(post_path))[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 获取当前实时时间，格式化为指定格式 date: 2024-10-21T21:10:51.719748</span>
-</span></span><span style="display:flex;"><span>        current_time <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>isoformat()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 处理用户输入的 categories</span>
-</span></span><span style="display:flex;"><span>        categories <span style="color:#f92672">=</span> [cat<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> cat <span style="color:#f92672">in</span> categories_input<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;,&#39;</span>)]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 生成 MD 头部内容</span>
-</span></span><span style="display:flex;"><span>        front_matter <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;---
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">title: &#34;</span><span style="color:#e6db74">{</span>title<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">date: </span><span style="color:#e6db74">{</span>current_time<span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">categories: </span><span style="color:#e6db74">{</span>categories<span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">author: &#34;</span><span style="color:#e6db74">{</span>author<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">---
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> front_matter
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">append_front_matter_to_md_file</span>(self, front_matter, post_path:str):
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># file.md 所在的目录 “/root/path”</span>
-</span></span><span style="display:flex;"><span>        dir_name, base_name <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>split(post_path)
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 无后缀名的 file</span>
-</span></span><span style="display:flex;"><span>        file_name, file_ext <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(base_name)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        final_path <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;content/posts/</span><span style="color:#e6db74">{</span>base_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 读取源文件内容</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(post_path, <span style="color:#e6db74">&#34;r&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>            source_body <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 将前言追加到 md 文档中</span>
-</span></span><span style="display:flex;"><span>        final_content <span style="color:#f92672">=</span> front_matter <span style="color:#f92672">+</span> source_body
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> final_content, final_path
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    blog <span style="color:#f92672">=</span> HugoBlog(
-</span></span><span style="display:flex;"><span>        owner <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>,
-</span></span><span style="display:flex;"><span>        repo <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>,
-</span></span><span style="display:flex;"><span>        token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    status <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 1.上传单篇文章 </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 2.批量上传 </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 按下对应数字并回车可选择相应功能：&#34;</span>)
-</span></span><span style="display:flex;"><span>    categories_input <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入标签，用,隔开：&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">match</span> status:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;1&#34;</span>:
-</span></span><span style="display:flex;"><span>            post_path <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入文章路径：&#34;</span>)
-</span></span><span style="display:flex;"><span>            front_matter <span style="color:#f92672">=</span> blog<span style="color:#f92672">.</span>generate_md_front_matter(post_path, categories_input)
-</span></span><span style="display:flex;"><span>            final_content, final_path <span style="color:#f92672">=</span> blog<span style="color:#f92672">.</span>append_front_matter_to_md_file(front_matter, post_path)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            blog<span style="color:#f92672">.</span>create_new_file_in_the_repo(final_path, final_content)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;2&#34;</span>:
-</span></span><span style="display:flex;"><span>            post_paths <span style="color:#f92672">=</span> blog<span style="color:#f92672">.</span>get_post_paths()
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> post_path <span style="color:#f92672">in</span> post_paths:
-</span></span><span style="display:flex;"><span>                front_matter <span style="color:#f92672">=</span> blog<span style="color:#f92672">.</span>generate_md_front_matter(post_path, categories_input)
-</span></span><span style="display:flex;"><span>                final_content, final_path <span style="color:#f92672">=</span> blog<span style="color:#f92672">.</span>append_front_matter_to_md_file(front_matter, post_path)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                blog<span style="color:#f92672">.</span>create_new_file_in_the_repo(final_path, final_content)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
-</span></span><span style="display:flex;"><span>    main()
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//还有另一种写法，根据情况按需选择
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">_write</span>( <span style="color:#66d9ef">int</span> fd, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>pBuffer, <span style="color:#66d9ef">int</span> size) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">USART_GetFlagStatus</span>(USART1, USART_FLAG_TC) <span style="color:#f92672">==</span> RESET);		<span style="color:#75715e">// 等待串口发送完毕
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        USART1<span style="color:#f92672">-&gt;</span>DR <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint8_t</span>) pBuffer[i];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> size;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
 
         
     
@@ -297,6 +455,8 @@
     
     <div class="paginator">
         
+            <a href="/categories/docs/page/2/" class="older"><i class="fa fa-angle-double-left"></i> Older posts</a>
+        
 
         
     </div>
@@ -316,7 +476,31 @@
                 
                 
                     <li>
-                        <a href="http://localhost:1313/posts/ronan-hugo-blog-%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/">Ronan-Hugo-Blog 上传脚本</a>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
                     </li>
                 
             </ul>
@@ -326,14 +510,38 @@
         
         <div class="categories">
             
-            <a href="http://localhost:1313/categories/"><strong>Categories</strong></a>
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
             
 
             <ul>
                 
                 <li>
                 
-                    <a href="http://localhost:1313/categories/docs/">Docs (1)</a>
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
                 
                 </li>
                 
@@ -358,7 +566,7 @@
             
             <div class="archive">
                 
-                <a href="http://localhost:1313/archive/"><strong>Archive</strong></a>
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
                 
             </div>
             
@@ -370,15 +578,15 @@
 <div class="credits">
     <div class="container">
         <div class="copyright">
-            <a href="https://github.com/Lednerb" target="_blank">
+            <a href="https://github.com/echozap" target="_blank">
                 &copy;
                 
                 2024
                 
-                by Lednerb
+                by Ronan
             </a>
             -
-            <a href="http://localhost:1313/categories/docs/index.xml">rss</a>
+            <a href="https://blog.ronan.us.kg/categories/docs/index.xml">rss</a>
         </div>
         <div class="author">
             <a href="https://github.com/Lednerb/bilberry-hugo-theme"
@@ -428,7 +636,8 @@
 
 
 
-    <script src="http://localhost:1313/theme.js"></script>
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
 
 
 
@@ -440,7 +649,7 @@
         <div id="activate-algolia-search" class="hidden">
   <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
   <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
-  <input type="hidden" id="algolia-search-indexName" value="blog">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
   <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
 
   

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               GCC &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="GCC">
+    <meta itemprop="description" content="GCC - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/gcc/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="GCC">
+  <meta property="og:description" content="GCC 是 Linux 下的编译工具集，是 GNU Compiler Collection 的缩写，包含 gcc、g&#43;&#43; 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar、nm 等。
+GCC 工具集不仅能编译 C/C&#43;&#43;语言，其他例如 Objective-C、Pascal、Fortran、Java、Ada 等语言均能进行编译。GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86、ARM、PowerPC、mips 等，以及 Linux、Windows 等软件平台。
+1. 安装 GCC 有些纯净版的Linux默认没有gcc编译器, 需要自己安装, 在线安装步骤如下:
+# 安装软件必须要有管理员权限 # ubuntu sudo apt update # 更新本地的软件下载列表, 得到最新的下载地址 sudo apt install gcc g&#43;&#43;	# 通过下载列表中提供的地址下载安装包, 并安装 # centos sudo yum update # 更新本地的软件下载列表, 得到最新的下载地址 sudo yum install gcc g&#43;&#43;	# 通过下载列表中提供的地址下载安装包, 并安装 gcc安装完成后，可查看版本：
+# 查看 gcc 版本 gcc -v gcc --version # 查看 g&#43;&#43; 版本 g&#43;&#43; -v g&#43;&#43; --version 2.GCC工作流程 GCC 编译器对程序的编译下图所示，分为 4 个阶段：预处理（预编译）、编译 和 优化、汇编和链接。GCC 的编译器可以将这 4 个步骤合并成一个。 先介绍一个每个步骤都分别做了写什么事:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-22T13:26:15+08:00">
+    <meta property="article:modified_time" content="2024-10-22T13:26:15+08:00">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/gcc/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/gcc/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/gcc/">
+            GCC
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/linux/">Linux</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p><strong>GCC</strong> 是 Linux 下的编译工具集，是 <strong>GNU Compiler Collection</strong> 的缩写，包含 gcc、g++ 等编译器。这个工具集不仅包含编译器，还包含其他工具集，例如 ar、nm 等。</p>
+<p>GCC 工具集不仅能编译 C/C++语言，其他例如 Objective-C、Pascal、Fortran、Java、Ada 等语言均能进行编译。GCC 在可以根据不同的硬件平台进行编译，即能进行交叉编译，在 A 平台上编译 B 平台的程序，支持常见的 X86、ARM、PowerPC、mips 等，以及 Linux、Windows 等软件平台。</p>
+<h1 id="1-安装-gcc">1. 安装 GCC</h1>
+<p>有些纯净版的Linux默认没有gcc编译器, 需要自己安装, 在线安装步骤如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 安装软件必须要有管理员权限</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ubuntu</span>
+</span></span><span style="display:flex;"><span>sudo apt update   		<span style="color:#75715e"># 更新本地的软件下载列表, 得到最新的下载地址</span>
+</span></span><span style="display:flex;"><span>sudo apt install gcc g++	<span style="color:#75715e"># 通过下载列表中提供的地址下载安装包, 并安装</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># centos</span>
+</span></span><span style="display:flex;"><span>sudo yum update   		<span style="color:#75715e"># 更新本地的软件下载列表, 得到最新的下载地址</span>
+</span></span><span style="display:flex;"><span>sudo yum install gcc g++	<span style="color:#75715e"># 通过下载列表中提供的地址下载安装包, 并安装</span>
+</span></span></code></pre></div><p>gcc安装完成后，可查看版本：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 查看 gcc 版本</span>
+</span></span><span style="display:flex;"><span>gcc -v
+</span></span><span style="display:flex;"><span>gcc --version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看 g++ 版本</span>
+</span></span><span style="display:flex;"><span>g++ -v
+</span></span><span style="display:flex;"><span>g++ --version
+</span></span></code></pre></div><h1 id="2gcc工作流程">2.GCC工作流程</h1>
+<p>GCC 编译器对程序的编译下图所示，分为 4 个阶段：<code>预处理（预编译）</code>、<code>编译</code> 和 <code>优化</code>、<code>汇编和链接</code>。GCC 的编译器可以将这 4 个步骤合并成一个。 先介绍一个每个步骤都分别做了写什么事:</p>
+<p><strong>1.预处理</strong>: 在这个阶段主要做了三件事: 展开头文件 、宏替换 、去掉注释行
+这个阶段需要GCC调用预处理器来完成, 最终得到的还是源文件, 文本格式</p>
+<p><strong>2.编译</strong>: 这个阶段需要GCC调用编译器对文件进行编译, 最终得到一个汇编文件</p>
+<p><strong>3.汇编</strong>: 这个阶段需要GCC调用汇编器对文件进行汇编, 最终得到一个二进制文件</p>
+<p><strong>4.链接</strong>: 这个阶段需要GCC调用链接器对程序需要调用的库进行链接, 最终得到一个可执行的二进制文件</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">文件后缀名</th>
+          <th style="text-align: center">说明</th>
+          <th style="text-align: center">gcc参数</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">.c</td>
+          <td style="text-align: center">源文件</td>
+          <td style="text-align: center">无</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">.i</td>
+          <td style="text-align: center">预处理后的c文件</td>
+          <td style="text-align: center">-E</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">.s</td>
+          <td style="text-align: center">编译之后得到的汇编语言的源文件</td>
+          <td style="text-align: center">-S</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">.o</td>
+          <td style="text-align: center">汇编之后得到的二进制文件</td>
+          <td style="text-align: center">-c</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>[!note]
+c语言源文件&ndash; <code>预处理</code> &ndash;&gt; 预处理后的文件&ndash; <code>编译</code> &ndash;&gt; 汇编文件&ndash; <code>汇编</code> &ndash;&gt; 目标文件&ndash; <code>链接</code> &ndash;&gt; 可执行文件</p>
+</blockquote>
+<h2 id="21编译单文件">2.1编译单文件</h2>
+<p>1.在 Linux 下使用 GCC 编译器编译单个文件十分简单，直接使用gcc命令后面加上要编译的c语言源文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gcc temp.c
+</span></span></code></pre></div><p>GCC 会自动生成文件名为temp.out 的可执行文件，temp.out授予执行权限后可直接运行。</p>
+<p>2.也可以通过参数 -o 指定生成的可执行文件名：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gcc temp.c -o temp
+</span></span></code></pre></div><p>temp就是生成的可执行文件(名称可自由指定)
+以上两种方式通过一个简单的命令就把上边提到的4个步骤就全部执行完毕了。</p>
+<h2 id="22单步执行编译步骤">2.2单步执行编译步骤</h2>
+<p>例子更为直观，直接举例🌰</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>// 假设程序对应的源文件名为 test.c
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include &lt;stdio.h&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include &lt;stdlib.h&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include &lt;unistd.h&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include &lt;string.h&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>int main<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    int array<span style="color:#f92672">[</span>5<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>1,2,3,4,5<span style="color:#f92672">}</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>int i<span style="color:#f92672">=</span>0; i&lt;5; ++i<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        printf<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;array[%d] = %d\n&#34;</span>, i, array<span style="color:#f92672">[</span>i<span style="color:#f92672">])</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> 0;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
+<li>第一步: 对源文件进行预处理, 需要使用的gcc参数为 <code>-E</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 1. 预处理, -o 指定生成的文件名</span>
+</span></span><span style="display:flex;"><span>gcc -E test.c -o test.i
+</span></span></code></pre></div><ul>
+<li>第二步: 编译预处理之后的文件, 需要使用的gcc参数为 <code>-S</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 2. 编译, 得到汇编文件</span>
+</span></span><span style="display:flex;"><span>gcc -S test.i -o test.s
+</span></span></code></pre></div><ul>
+<li>第三步: 对得到的汇编文件进行汇编, 需要使用的gcc参数为 <code>-c</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 3. 汇编</span>
+</span></span><span style="display:flex;"><span>gcc -c test.s -o test.o
+</span></span></code></pre></div><ul>
+<li>第四步: 将得到的二进制文件和标准库进制链接, 得到可执行的二进制文件, <code>不需要任何参数</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 4. 链接</span>
+</span></span><span style="display:flex;"><span>gcc test.o -o test
+</span></span></code></pre></div><blockquote>
+<p>最后再次强调, 在使用gcc编译程序的时候可以通过参数控制内部自动执行几个步骤:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 参数 -c 是进行文件的汇编, 汇编之前的两步会自动执行</span>
+</span></span><span style="display:flex;"><span>$ gcc test.c -c -o app.o
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 该命令是直接进行链接生成可执行程序, 链接之前的三步会自动执行</span>
+</span></span><span style="display:flex;"><span>$ gcc test.c -o app
+</span></span></code></pre></div><h1 id="3gcc常用参数">3.gcc常用参数</h1>
+<p>下面的表格中列出了常用的一些gcc参数, 这些参数在 gcc命令中没有位置要求，只需要编译程序的时候将需要的参数指定出来即可。</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">gcc编译选项</th>
+          <th style="text-align: center">选项的意义</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><code>-E</code></td>
+          <td style="text-align: center">预处理指定的源文件，不进行编译</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-S</code></td>
+          <td style="text-align: center">编译指定的源文件，但是不进行汇编</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-c</code></td>
+          <td style="text-align: center">编译、汇编指定的源文件，但是不进行链接</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-o [file1] [file2]</code> / <code>[file2] -o [file1]</code></td>
+          <td style="text-align: center">将文件 <code>file2</code> 编译成文件 <code>file1</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-I directory</code> (大写的i)</td>
+          <td style="text-align: center">指定 include 包含文件的搜索目录</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-g</code></td>
+          <td style="text-align: center">在编译的时候，生成调试信息，该程序可以被调试器调试</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-D</code></td>
+          <td style="text-align: center">在程序编译的时候，指定一个宏</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-w</code></td>
+          <td style="text-align: center">不生成任何警告信息，不建议使用，有些时候警告就是错误</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-Wall</code></td>
+          <td style="text-align: center">生成所有警告信息</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-On</code></td>
+          <td style="text-align: center"><code>n</code> 的取值范围：0~3。编译器的优化选项的4个级别，<code>-O0</code> 表示没有优化，<code>-O1</code> 为缺省值，<code>-O3</code> 优化级别最高</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-l</code></td>
+          <td style="text-align: center">在程序编译的时候，指定使用的库</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-L</code></td>
+          <td style="text-align: center">指定编译的时候，搜索的库的路径</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-fPIC/fpic</code></td>
+          <td style="text-align: center">生成与位置无关的代码</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-shared</code></td>
+          <td style="text-align: center">生成共享目标文件。通常用在建立共享库时</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>-std</code></td>
+          <td style="text-align: center">指定 C 方言，如：<code>-std=c99</code>，<code>gcc</code> 默认的方言是 <code>GNU C</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="31-指定生成的文件名--o">3.1 指定生成的文件名 (-o)</h2>
+<p>该参数用于指定原文件通过 gcc 处理之后生成的新文件的名字, 有两种写法, 原文件可以写在参数 -o前边后缀写在后边。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 参数 -o的用法 , 原材料 test.c 最终生成的文件名为 app</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># test.c 写在 -o 之前</span>
+</span></span><span style="display:flex;"><span>$ gcc test.c -o app
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># test.c 写在 -o 之后</span>
+</span></span><span style="display:flex;"><span>$ gcc -o app test.c
+</span></span></code></pre></div><h2 id="32-搜索头文件--i">3.2 搜索头文件 (-I)</h2>
+<p>如果在程序中包含了一些头文件, 但是包含的一些头文件在程序预处理的时候因为找不到无法被展开，导致程序编译失败，这时候我们可以在gcc命令中添加 -I参数重新指定要引用的头文件路径, 保证编译顺利完成。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># -I, 指定头文件目录</span>
+</span></span><span style="display:flex;"><span>$ tree
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── add.c
+</span></span><span style="display:flex;"><span>├── div.c
+</span></span><span style="display:flex;"><span>├── include
+</span></span><span style="display:flex;"><span>│   └── head.h
+</span></span><span style="display:flex;"><span>├── main.c
+</span></span><span style="display:flex;"><span>├── mult.c
+</span></span><span style="display:flex;"><span>└── sub.c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 编译当前目录中的所有源文件，得到可执行程序</span>
+</span></span><span style="display:flex;"><span>$ gcc *.c -o calc
+</span></span><span style="display:flex;"><span>main.c:2:18: fatal error: head.h: No such file or directory
+</span></span><span style="display:flex;"><span>compilation terminated.
+</span></span><span style="display:flex;"><span>sub.c:2:18: fatal error: head.h: No such file or directory
+</span></span><span style="display:flex;"><span>compilation terminated.
+</span></span></code></pre></div><p>通过编译得到的错误信息可以知道, 源文件中包含的头文件无法被找到。通过提供的目录结构可以得知头文件 head.h 在 include 目录中，因此可以在编译的时候重新指定头文件位置，具体操作如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 可以在编译的时候重新指定头文件位置 -I 头文件目录</span>
+</span></span><span style="display:flex;"><span>$ gcc *.c -o calc -I ./include
+</span></span></code></pre></div><h2 id="33-指定一个宏--d">3.3 指定一个宏 (-D)</h2>
+<p>在程序中我们可以使用宏定义一个常量, 也可以通过宏控制某段代码是否能够被执行。在下面这段程序中第8行判断是否定义了一个叫做 DEBUG的宏, 如果没有定义第9行代码就不会被执行了, 通过阅读代码能够知道这个宏是没有在程序中被定义的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>// test.c
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include &lt;stdio.h&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define NUMBER  3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>int main<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    int a <span style="color:#f92672">=</span> 10;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef DEBUG</span>
+</span></span><span style="display:flex;"><span>    printf<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;我是一个程序猿, 我不会爬树...\n&#34;</span><span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>int i<span style="color:#f92672">=</span>0; i&lt;NUMBER; ++i<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        printf<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello, GCC!!!\n&#34;</span><span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> 0;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>如果不想在程序中定义这个宏， 但是又想让它存在，通过gcc的参数 -D就可以实现了，编译器会认为参数后边指定的宏在程序中是存在的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 在编译命令中定义这个 DEBUG 宏, </span>
+</span></span><span style="display:flex;"><span>$ gcc test.c -o app -D DEBUG
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 执行生成的程序， 可以看到程序第9行的输出</span>
+</span></span><span style="display:flex;"><span>$ ./app 
+</span></span><span style="display:flex;"><span>我是一个程序猿, 我不会爬树...
+</span></span><span style="display:flex;"><span>hello, GCC!!!
+</span></span><span style="display:flex;"><span>hello, GCC!!!
+</span></span><span style="display:flex;"><span>hello, GCC!!!
+</span></span></code></pre></div><p><code>-D 参数的应用场景:</code>
+在发布程序的时候, 一般都会要求将程序中所有的log输出去掉, 如果不去掉会影响程序的执行效率，很显然删除这些打印log的源代码是一件很麻烦的事情，解决方案是这样的：</p>
+<ul>
+<li>将所有的打印log的代码都写到一个宏判定中, 可以模仿上边的例子</li>
+<li>在编译程序的时候指定 -D 就会有log输出</li>
+<li>在编译程序的时候不指定 -D, log就不会输出</li>
+</ul>
+<h1 id="4多文件编译">4.多文件编译</h1>
+<p>GCC 可以自动编译链接多个文件，不管是目标文件还是源文件，都可以使用同一个命令编译到一个可执行文件中。</p>
+<h2 id="41-准备工作">4.1 准备工作</h2>
+<p>首先将程序编译之前需要的代码准备出来, 例如一个项目包含3个文件，文件 string.h , string.c 中有一个函数 strLength 用于计算字符串的长度，而在 main.c 中调用这个函数将计算的结果显示出来。</p>
+<ul>
+<li>头文件</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#ifndef _STRING_H_</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define _STRING_H_</span>
+</span></span><span style="display:flex;"><span>int strLength<span style="color:#f92672">(</span>char *string<span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif // _STRING_H_</span>
+</span></span></code></pre></div><ul>
+<li>源文件 string.c</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#include &#34;string.h&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>int strLength<span style="color:#f92672">(</span>char *string<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	int len <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>*string++ !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;\0&#39;</span><span style="color:#f92672">)</span> 	// 当*string 的值为<span style="color:#e6db74">&#39;\0&#39;</span>时, 停止计算
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        len++;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> len; 	// 返回字符串长度
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
+<li>源文件 main.c</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#include &lt;stdio.h&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include &#34;string.h&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>int main<span style="color:#f92672">(</span>void<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	char *src <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello, I&#39;am Monkey·D·Luffy!!!&#34;</span>; 
+</span></span><span style="display:flex;"><span>	printf<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;string length is: %d\n&#34;</span>, strLength<span style="color:#f92672">(</span>src<span style="color:#f92672">))</span>; 
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> 0;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="42-编译运行">4.2 编译运行</h2>
+<p>因为头文件是包含在源文件中的, 因此在使用gcc编译程序的时候不需要指定头文件的名字（在头文件无法被找到的时候需要使用参数 -I 指定其具体路径而不是名字）。我们可以通过一个 gcc 命令将多个源文件编译并生成可执行程序，也可以分多步完成这个操作。</p>
+<ul>
+<li>直接链接生成可执行程序</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 直接生成可执行程序 test</span>
+</span></span><span style="display:flex;"><span>$ gcc -o test string.c main.c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 运行可执行程序</span>
+</span></span><span style="display:flex;"><span>$ ./test
+</span></span></code></pre></div><ul>
+<li>先将源文件编成目标文件，然后进行链接得到可执行程序</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 汇编生成二进制目标文件, 指定了 -c 参数之后, 源文件会自动生成 string.o 和 main.o</span>
+</span></span><span style="display:flex;"><span>$ gcc –c string.c main.c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 链接目标文件, 生成可执行程序 test</span>
+</span></span><span style="display:flex;"><span>$ gcc –o test string.o main.o
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 运行可执行程序</span>
+</span></span><span style="display:flex;"><span>$ ./test
+</span></span></code></pre></div><h1 id="5gcc与g">5.gcc与g++</h1>
+<p>关于对gcc和g++很多人的理解都是比较片面的或者是对二者的理解有一些误区，下边从三个方面介绍一下二者的区别:</p>
+<p>1.在代码编译阶段（第二个阶段）:</p>
+<ul>
+<li>后缀为 .c 的，gcc 把它当作是C程序，而 g++ 当作是 C++ 程序</li>
+<li>后缀为.cpp的，两者都会认为是 C++ 程序，C++ 的语法规则更加严谨一些</li>
+<li>g++会调用gcc，对于C++代码，两者是等价的, 也就是说 gcc 和 g++ 都可以编译 C/C++代码</li>
+</ul>
+<p>2.在链接阶段（最后一个阶段）:</p>
+<ul>
+<li>gcc 和 g++ 都可以自动链接到标准C库</li>
+<li>g++ 可以自动链接到标准C++库, gcc如果要链接到标准C++库需要加参数 -lstdc++</li>
+</ul>
+<p>3.关于 __cplusplus宏的定义</p>
+<ul>
+<li>g++ 会自动定义__cplusplus宏，但是这个不影响它去编译C程序</li>
+<li>gcc 需要根据文件后缀判断是否需要定义 __cplusplus 宏 （规则参考第一条）。</li>
+</ul>
+<p>综上所述：</p>
+<ol>
+<li>不管是 gcc 还是 g++ 都可以编译 C 程序，编译程序的规则和参数都相同</li>
+<li>g++可以直接编译C++程序， gcc 编译 C++程序需要添加额外参数 -lstdc++</li>
+<li>不管是 gcc 还是 g++ 都可以定义 __cplusplus宏</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 编译 c 程序</span>
+</span></span><span style="display:flex;"><span>$ gcc test.c -o test	<span style="color:#75715e"># 使用gcc</span>
+</span></span><span style="display:flex;"><span>$ g++ test.c -o test	<span style="color:#75715e"># 使用g++</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 编译 c++ 程序</span>
+</span></span><span style="display:flex;"><span>$ g++ test.cpp -o test              <span style="color:#75715e"># 使用g++</span>
+</span></span><span style="display:flex;"><span>$ gcc test.cpp -lstdc++ -o test     <span style="color:#75715e"># 使用gcc</span>
+</span></span></code></pre></div>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

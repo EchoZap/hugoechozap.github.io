@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               fire,一个强大的「python」库 &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="fire,一个强大的「python」库">
+    <meta itemprop="description" content="fire,一个强大的「python」库 - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/fire%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84python%E5%BA%93/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="fire,一个强大的「python」库">
+  <meta property="og:description" content="Github地址：https://github.com/google/python-fire
+在开发命令行工具时，开发者通常需要编写大量代码来解析命令行参数，这既耗时又容易出错。Python Fire 是 Google 开源的一个库，旨在简化命令行界面的开发。它可以将任何 Python 对象自动生成一个命令行界面，从而大大减少了开发时间和代码复杂度。本文将详细介绍 Python Fire 库，包括其安装方法、主要特性、基本和高级功能，以及实际应用场景，帮助全面了解并掌握该库的使用。
+安装 要使用 Python Fire 库，首先需要安装它。以下是安装步骤：
+使用 pip 安装
+可以通过 pip 直接安装 Python Fire：
+pip install fire 特性 自动生成命令行界面：将任何 Python 对象（函数、类、模块、字典等）自动转换为命令行界面。 简洁性：只需一行代码即可生成命令行界面，大大减少了开发时间和代码复杂度。 灵活性：支持多种数据类型和参数，能够处理复杂的命令行需求。 易用性：与 Python 标准库无缝集成，易于上手和使用。 基本功能 将函数转换为命令行工具 可以将一个简单的函数转换为命令行工具：
+import fire def greet(name): return f&#39;Hello, {name}!&#39; if __name__ == &#39;__main__&#39;: fire.Fire(greet) 在命令行中运行：
+python greet.py John 输出：
+Hello, John! 将类转换为命令行工具 可以将一个类转换为命令行工具：
+import fire class Calculator: def add(self, a, b): return a &#43; b def multiply(self, a, b): return a * b if __name__ == &#39;__main__&#39;: fire.Fire(Calculator) 在命令行中运行：">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-22T13:28:24+08:00">
+    <meta property="article:modified_time" content="2024-10-22T13:28:24+08:00">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/fire%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84python%E5%BA%93/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/fire%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84python%E5%BA%93/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/fire%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84python%E5%BA%93/">
+            fire,一个强大的「python」库
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>Github地址：<a href="https://github.com/google/python-fire">https://github.com/google/python-fire</a></p>
+<p>在开发命令行工具时，开发者通常需要编写大量代码来解析命令行参数，这既耗时又容易出错。Python Fire 是 Google 开源的一个库，旨在简化命令行界面的开发。它可以将任何 Python 对象自动生成一个命令行界面，从而大大减少了开发时间和代码复杂度。本文将详细介绍 Python Fire 库，包括其安装方法、主要特性、基本和高级功能，以及实际应用场景，帮助全面了解并掌握该库的使用。</p>
+<h2 id="安装">安装</h2>
+<p>要使用 Python Fire 库，首先需要安装它。以下是安装步骤：</p>
+<p>使用 pip 安装</p>
+<p>可以通过 pip 直接安装 Python Fire：</p>
+<pre tabindex="0"><code>pip install fire
+</code></pre><h2 id="特性">特性</h2>
+<ol>
+<li><strong>自动生成命令行界面</strong>：将任何 Python 对象（函数、类、模块、字典等）自动转换为命令行界面。</li>
+<li><strong>简洁性</strong>：只需一行代码即可生成命令行界面，大大减少了开发时间和代码复杂度。</li>
+<li><strong>灵活性</strong>：支持多种数据类型和参数，能够处理复杂的命令行需求。</li>
+<li><strong>易用性</strong>：与 Python 标准库无缝集成，易于上手和使用。</li>
+</ol>
+<h2 id="基本功能">基本功能</h2>
+<h3 id="将函数转换为命令行工具">将函数转换为命令行工具</h3>
+<p>可以将一个简单的函数转换为命令行工具：</p>
+<pre tabindex="0"><code>import fire
+
+def greet(name):
+    return f&#39;Hello, {name}!&#39;
+
+if __name__ == &#39;__main__&#39;:
+    fire.Fire(greet)
+</code></pre><p>在命令行中运行：</p>
+<pre tabindex="0"><code>python greet.py John
+</code></pre><p>输出：</p>
+<pre tabindex="0"><code>Hello, John!
+</code></pre><h3 id="将类转换为命令行工具">将类转换为命令行工具</h3>
+<p>可以将一个类转换为命令行工具：</p>
+<pre tabindex="0"><code>import fire
+
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+    def multiply(self, a, b):
+        return a * b
+
+if __name__ == &#39;__main__&#39;:
+    fire.Fire(Calculator)
+</code></pre><p>在命令行中运行：</p>
+<pre tabindex="0"><code>python calculator.py add 2 3
+python calculator.py multiply 2 3
+</code></pre><p>输出：</p>
+<pre tabindex="0"><code>5
+6
+</code></pre><h3 id="将字典转换为命令行工具">将字典转换为命令行工具</h3>
+<p>可以将一个字典转换为命令行工具：</p>
+<pre tabindex="0"><code>import fire
+
+operations = {
+    &#39;add&#39;: lambda a, b: a + b,
+    &#39;multiply&#39;: lambda a, b: a * b,
+}
+
+if __name__ == &#39;__main__&#39;:
+    fire.Fire(operations)
+</code></pre><p>在命令行中运行：</p>
+<pre tabindex="0"><code>python operations.py add 2 3
+python operations.py multiply 2 3
+</code></pre><p>输出：</p>
+<pre tabindex="0"><code>5
+6
+</code></pre><h2 id="高级功能">高级功能</h2>
+<h3 id="处理复杂的数据类型">处理复杂的数据类型</h3>
+<p>Python Fire 支持处理复杂的数据类型，如列表、字典等：</p>
+<pre tabindex="0"><code>import fire
+
+def process_list(items):
+    return [item.upper() for item in items]
+
+if __name__ == &#39;__main__&#39;:
+    fire.Fire(process_list)
+</code></pre><p>在命令行中运行：</p>
+<pre tabindex="0"><code>python process_list.py --items a b c
+</code></pre><p>输出：</p>
+<pre tabindex="0"><code>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+</code></pre><h3 id="使用嵌套命令">使用嵌套命令</h3>
+<p>可以使用嵌套命令来处理复杂的命令行操作：</p>
+<pre tabindex="0"><code>import fire
+
+class FileManager:
+    def read(self, filename):
+        with open(filename, &#39;r&#39;) as file:
+            return file.read()
+
+    def write(self, filename, content):
+        with open(filename, &#39;w&#39;) as file:
+            file.write(content)
+        return f&#39;{filename} has been written.&#39;
+
+if __name__ == &#39;__main__&#39;:
+    fire.Fire(FileManager)
+</code></pre><p>在命令行中运行：</p>
+<pre tabindex="0"><code>python filemanager.py read test.txt
+python filemanager.py write test.txt &#34;Hello, World!&#34;
+</code></pre><h3 id="自定义命令行参数">自定义命令行参数</h3>
+<p>可以自定义命令行参数，提供更多控制和灵活性：</p>
+<pre tabindex="0"><code>import fire
+
+def greet(name, greeting=&#39;Hello&#39;):
+    return f&#39;{greeting}, {name}!&#39;
+
+if __name__ == &#39;__main__&#39;:
+    fire.Fire(greet)
+</code></pre><p>在命令行中运行：</p>
+<pre tabindex="0"><code>python greet.py John --greeting Hi
+</code></pre><p>输出：</p>
+<pre tabindex="0"><code>Hi, John!
+</code></pre><h2 id="实际应用场景">实际应用场景</h2>
+<h3 id="数据处理脚本">数据处理脚本</h3>
+<p>在数据处理脚本中，通过 Python Fire 将函数或类转换为命令行工具，简化数据处理流程。</p>
+<pre tabindex="0"><code>import fire
+import pandas as pd
+
+def process_data(filename):
+    df = pd.read_csv(filename)
+    df[&#39;processed&#39;] = df[&#39;data&#39;] * 2
+    df.to_csv(&#39;processed_&#39; + filename, index=False)
+    return &#39;Data processed.&#39;
+
+if __name__ == &#39;__main__&#39;:
+    fire.Fire(process_data)
+</code></pre><p>在命令行中运行：</p>
+<pre tabindex="0"><code>python process_data.py data.csv
+</code></pre><h3 id="自动化运维脚本">自动化运维脚本</h3>
+<p>在自动化运维脚本中，通过 Python Fire 将类转换为命令行工具，简化服务器管理和运维操作。</p>
+<pre tabindex="0"><code>import fire
+import os
+
+class ServerManager:
+    def start(self, service):
+        os.system(f&#39;systemctl start {service}&#39;)
+        return f&#39;{service} started.&#39;
+
+    def stop(self, service):
+        os.system(f&#39;systemctl stop {service}&#39;)
+        return f&#39;{service} stopped.&#39;
+
+if __name__ == &#39;__main__&#39;:
+    fire.Fire(ServerManager)
+</code></pre><p>在命令行中运行：</p>
+<pre tabindex="0"><code>python server_manager.py start nginx
+python server_manager.py stop nginx
+</code></pre><h3 id="开发测试工具">开发测试工具</h3>
+<p>在开发测试工具中，通过 Python Fire 将函数或类转换为命令行工具，简化测试流程。</p>
+<pre tabindex="0"><code>import fire
+import requests
+
+def test_api(endpoint):
+    response = requests.get(endpoint)
+    return response.json()
+
+if __name__ == &#39;__main__&#39;:
+    fire.Fire(test_api)
+</code></pre><p>在命令行中运行：</p>
+<pre tabindex="0"><code>python test_api.py https://api.example.com/data
+</code></pre>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

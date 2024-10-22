@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               「向前每多走一步，热爱和勇气就会多一分。」 &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="「向前每多走一步，热爱和勇气就会多一分。」">
+    <meta itemprop="description" content="Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="Ronan Blog">
+  <meta property="og:description" content="Bilberry Premium Theme for Hugo.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+
+    
+
+
+    
+    <link href="https://blog.ronan.us.kg/index.xml" rel="alternate" type="application/rss+xml" title="Ronan Blog" />
+    <link href="https://blog.ronan.us.kg/index.xml" rel="feed" type="application/rss+xml" title="Ronan Blog" />
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/makefile/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/makefile/">
+            Makefile
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h2 id="1规则">1.规则</h2>
+<blockquote>
+<p>Makefile的框架是由规则构成的。make命令执行时先在Makefile文件中查找各种规则，对各种规则进行解析后运行规则。规则的基本格式为：</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>每条规则的语法格式:
+</span></span><span style="display:flex;"><span>target1,target2...: depend1, depend2, ...
+</span></span><span style="display:flex;"><span>	command
+</span></span><span style="display:flex;"><span>	......
+</span></span><span style="display:flex;"><span>	......
+</span></span></code></pre></div><p>每条规则由三个部分组成分别是<code>目标(target)</code>, <code>依赖(depend)</code>和<code>命令(command)</code>。</p>
+<ul>
+<li><code>命令(command)</code>: 当前这条规则的动作，一般情况下这个动作就是一个 shell 命令
+例如：通过某个命令编译文件、生成库文件、进入目录等。
+动作可以是多个，每个命令前必须有一个Tab缩进并且独占占一行。</li>
+<li><code>依赖(depend)</code>: 规则所必需的依赖条件，在规则的命令中可以使用这些依赖。
+例如：生成可执行文件的目标文件（*.o）可以作为依赖使用
+如果规则的命令中不需要任何依赖，那么规则的依赖可以为空
+当前规则中的依赖可以是其他规则中的某个目标，这样就形成了规则之间的嵌套
+依赖可以根据要执行的命令的实际需求, 指定很多个</li>
+<li><code>目标(target)</code>： 规则中的目标，这个目标和规则中的命令是对应的
+通过执行规则中的命令，可以生成一个和目标同名的文件
+规则中可以有多个命令, 因此可以通过这多条命令来生成多个目标, 所有目标也可以有很多个
+通过执行规则中的命令，可以只执行一个动作，不生成任何文件，这样的目标被称为<code>伪目标</code></li>
+</ul>
+<p>这里看着脑疼，举个例子</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#75715e">################# 例1 #################
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span><span style="color:#f92672">:</span>a.c b.c c.c
+</span></span><span style="display:flex;"><span>	gcc a.c b.c c.c -o app
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################# 例2 #################
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># 有多个目标, 多个依赖, 多个命令
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app,app1</span><span style="color:#f92672">:</span>a.c b.c c.c d.c
+</span></span><span style="display:flex;"><span>	gcc a.c b.c -o app
+</span></span><span style="display:flex;"><span>	gcc c.c d.c -o app1
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################# 例3 #################	
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># 规则之间的嵌套
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span><span style="color:#f92672">:</span>a.o b.o c.o
+</span></span><span style="display:flex;"><span>	gcc a.o b.o c.o -o app
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># a.o 是第一条规则中的依赖
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">a.o</span><span style="color:#f92672">:</span>a.c
+</span></span><span style="display:flex;"><span>	gcc -c a.c
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># b.o 是第一条规则中的依赖
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">b.o</span><span style="color:#f92672">:</span>b.c
+</span></span><span style="display:flex;"><span>	gcc -c b.c
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># c.o 是第一条规则中的依赖
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">c.o</span><span style="color:#f92672">:</span>c.c
+</span></span><span style="display:flex;"><span>	gcc -c c.c
+</span></span></code></pre></div><hr>
+<h2 id="2规则的执行">2.规则的执行</h2>
+<p><code>在调用 make 命令编译程序的时候，make 会首先找到 Makefile 文件中的第 1 个规则，分析并执行相关的动作。</code>但是需要注意的是，好多时候要执行的动作（命令）中使用的依赖是不存在的，如果使用的依赖不存在，这个动作也就不会被执行。</p>
+
+        
+            <a href="https://blog.ronan.us.kg/posts/makefile/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/platformio%E5%9F%BA%E4%BA%8E-stm32-hal%E5%BA%93-%E7%9A%84%E5%B7%A5%E7%A8%8B%E6%A8%A1%E6%9D%BF/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/platformio%E5%9F%BA%E4%BA%8E-stm32-hal%E5%BA%93-%E7%9A%84%E5%B7%A5%E7%A8%8B%E6%A8%A1%E6%9D%BF/">
+            「platformIO」基于 stm32 HAL库 的工程模板
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1 id="1建立-makefile-工程">1.建立 Makefile 工程</h1>
+<p>通过 STM32CubeMX 建立适于自己开发版的 Makefile 工程（步骤不赘述，百度一下，你就知道），并且记住「<strong>工程名</strong>」和「<strong>工程存放路径</strong>」。</p>
+<h1 id="2新建-platformio-工程">2.新建 platformIO 工程</h1>
+<p>新建 platformIO 工程时的「Framework」<strong>一定要选择「STM32Cube」</strong>，新建工程的「<strong>工程名</strong>」和「<strong>工程存放路径</strong>」要与之前建立的 Makefile 工程<strong>一致</strong>。</p>
+<p>工程建立完成后，你应该会得到如下项目结构：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>├── Core
+</span></span><span style="display:flex;"><span>│   ├── Inc
+</span></span><span style="display:flex;"><span>│   │   ├── gpio.h
+</span></span><span style="display:flex;"><span>│   │   ├── main.h
+</span></span><span style="display:flex;"><span>│   │   ├── ...
+</span></span><span style="display:flex;"><span>│   └── Src
+</span></span><span style="display:flex;"><span>│       ├── gpio.c
+</span></span><span style="display:flex;"><span>│       ├── main.c
+</span></span><span style="display:flex;"><span>│       ├── ...
+</span></span><span style="display:flex;"><span>├── Drivers
+</span></span><span style="display:flex;"><span>│   ├── CMSIS
+</span></span><span style="display:flex;"><span>│   │   ├── Device
+</span></span><span style="display:flex;"><span>│   │   │   └── ST
+</span></span><span style="display:flex;"><span>│   │   │       └── STM32F1xx
+</span></span><span style="display:flex;"><span>│   │   │           ├── Include
+</span></span><span style="display:flex;"><span>│   │   │           │   ├── stm32f103xb.h
+</span></span><span style="display:flex;"><span>│   │   │           │   ├── stm32f1xx.h
+</span></span><span style="display:flex;"><span>│   │   │           │   └── system_stm32f1xx.h
+</span></span><span style="display:flex;"><span>│   │   │           ├── LICENSE.txt
+</span></span><span style="display:flex;"><span>│   │   │           └── Source
+</span></span><span style="display:flex;"><span>│   │   │               └── Templates
+</span></span><span style="display:flex;"><span>│   │   ├── Include
+</span></span><span style="display:flex;"><span>│   │   │   ├── cmsis_armcc.h
+</span></span><span style="display:flex;"><span>│   │   │   ├── cmsis_armclang.h
+</span></span><span style="display:flex;"><span>│   │   │   ├── cmsis_compiler.h
+</span></span><span style="display:flex;"><span>│   │   │   ├── cmsis_gcc.h
+</span></span><span style="display:flex;"><span>│   │   │   ├── ...
+</span></span><span style="display:flex;"><span>│   │   └── LICENSE.txt
+</span></span><span style="display:flex;"><span>│   └── STM32F1xx_HAL_Driver
+</span></span><span style="display:flex;"><span>│       ├── Inc
+</span></span><span style="display:flex;"><span>│       │   ├── Legacy
+</span></span><span style="display:flex;"><span>│       │   │   └── stm32_hal_legacy.h
+</span></span><span style="display:flex;"><span>│       │   ├── stm32f1xx_hal.h
+</span></span><span style="display:flex;"><span>│       │   ├── stm32f1xx_hal_cortex.h
+</span></span><span style="display:flex;"><span>│       │   ├── stm32f1xx_hal_def.h
+</span></span><span style="display:flex;"><span>│       │   ├── ...
+</span></span><span style="display:flex;"><span>│       ├── LICENSE.txt
+</span></span><span style="display:flex;"><span>│       └── Src
+</span></span><span style="display:flex;"><span>│           ├── stm32f1xx_hal.c
+</span></span><span style="display:flex;"><span>│           ├── stm32f1xx_hal_cortex.c
+</span></span><span style="display:flex;"><span>│           ├── stm32f1xx_hal_dma.c
+</span></span><span style="display:flex;"><span>│           ├── ...
+</span></span><span style="display:flex;"><span>├── Makefile
+</span></span><span style="display:flex;"><span>├── STM32F103C8Tx_FLASH.ld
+</span></span><span style="display:flex;"><span>├── include
+</span></span><span style="display:flex;"><span>│   └── README
+</span></span><span style="display:flex;"><span>├── lib
+</span></span><span style="display:flex;"><span>│   └── README
+</span></span><span style="display:flex;"><span>├── one.ioc
+</span></span><span style="display:flex;"><span>├── platformio.ini
+</span></span><span style="display:flex;"><span>├── src
+</span></span><span style="display:flex;"><span>├── startup_stm32f103xb.s
+</span></span><span style="display:flex;"><span>└── test
+</span></span><span style="display:flex;"><span>    └── README
+</span></span></code></pre></div><h1 id="3配置工程">3.配置工程</h1>
+<ul>
+<li>修改 platformio.ini</li>
+</ul>
+<p>在 <strong>platformIo.ini</strong>中添加：</p>
+
+        
+            <a href="https://blog.ronan.us.kg/posts/platformio%E5%9F%BA%E4%BA%8E-stm32-hal%E5%BA%93-%E7%9A%84%E5%B7%A5%E7%A8%8B%E6%A8%A1%E6%9D%BF/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/fire%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84python%E5%BA%93/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/fire%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84python%E5%BA%93/">
+            fire,一个强大的「python」库
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>Github地址：<a href="https://github.com/google/python-fire">https://github.com/google/python-fire</a></p>
+<p>在开发命令行工具时，开发者通常需要编写大量代码来解析命令行参数，这既耗时又容易出错。Python Fire 是 Google 开源的一个库，旨在简化命令行界面的开发。它可以将任何 Python 对象自动生成一个命令行界面，从而大大减少了开发时间和代码复杂度。本文将详细介绍 Python Fire 库，包括其安装方法、主要特性、基本和高级功能，以及实际应用场景，帮助全面了解并掌握该库的使用。</p>
+<h2 id="安装">安装</h2>
+<p>要使用 Python Fire 库，首先需要安装它。以下是安装步骤：</p>
+<p>使用 pip 安装</p>
+<p>可以通过 pip 直接安装 Python Fire：</p>
+<pre tabindex="0"><code>pip install fire
+</code></pre><h2 id="特性">特性</h2>
+<ol>
+<li><strong>自动生成命令行界面</strong>：将任何 Python 对象（函数、类、模块、字典等）自动转换为命令行界面。</li>
+<li><strong>简洁性</strong>：只需一行代码即可生成命令行界面，大大减少了开发时间和代码复杂度。</li>
+<li><strong>灵活性</strong>：支持多种数据类型和参数，能够处理复杂的命令行需求。</li>
+<li><strong>易用性</strong>：与 Python 标准库无缝集成，易于上手和使用。</li>
+</ol>
+<h2 id="基本功能">基本功能</h2>
+<h3 id="将函数转换为命令行工具">将函数转换为命令行工具</h3>
+<p>可以将一个简单的函数转换为命令行工具：</p>
+<pre tabindex="0"><code>import fire
+
+def greet(name):
+    return f&#39;Hello, {name}!&#39;
+
+if __name__ == &#39;__main__&#39;:
+    fire.Fire(greet)
+</code></pre><p>在命令行中运行：</p>
+<pre tabindex="0"><code>python greet.py John
+</code></pre><p>输出：</p>
+<pre tabindex="0"><code>Hello, John!
+</code></pre><h3 id="将类转换为命令行工具">将类转换为命令行工具</h3>
+<p>可以将一个类转换为命令行工具：</p>
+<pre tabindex="0"><code>import fire
+
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+    def multiply(self, a, b):
+        return a * b
+
+if __name__ == &#39;__main__&#39;:
+    fire.Fire(Calculator)
+</code></pre><p>在命令行中运行：</p>
+
+        
+            <a href="https://blog.ronan.us.kg/posts/fire%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84python%E5%BA%93/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+
+    
+    <div class="paginator">
+        
+            <a href="/page/12/" class="older"><i class="fa fa-angle-double-left"></i> Older posts</a>
+        
+
+        
+            <a href="/page/10/" class="newer">Newer posts <i class="fa fa-angle-double-right"></i></a>
+        
+    </div>
+
+
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            -
+            <a href="https://blog.ronan.us.kg/index.xml">rss</a>
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

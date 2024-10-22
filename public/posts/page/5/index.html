@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               Posts &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="Posts">
+    <meta itemprop="description" content="Posts - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="Posts">
+  <meta property="og:description" content="Bilberry Premium Theme for Hugo.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+
+    
+
+
+    
+    <link href="https://blog.ronan.us.kg/posts/index.xml" rel="alternate" type="application/rss+xml" title="Ronan Blog" />
+    <link href="https://blog.ronan.us.kg/posts/index.xml" rel="feed" type="application/rss+xml" title="Ronan Blog" />
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/stm32%E7%A8%8B%E5%BA%8F%E7%83%A7%E5%BD%95%E6%96%B9%E5%BC%8F/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/stm32%E7%A8%8B%E5%BA%8F%E7%83%A7%E5%BD%95%E6%96%B9%E5%BC%8F/">
+            stm32程序烧录方式
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <blockquote>
+<p>以下以stm32f103c8t6芯片为例</p>
+</blockquote>
+<h1 id="使用stlink">使用stlink</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>st-flash write /path/project/build.bin 0x08000000
+</span></span></code></pre></div><p>注意：</p>
+<ul>
+<li>使用 <code>st-flash</code> 命令需要提前安装 stlink ，macOS 通过<code>brew install stlink</code>即可安装。</li>
+<li>烧写 <code>.bin</code> 文件需要指定 flash 起始地址，也就是 <code>0x08000000</code>(具体芯片具体地址根据手册修改)</li>
+</ul>
+<h1 id="使用openocd">使用openocd</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -c <span style="color:#e6db74">&#34;program /path/project/build.bin verify reset exit 0x08000000&#34;</span>
+</span></span></code></pre></div><p>注意：</p>
+<ul>
+<li>根据自己的stlink 实际版本更改<code>interface/stlink-v2.cfg</code>为适配的 stlink 配置文件</li>
+<li>根据自己的stm32单片机实际型号更改<code>target/stm32f1x.cfg</code>为适配的配置文件</li>
+</ul>
+<h1 id="使用stm32_programmer_cli串口烧录">使用STM32_Programmer_CLI（串口烧录）</h1>
+<p>使用该方法之前需要安装<code>STM32_Programmer_CLI</code>，该程序可以到 ST（意法半导体）官网自行下载，需要将其添加到环境变量。之后将串口线正确接到板子上的引脚，通过以下命令将程序文件烧录到单片机中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>STM32_Programmer_CLI -c port<span style="color:#f92672">=</span>/dev/tty.usbmodem11403 -w /path/project/build.bin 0x08000000
+</span></span></code></pre></div><p>同样的，烧录.bin 文件需要指定 flash 起始地址。</p>
+<p>注意：</p>
+<ul>
+<li><code>port=</code>后面是串口号，mac 以及 linux 可以通过<code>ls /dev/tty.*</code>命令来查看串口号，Windows 一般是<code>COMx</code>，可以通过<code>设备管理器</code>查看。</li>
+</ul>
+
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA-stm32-%E6%A0%87%E5%87%86%E5%A4%96%E8%AE%BE%E5%BA%93&#43;makefile%E5%B7%A5%E7%A8%8B/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA-stm32-%E6%A0%87%E5%87%86%E5%A4%96%E8%AE%BE%E5%BA%93&#43;makefile%E5%B7%A5%E7%A8%8B/">
+            手动搭建 stm32 标准外设库&#43;Makefile工程
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <blockquote>
+<p>本教程以 <strong>stm32f407</strong> 为例，其他 stm32 芯片配置方式大同小异。</p>
+</blockquote>
+<h1 id="1下载官方标准外设库">1.下载官方标准外设库</h1>
+<p>进入 <a href="https://www.st.com.cn/zh/embedded-software/stm32-standard-peripheral-libraries.html">ST 官网的嵌入式软件板块</a> ，根据自身板子型号选择，有F0-F4多种型号。</p>
+<p>之后根据提示选择下载即可，如果没有意外的话，应该会获得一个类似 <strong>en.stsw-stm32065_v1-9-0.zip(这是 F4 的标准库)</strong> 的压缩包。</p>
+<h1 id="2创建工程">2.创建工程</h1>
+<h2 id="21建立工程结构">2.1建立工程结构</h2>
+<p>1.解压从官网下载的标准外设库 <strong>en.stsw-stm32065_v1-9-0.zip</strong> ，获得一个 <strong>STM32F4xx_DSP_StdPeriph_Lib_V1.9.0</strong> 目录</p>
+<p>2.新建一个<code>my_project</code>目录，并在该目录下创建四个子目录：<code>driver</code>、<code>include</code>、<code>lib</code>、<code>src</code></p>
+<p>3.将标准固件库目录<code>.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Libraries/CMSIS/Include</code>文件夹，以及固件库文件目录<code>.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/TrueSTUDIO</code>文件夹，全部拷贝到<code>my_project/cmsis</code>文件夹下</p>
+<p>4.将标准固件库文件目录<code>.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Libraries/STM32F4xx_StdPeriph_Driver</code>文件夹下的<code>inc</code>和<code>src</code>文件夹全部拷贝移植到<code>lib</code>文件夹下</p>
+<p>5.将标准固件库文件目录<code>.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include</code>文件夹目录下的<code>stm32f4xx.h</code>、<code>system_stm32f4xx.h</code>文件拷贝到<code>include</code>文件夹下</p>
+<p>6.将标准固件文件目录<code>.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Project/STM32F4xx_StdPeriph_Templates</code>目录下的<code>main.c</code>、<code>stm32f4xx_it.c</code>、<code>system_stm32f4xx.c</code>拷贝移植到<code>src</code>文件夹下，<code>stm32f4xx_conf.h</code>、<code>stm32f4xx_it.h</code>拷贝到<code>include</code>文件夹中，其中main.c文件是STM32工程文件的主函数程序,(main.c 也可以不拷贝，自行创建即可)</p>
+<p>7.将标准固件库文件目录<code>.../STM32F4xx_DSP_StdPeriph_Lib_V1.9.0/Project/STM32F4xx_StdPeriph_Templates/TrueSTUDIO/STM32F40_41xxx</code>文件夹下的<code>STM32F417IG_FLASH.ld</code>拷贝到<code>my_project</code>的工程根目录下，并重命名为<strong>stm32_flash.ld</strong>。</p>
+<h2 id="22编写-makefile">2.2编写 Makefile</h2>
+<p>到这里我们需要自行手动编写一个 Makefile&hellip;</p>
+<p>逗你玩呢，我已经写好了，请慢用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Makefile" data-lang="Makefile"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>CROSS_COMPILE <span style="color:#f92672">=</span> arm-none-eabi-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 将源文件放在这里 (*.c)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>SRCDIR<span style="color:#f92672">=</span>./src
+</span></span><span style="display:flex;"><span>LIBDIR<span style="color:#f92672">=</span>./lib/src
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SRC <span style="color:#f92672">=</span> <span style="color:#e6db74">${</span>wildcard <span style="color:#e6db74">${</span>LIBDIR<span style="color:#e6db74">}</span>/*.c<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	  <span style="color:#e6db74">${</span>wildcard <span style="color:#e6db74">${</span>SRCDIR<span style="color:#e6db74">}</span>/*.c<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 将以该名称生成二进制文件 (.elf, .bin, .hex)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>PROJECT_NAME<span style="color:#f92672">=</span>out
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 编译器设置。仅编辑 CFLAGS 以包含其他头文件。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>CC <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>CROSS_COMPILE<span style="color:#66d9ef">)</span>gcc
+</span></span><span style="display:flex;"><span>AS <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>CROSS_COMPILE<span style="color:#66d9ef">)</span>as
+</span></span><span style="display:flex;"><span>LD <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>CROSS_COMPILE<span style="color:#66d9ef">)</span>gcc
+</span></span><span style="display:flex;"><span>OBJCOPY <span style="color:#f92672">=</span> <span style="color:#e6db74">${</span>CROSS_COMPILE<span style="color:#e6db74">}</span>objcopy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># compiler flags 编译器标志
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>CFLAGS <span style="color:#f92672">=</span> -g -O2 -Wall -Tstm32_flash.ld
+</span></span><span style="display:flex;"><span>CFLAGS <span style="color:#f92672">+=</span> -DUSE_STDPERIPH_DRIVER
+</span></span><span style="display:flex;"><span>CFLAGS <span style="color:#f92672">+=</span> -D STM32F40_41xxx
+</span></span><span style="display:flex;"><span>CFLAGS <span style="color:#f92672">+=</span> -mlittle-endian -mthumb -mcpu<span style="color:#f92672">=</span>cortex-m4 -mthumb-interwork
+</span></span><span style="display:flex;"><span>CFLAGS <span style="color:#f92672">+=</span> -mfloat-abi<span style="color:#f92672">=</span>hard -mfpu<span style="color:#f92672">=</span>fpv4-sp-d16
+</span></span><span style="display:flex;"><span>CFLAGS <span style="color:#f92672">+=</span> -I .
+</span></span><span style="display:flex;"><span>CFLAGS <span style="color:#f92672">+=</span> -specs<span style="color:#f92672">=</span>nosys.specs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 包含 STM 库中的文件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>CFLAGS <span style="color:#f92672">+=</span> -I./cmsis/Include
+</span></span><span style="display:flex;"><span>CFLAGS <span style="color:#f92672">+=</span> -I./include
+</span></span><span style="display:flex;"><span>CFLAGS <span style="color:#f92672">+=</span> -I./lib/inc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SRC <span style="color:#f92672">+=</span> ./cmsis/TrueSTUDIO/startup_stm32f40_41xxx.s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 将 SRC 中每个 .c 文件的扩展名替换为 .o，生成对应的目标文件。例如，如果 SRC 中有一个文件 main.c，它会生成 main.o，以便后续编译和链接时使用这些目标文件。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>OBJS <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>SRC:.c<span style="color:#f92672">=</span>.o<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">vpath</span> <span style="color:#960050;background-color:#1e0010">%.c</span> <span style="color:#960050;background-color:#1e0010">./lib/src</span> <span style="color:#960050;background-color:#1e0010">\</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">vpath</span> <span style="color:#960050;background-color:#1e0010">%.c</span> <span style="color:#960050;background-color:#1e0010">./src</span> <span style="color:#960050;background-color:#1e0010">\</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.PHONY</span><span style="color:#f92672">:</span> proj
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">all</span><span style="color:#f92672">:</span>proj
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">proj</span><span style="color:#f92672">:</span><span style="color:#66d9ef">$(</span>PROJECT_NAME<span style="color:#66d9ef">)</span>.elf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$(PROJECT_NAME).elf</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">$(</span>SRC<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>CFLAGS<span style="color:#66d9ef">)</span> $^ -o $@
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">$(</span>OBJCOPY<span style="color:#66d9ef">)</span> -O ihex <span style="color:#66d9ef">$(</span>PROJECT_NAME<span style="color:#66d9ef">)</span>.elf <span style="color:#66d9ef">$(</span>PROJECT_NAME<span style="color:#66d9ef">)</span>.hex
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">$(</span>OBJCOPY<span style="color:#66d9ef">)</span> -O binary <span style="color:#66d9ef">$(</span>PROJECT_NAME<span style="color:#66d9ef">)</span>.elf <span style="color:#66d9ef">$(</span>PROJECT_NAME<span style="color:#66d9ef">)</span>.bin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clean</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	rm -f *.o <span style="color:#66d9ef">$(</span>PROJECT_NAME<span style="color:#66d9ef">)</span>.elf <span style="color:#66d9ef">$(</span>PROJECT_NAME<span style="color:#66d9ef">)</span>.hex <span style="color:#66d9ef">$(</span>PROJECT_NAME<span style="color:#66d9ef">)</span>.bin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">flash</span><span style="color:#f92672">:</span>proj
+</span></span><span style="display:flex;"><span>	st-flash write <span style="color:#66d9ef">$(</span>PROJECT_NAME<span style="color:#66d9ef">)</span>.bin Ox8000000
+</span></span><span style="display:flex;"><span>	STM32_Programmer_CLI -c port<span style="color:#f92672">=</span>SWD -w <span style="color:#66d9ef">$(</span>PROJECT_NAME<span style="color:#66d9ef">)</span>.hex 
+</span></span></code></pre></div><p>将以上内容复制并保存为<code>Makefile</code>，将其放到<code>my_project</code>工程根目录下</p>
+
+        
+            <a href="https://blog.ronan.us.kg/posts/%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA-stm32-%E6%A0%87%E5%87%86%E5%A4%96%E8%AE%BE%E5%BA%93&#43;makefile%E5%B7%A5%E7%A8%8B/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/gdb%E8%B0%83%E8%AF%95/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/gdb%E8%B0%83%E8%AF%95/">
+            GDB调试
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <p>gdb 是由 GNU 软件系统社区提供的调试器，同 gcc 配套组成了一套完整的开发环境，可移植性很好，支持非常多的体系结构并被移植到各种系统中（包括各种类 Unix 系统与 Windows 系统里的 MinGW 和 Cygwin ）。此外，除了 C 语言之外，gcc/gdb 还支持包括 C++、Objective-C、Ada 和 Pascal 等各种语言后端的编译和调试。 gcc/gdb 是 Linux 和许多类 Unix 系统中的标准开发环境，Linux 内核也是专门针对 gcc 进行编码的。</p>
+<p>gdb 的吉祥物是专门捕杀 bug 的射手鱼，官方有这样一段描述:</p>
+<blockquote>
+<p>For a fish, the archer fish is known to shoot down bugs from low hanging plants by spitting water at them.</p>
+<p>作为一种鱼，射手鱼以喷水射下低垂的植物上的虫子而闻名。</p>
+</blockquote>
+<p>GDB 是一套字符界面的程序集，可以使用命令 gdb 加载要调试的程序。 下面为大家介绍一些常用的GDB调试命令。</p>
+<h1 id="1调试准备">1.调试准备</h1>
+<p>项目程序如果是为了进行调试而编译时， 必须要打开调试选项(<code>-g</code>)。另外还有一些可选项，比如: 在尽量不影响程序行为的情况下关掉编译器的优化选项(<code>-O0</code>)，<code>-Wall</code>选项打开所有 warning，也可以发现许多问题，避免一些不必要的 bug。</p>
+<p><code>-g</code>选项的作用是在可执行文件中加入源代码的信息，比如可执行文件中第几条机器指令对应源代码的第几行，但并不是把整个源文件嵌入到可执行文件中，所以在调试时必须保证gdb能找到源文件。</p>
+<p>习惯上如果是c程序就使用gcc编译, 如果是 c++程序就使用g++编译, 编译命令中添加上边提到的参数即可。</p>
+
+        
+            <a href="https://blog.ronan.us.kg/posts/gdb%E8%B0%83%E8%AF%95/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+
+    
+    <div class="paginator">
+        
+            <a href="/posts/page/6/" class="older"><i class="fa fa-angle-double-left"></i> Older posts</a>
+        
+
+        
+            <a href="/posts/page/4/" class="newer">Newer posts <i class="fa fa-angle-double-right"></i></a>
+        
+    </div>
+
+
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            -
+            <a href="https://blog.ronan.us.kg/posts/index.xml">rss</a>
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

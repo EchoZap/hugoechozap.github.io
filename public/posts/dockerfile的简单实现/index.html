@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               Dockerfile的简单实现 &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="Dockerfile的简单实现">
+    <meta itemprop="description" content="Dockerfile的简单实现 - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/dockerfile%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="Dockerfile的简单实现">
+  <meta property="og:description" content="构建第一个Dockerfile 假设该镜像实现的等同于我们在已经配置好python环境的机器上通过python hello.py命令来运行一个python脚本
+所以该Dockerfile的构建有以下步骤：
+在桌面或其他位置新建一个文件夹，假设文件夹名为docker 在docker新建一个hello.py文件，hello.py已经实现所需功能 再在docker新建一个Dockerfile，注意：仅开头且必须大写 以下是Dockerfile内容：
+FROM python:3.9.19-alpine3.18 COPY hello.py /hello.py CMD python hello.py Dockerfile语法说明 Dockerfile 是 Docker 构建镜像的描述文件，它包含了一系列指令，描述了如何从基础镜像创建一个新的 Docker 镜像。
+下面是 Dockerfile 中常用指令的说明及其语法，参考自Docker Dockerfile | 菜鸟教程 (runoob.com)：
+Dockerfile 指令 说明 FROM 指定基础镜像，用于后续的指令构建。 MAINTAINER 指定Dockerfile的作者/维护者。（已弃用，推荐使用LABEL指令） LABEL 添加镜像的元数据，使用键值对的形式。 RUN 在构建过程中在镜像中执行命令。 CMD 指定容器创建时的默认命令。（可以被覆盖） ENTRYPOINT 设置容器创建时的主要命令。（不可被覆盖） EXPOSE 声明容器运行时监听的特定网络端口。 ENV 在容器内部设置环境变量。 ADD 将文件、目录或远程URL复制到镜像中。 COPY 将文件或目录复制到镜像中。 VOLUME 为容器创建挂载点或声明卷。 WORKDIR 设置后续指令的工作目录。 USER 指定后续指令的用户上下文。 ARG 定义在构建过程中传递给构建器的变量，可使用 “docker build” 命令设置。 ONBUILD 当该镜像被用作另一个构建过程的基础时，添加触发器。 STOPSIGNAL 设置发送给容器以退出的系统调用信号。 HEALTHCHECK 定义周期性检查容器健康状态的命令。 SHELL 覆盖Docker中默认的shell，用于RUN、CMD和ENTRYPOINT指令。 详细说明：">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-22T13:28:22+08:00">
+    <meta property="article:modified_time" content="2024-10-22T13:28:22+08:00">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/dockerfile%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/dockerfile%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/dockerfile%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">
+            Dockerfile的简单实现
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <h1 id="构建第一个dockerfile">构建第一个Dockerfile</h1>
+<p>假设该镜像实现的等同于我们在已经配置好python环境的机器上通过<code>python hello.py</code>命令来运行一个python脚本</p>
+<p>所以该Dockerfile的构建有以下步骤：</p>
+<ol>
+<li>在桌面或其他位置新建一个文件夹，假设文件夹名为docker</li>
+<li>在docker新建一个hello.py文件，hello.py已经实现所需功能</li>
+<li>再在docker新建一个<code>Dockerfile</code>，<strong>注意：仅开头且必须大写</strong></li>
+</ol>
+<p>以下是Dockerfile内容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>FROM python:3.9.19-alpine3.18
+</span></span><span style="display:flex;"><span>COPY hello.py /hello.py
+</span></span><span style="display:flex;"><span>CMD python hello.py
+</span></span></code></pre></div><h1 id="dockerfile语法说明">Dockerfile语法说明</h1>
+<p><code>Dockerfile</code> 是 Docker 构建镜像的描述文件，它包含了一系列指令，描述了如何从基础镜像创建一个新的 Docker 镜像。</p>
+<p>下面是 <code>Dockerfile</code> 中常用指令的说明及其语法，参考自Docker Dockerfile | 菜鸟教程 (runoob.com)：</p>
+<table>
+  <thead>
+      <tr>
+          <th><code>Dockerfile</code> 指令</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>FROM</td>
+          <td>指定基础镜像，用于后续的指令构建。</td>
+      </tr>
+      <tr>
+          <td>MAINTAINER</td>
+          <td>指定Dockerfile的作者/维护者。（已弃用，推荐使用LABEL指令）</td>
+      </tr>
+      <tr>
+          <td>LABEL</td>
+          <td>添加镜像的元数据，使用键值对的形式。</td>
+      </tr>
+      <tr>
+          <td>RUN</td>
+          <td>在构建过程中在镜像中执行命令。</td>
+      </tr>
+      <tr>
+          <td>CMD</td>
+          <td>指定容器创建时的默认命令。（可以被覆盖）</td>
+      </tr>
+      <tr>
+          <td>ENTRYPOINT</td>
+          <td>设置容器创建时的主要命令。（不可被覆盖）</td>
+      </tr>
+      <tr>
+          <td>EXPOSE</td>
+          <td>声明容器运行时监听的特定网络端口。</td>
+      </tr>
+      <tr>
+          <td>ENV</td>
+          <td>在容器内部设置环境变量。</td>
+      </tr>
+      <tr>
+          <td>ADD</td>
+          <td>将文件、目录或远程URL复制到镜像中。</td>
+      </tr>
+      <tr>
+          <td>COPY</td>
+          <td>将文件或目录复制到镜像中。</td>
+      </tr>
+      <tr>
+          <td>VOLUME</td>
+          <td>为容器创建挂载点或声明卷。</td>
+      </tr>
+      <tr>
+          <td>WORKDIR</td>
+          <td>设置后续指令的工作目录。</td>
+      </tr>
+      <tr>
+          <td>USER</td>
+          <td>指定后续指令的用户上下文。</td>
+      </tr>
+      <tr>
+          <td>ARG</td>
+          <td>定义在构建过程中传递给构建器的变量，可使用 &ldquo;docker build&rdquo; 命令设置。</td>
+      </tr>
+      <tr>
+          <td>ONBUILD</td>
+          <td>当该镜像被用作另一个构建过程的基础时，添加触发器。</td>
+      </tr>
+      <tr>
+          <td>STOPSIGNAL</td>
+          <td>设置发送给容器以退出的系统调用信号。</td>
+      </tr>
+      <tr>
+          <td>HEALTHCHECK</td>
+          <td>定义周期性检查容器健康状态的命令。</td>
+      </tr>
+      <tr>
+          <td>SHELL</td>
+          <td>覆盖Docker中默认的shell，用于RUN、CMD和ENTRYPOINT指令。</td>
+      </tr>
+  </tbody>
+</table>
+<p>详细说明：</p>
+<h4 id="1-from">1. <code>FROM</code></h4>
+<p>指定构建镜像所基于的基础镜像。每个 Dockerfile 必须以 <code>FROM</code> 指令开始。</p>
+<p>FROM是必须的，这是搭建镜像的基础</p>
+<ul>
+<li><code>python:3.9.19-alpine3.18</code>前面的<code>python</code>为镜像名称，可到dockerhub按需搜索，如下图</li>
+</ul>
+<p>
+<a href="https://imgs.ronan.us.kg/dockerfile1.png" data-dimbox data-dimbox-caption="img">
+  <img alt="img" src="https://imgs.ronan.us.kg/dockerfile1.png"/>
+</a>
+</p>
+<ul>
+<li><code>python:3.9.19-alpine3.18</code>冒号后面的是tag，也就是标签(版本号)。<strong>标签必须与dockerhub镜像里提供的一致，在上图点击所需镜像名称即可看到可用标签。</strong></li>
+</ul>
+<p>
+<a href="https://imgs.ronan.us.kg/dockerfile2.png" data-dimbox data-dimbox-caption="img">
+  <img alt="img" src="https://imgs.ronan.us.kg/dockerfile2.png"/>
+</a>
+</p>
+<pre tabindex="0"><code>FROM ubuntu:20.04
+</code></pre><h4 id="2-label">2. <code>LABEL</code></h4>
+<p>LABEL 指令用来给镜像添加一些元数据（metadata），以键值对的形式，语法格式如下：</p>
+<pre tabindex="0"><code>LABEL &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; ...
+</code></pre><p>例如添加镜像作者信息：</p>
+<pre tabindex="0"><code>LABEL maintainer=&#34;your-email@example.com&#34;
+</code></pre><h4 id="3-env">3. <code>ENV</code></h4>
+<p>设置环境变量，这些环境变量在构建和运行容器时都会存在。</p>
+<p>格式如下：</p>
+<pre tabindex="0"><code>ENV &lt;key&gt; &lt;value&gt;
+ENV &lt;key1&gt;=&lt;value1&gt; &lt;key2&gt;=&lt;value2&gt;...
+</code></pre><p>以下示例设置 NODE_VERSION = 7.2.0 ， 在后续的指令中可以通过 $NODE_VERSION 引用：</p>
+<pre tabindex="0"><code>ENV NODE_VERSION 7.2.0
+
+RUN curl -SLO &#34;https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz&#34; \
+  &amp;&amp; curl -SLO &#34;https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc&#34;
+</code></pre><h4 id="4-run">4. <code>RUN</code></h4>
+<p>执行命令行指令。这些指令在构建镜像时执行，通常用于安装软件包、修改文件等操作。</p>
+<p>RUN命令有俩种格式：</p>
+<p>1）shell 格式：</p>
+<pre tabindex="0"><code>RUN &lt;命令行命令&gt;
+# &lt;命令行命令&gt; 等同于，在终端操作的 shell 命令。
+</code></pre><p>2）exec 格式：</p>
+<pre tabindex="0"><code>RUN [&#34;可执行文件&#34;, &#34;参数1&#34;, &#34;参数2&#34;]
+# 例如：
+# RUN [&#34;./test.php&#34;, &#34;dev&#34;, &#34;offline&#34;] 等价于 RUN ./test.php dev offline
+</code></pre><blockquote>
+<p><strong>注意</strong>：<code>Dockerfile</code> 的指令每执行一次都会在 docker 上新建一层。所以过多无意义的层，会造成镜像膨胀过大。尽量将命令行指令通过<code>&amp;&amp;</code>连接写为一条指令。</p>
+</blockquote>
+<pre tabindex="0"><code>RUN apt-get update &amp;&amp; \
+    apt-get install -y --no-install-recommends \
+    curl \
+    vim \
+    git \
+    &amp;&amp; rm -rf /var/lib/apt/lists/*
+</code></pre><h4 id="5-copy">5. <code>COPY</code></h4>
+<p>复制指令，从上下文目录中复制文件或者目录到容器里指定路径。</p>
+<p>格式：</p>
+<pre tabindex="0"><code>COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;源路径1&gt;...  &lt;目标路径&gt;
+COPY [--chown=&lt;user&gt;:&lt;group&gt;] [&#34;&lt;源路径1&gt;&#34;,...  &#34;&lt;目标路径&gt;&#34;]
+</code></pre><p><strong>[&ndash;chown=:]</strong>：可选参数，用户改变复制到容器内文件的拥有者和属组。</p>
+<p><strong>&lt;源路径&gt;</strong>：源文件或者源目录，这里可以是通配符表达式，其通配符规则要满足 Go 的 filepath.Match 规则。例如：</p>
+<pre tabindex="0"><code>COPY hom* /mydir/
+COPY hom?.txt /mydir/
+</code></pre><p><strong>&lt;目标路径&gt;</strong>：容器内的指定路径，该路径不用事先建好，路径不存在的话，会自动创建。</p>
+<h4 id="6-add">6. <code>ADD</code></h4>
+<p>ADD 指令和 COPY 的使用格类似（<strong>同样需求下，官方推荐使用 COPY</strong>）。功能也类似，不同之处如下：</p>
+<ul>
+<li>ADD 的优点：在执行 &lt;源文件&gt; 为 tar 压缩文件的话，压缩格式为 gzip, bzip2 以及 xz 的情况下，会自动复制并解压到 &lt;目标路径&gt;。</li>
+<li>ADD 的缺点：在不解压的前提下，无法复制 tar 压缩文件。会令镜像构建缓存失效，从而可能会令镜像构建变得比较缓慢。具体是否使用，可以根据是否需要自动解压来决定。</li>
+</ul>
+<h4 id="7-workdir">7. <code>WORKDIR</code></h4>
+<p>指定工作目录。用 WORKDIR 指定的工作目录，会在构建镜像的每一层中都存在。以后各层的当前目录就被改为指定的目录，如该目录不存在，WORKDIR 会帮你建立目录。</p>
+<p>docker build 构建镜像过程中的，每一个 RUN 命令都是新建的一层。只有通过 WORKDIR 创建的目录才会一直存在。</p>
+<p>格式：</p>
+<pre tabindex="0"><code>WORKDIR &lt;工作目录路径&gt;
+</code></pre><h4 id="8-expose">8. <code>EXPOSE</code></h4>
+<p>仅仅只是声明端口，此指令不会实际发布端口。</p>
+<p>作用：</p>
+<ul>
+<li>帮助镜像使用者理解这个镜像服务的守护端口，以方便配置映射。</li>
+<li>在运行时使用随机端口映射时，也就是 <code>docker run -P</code> 时，会自动随机映射 EXPOSE 的端口。</li>
+</ul>
+<p>格式：</p>
+<pre tabindex="0"><code>EXPOSE &lt;端口1&gt; [&lt;端口2&gt;...]
+</code></pre><h4 id="9-cmd">9. <code>CMD</code></h4>
+<p>指定容器启动时默认执行的命令。<code>CMD</code> 指令指定的程序可被 docker run 命令行参数中指定要运行的程序所覆盖。</p>
+<pre tabindex="0"><code>CMD [&#34;nginx&#34;, &#34;-g&#34;, &#34;daemon off;&#34;]
+</code></pre><p>格式：</p>
+<pre tabindex="0"><code>CMD &lt;shell 命令&gt; 
+CMD [&#34;&lt;可执行文件或命令&gt;&#34;,&#34;&lt;param1&gt;&#34;,&#34;&lt;param2&gt;&#34;,...] 
+CMD [&#34;&lt;param1&gt;&#34;,&#34;&lt;param2&gt;&#34;,...]  # 该写法是为 ENTRYPOINT 指令指定的程序提供默认参数
+</code></pre><p>推荐使用第二种格式，执行过程比较明确。第一种格式实际上在运行的过程中也会自动转换成第二种格式运行，并且默认可执行文件是 sh。</p>
+<p><strong>注意</strong>：如果 <code>Dockerfile</code> 中如果存在多个 <code>CMD</code>指令，仅最后一个生效。</p>
+<h4 id="10-entrypoint">10. <code>ENTRYPOINT</code></h4>
+<p>类似于 <code>CMD</code>，但不能被 <code>docker run</code> 提供的参数覆盖，而且这些命令行参数会被当作参数送给 ENTRYPOINT 指令指定的程序。</p>
+<p>如果运行 docker run 时使用了 <code>--entrypoint</code> 选项，将覆盖 <code>ENTRYPOINT</code> 指令指定的程序。通常用来设置不可变的部分，<code>CMD</code> 用来指定可变的参数。</p>
+<p>格式：</p>
+<pre tabindex="0"><code>ENTRYPOINT [&#34;&lt;executeable&gt;&#34;,&#34;&lt;param1&gt;&#34;,&#34;&lt;param2&gt;&#34;,...]
+</code></pre><p>搭配 CMD 命令使用：</p>
+<pre tabindex="0"><code>ENTRYPOINT [&#34;nginx&#34;]
+CMD [&#34;-g&#34;, &#34;daemon off;&#34;]
+</code></pre><p><strong>注意</strong>：如果 <code>Dockerfile</code> 中如果存在多个 <code>ENTRYPOINT</code> 指令，仅最后一个生效。</p>
+<p>示例：</p>
+<p>假设已通过 <code>Dockerfile</code> 构建了 <code>nginx:test</code> 镜像：</p>
+<pre tabindex="0"><code>FROM nginx
+
+ENTRYPOINT [&#34;nginx&#34;, &#34;-c&#34;] # 定参
+CMD [&#34;/etc/nginx/nginx.conf&#34;] # 变参 
+</code></pre><p>1、不传参运行</p>
+<pre tabindex="0"><code>$ docker run  nginx:test
+</code></pre><p>容器内会默认运行以下命令，启动主进程。</p>
+<pre tabindex="0"><code>nginx -c /etc/nginx/nginx.conf
+</code></pre><p>2、传参运行</p>
+<pre tabindex="0"><code>$ docker run  nginx:test -c /etc/nginx/new.conf
+</code></pre><p>容器内会默认运行以下命令，启动主进程(/etc/nginx/new.conf:假设容器内已有此文件)</p>
+<pre tabindex="0"><code>nginx -c /etc/nginx/new.conf
+</code></pre><h4 id="11-volume">11. <code>VOLUME</code></h4>
+<p>定义匿名数据卷。在启动容器时忘记挂载数据卷，会自动挂载到匿名卷。创建挂载点，声明了容器中的一个目录将作为数据卷。</p>
+<p>作用：</p>
+<ul>
+<li>避免重要的数据，因容器重启而丢失，这是非常致命的。</li>
+<li>避免容器不断变大。</li>
+</ul>
+<p>格式：</p>
+<pre tabindex="0"><code>VOLUME [&#34;&lt;路径1&gt;&#34;, &#34;&lt;路径2&gt;&#34;...]
+VOLUME &lt;路径&gt;
+</code></pre><p>在启动容器 docker run 的时候，我们可以通过 -v 参数修改挂载点。</p>
+<h4 id="12-user">12. <code>USER</code></h4>
+<p>用于指定执行后续命令的用户和用户组，这边只是切换后续命令执行的用户（用户和用户组必须提前已经存在）。</p>
+<p>格式：</p>
+<pre tabindex="0"><code>USER &lt;用户名&gt;[:&lt;用户组&gt;]
+</code></pre><h4 id="13-arg">13. <code>ARG</code></h4>
+<p>构建参数，与 ENV 作用一致。不过作用域不一样。ARG 设置的环境变量仅对 Dockerfile 内有效，也就是说只有 docker build 的过程中有效，构建好的镜像内不存在此环境变量。</p>
+<p>构建命令 docker build 中可以用 &ndash;build-arg &lt;参数名&gt;=&lt;值&gt; 来覆盖。</p>
+<p>格式：</p>
+<pre tabindex="0"><code>ARG &lt;参数名&gt;[=&lt;默认值&gt;]
+</code></pre><p>示例：</p>
+<pre tabindex="0"><code>ARG VERSION=1.0
+RUN echo &#34;Version: $VERSION&#34;
+</code></pre><h4 id="14-healthcheck">14. <code>HEALTHCHECK</code></h4>
+<p>用于指定某个程序或者指令来监控 docker 容器服务的运行状态。</p>
+<p>格式：</p>
+<pre tabindex="0"><code>HEALTHCHECK [选项] CMD &lt;命令&gt;：设置检查容器健康状况的命令
+HEALTHCHECK NONE：如果基础镜像有健康检查指令，使用这行可以屏蔽掉其健康检查指令
+
+HEALTHCHECK [选项] CMD &lt;命令&gt; : 这边 CMD 后面跟随的命令使用，可以参考 CMD 的用法。
+</code></pre><h4 id="15-onbuild">15. <code>ONBUILD</code></h4>
+<p>用于延迟构建命令的执行。简单的说，就是 Dockerfile 里用 ONBUILD 指定的命令，在本次构建镜像的过程中不会执行（假设镜像为 test-build）。当有新的 <code>Dockerfile</code> 使用了之前构建的镜像 FROM test-build ，这时执行新镜像的 <code>Dockerfile</code> 构建时候，会执行 test-build 的 Dockerfile 里的 ONBUILD 指定的命令。</p>
+<p>格式：</p>
+<pre tabindex="0"><code>ONBUILD &lt;其它指令&gt;
+</code></pre><h1 id="构建镜像实战">构建镜像实战</h1>
+<h3 id="1-创建-dockerfile">1. 创建 <code>Dockerfile</code></h3>
+<p><code>Dockerfile</code> 是一个包含构建镜像指令的文本文件。以下是一个示例 <code>Dockerfile</code>，它构建了一个基于 Ubuntu 的基础镜像，并安装了一些常用的工具。****</p>
+<ol>
+<li>创建一个名为 <code>Dockerfile</code> 的文件。</li>
+</ol>
+<pre tabindex="0"><code># 使用官方的 Python 作为基础镜像
+FROM python:3.10-slim
+
+# 设置工作目录
+WORKDIR /app
+
+# 复制本地的 requirements.txt 文件到镜像中
+COPY requirements.txt requirements.txt
+
+# 安装依赖包
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 复制当前目录内容到镜像中的 /app 目录
+COPY . .
+
+# 暴露应用运行的端口
+EXPOSE 5000
+
+# 设置环境变量
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+
+# 运行 Flask 应用
+CMD [&#34;flask&#34;, &#34;run&#34;]
+</code></pre><p>目录结构：</p>
+<pre tabindex="0"><code>my_flask_app/
+│
+├── Dockerfile
+├── app.py
+└── requirements.txt
+</code></pre><p>requirements.txt文件内容：</p>
+<pre tabindex="0"><code>Flask
+</code></pre><p>Flask 应用程序文件 <code>app.py</code>：</p>
+<pre tabindex="0"><code>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route(&#39;/&#39;)
+def hello_world():
+    return &#39;Hello, World!&#39;
+
+if __name__ == &#39;__main__&#39;:
+    app.run(host=&#39;0.0.0.0&#39;)
+</code></pre><h3 id="2-构建-docker-镜像">2. 构建 Docker 镜像</h3>
+<ol>
+<li>在 Dockerfile 所在目录下，运行以下命令构建 Docker 镜像：</li>
+</ol>
+<pre tabindex="0"><code>docker build -t myflaskapp:1.0 .
+</code></pre><p>以上命令将根据 <code>Dockerfile</code> 的内容构建镜像，并将其标记为 <code>mybaseimage:1.0</code>。</p>
+<h3 id="3-验证及管理镜像">3. 验证及管理镜像</h3>
+<ol>
+<li>构建完成后，您可以使用以下命令查看已创建的镜像：</li>
+</ol>
+<pre tabindex="0"><code>docker images
+</code></pre><p>您应该会看到类似以下的输出：</p>
+<pre tabindex="0"><code>REPOSITORY       TAG          IMAGE ID       CREATED          SIZE
+myflaskapp       1.0          a405b0aca5f0   10 minutes ago   133MB
+</code></pre><ol start="2">
+<li>查看镜像的各个层</li>
+</ol>
+<p>查看镜像的各个层，请使用 docker history 命令</p>
+<pre tabindex="0"><code>docker history myflaskapp:1.0
+# 或者
+docker inspect myflaskapp:1.0
+</code></pre><ol start="3">
+<li>可以使用以下命令运行新创建的镜像，以确保其工作正常：</li>
+</ol>
+<pre tabindex="0"><code>[root@k8s-master my_flask_app]# docker run -d -p 5000:5000 myflaskapp:1.0
+426420bedd2754508643d5cea5430911c4900809e608b649470e3989b53ed0f1
+[root@k8s-master my_flask_app]# ss -tulnp | grep 5000
+tcp    LISTEN     0      128       *:5000                  *:*                   users:((&#34;docker-proxy&#34;,pid=55916,fd=4))
+tcp    LISTEN     0      128    [::]:5000               [::]:*                   users:((&#34;docker-proxy&#34;,pid=55922,fd=4))
+[root@k8s-master my_flask_app]# curl 127.0.0.1:5000
+Hello, World!
+</code></pre><ol start="4">
+<li>删除镜像(按需)</li>
+</ol>
+<pre tabindex="0"><code>docker image rm myflaskapp:1.0
+</code></pre><h3 id="4-推送镜像到-docker-仓库可选">4. 推送镜像到 Docker 仓库（可选）</h3>
+<p>如果您希望将镜像分享给其他人或在不同的环境中使用，可以将其推送到 Docker Hub 或其他 Docker 镜像仓库。</p>
+<ol>
+<li>登录到 Docker Hub：</li>
+</ol>
+<pre tabindex="0"><code>docker login
+</code></pre><ol start="2">
+<li>给镜像打标签：</li>
+</ol>
+<pre tabindex="0"><code>docker tag my-images:1.0 your-dockerhub-username/my-images:1.0
+</code></pre><ol start="3">
+<li>推送镜像到 Docker Hub：</li>
+</ol>
+<pre tabindex="0"><code>docker push your-dockerhub-username/my-images:1.0
+</code></pre><h3 id="总结">总结</h3>
+<p>通过以上步骤，您已经成功构建了一个应用容器镜像，并可以根据需要定制和扩展这个镜像。</p>
+
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

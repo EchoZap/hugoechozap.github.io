@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               「Python」模块和包 &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="「Python」模块和包">
+    <meta itemprop="description" content="「Python」模块和包 - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="「Python」模块和包">
+  <meta property="og:description" content="Python 提供了强大的模块支持，主要体现在，不仅 Python 标准库中包含了大量的模块（称为标准模块），还有大量的第三方模块，开发者自己也可以开发自定义模块。通过这些强大的模块可以极大地提高开发者的开发效率。
+那么，模块到底指的是什么呢？Python 模块(Module)，是一个 Python 文件，以 .py 结尾，也就是 Python 程序的后缀名。 模块能定义函数，类和变量，模块里也能包含可执行的代码。用作模块的程序与其他的程序并没有什么区别。
+模块的作用: python中有很多各种不同的模块, 每一个模块都可以帮助我们快速的实现一些功能, 比如实现与数学相关的功能就可以使用 math 模块，我们可以这样理解，每个变量，函数，类都是一个工具，而模块则是一个工具箱，里面可以放很多工具。当我们想要使用某个工具的时候，我们不需要现场制造（写新的代码），只需要拿出来含有相对应工具的工具箱即可（导入相对应的模块）。
+1. 模块的导入方式 在 Python 中，模块使用前需要先导入，导入语法如下：
+# 将整个模块导入 import 模块名 # 将整个模块导入，并且在程序中用别名代替模块名 import 模块名 as 别名 # 导入模块名中的某个类，变量，方法 from 模块名 import 类，变量，方法等 # 导入整个模块 from 模块名 import * # 导入模块的某个功能，并用别名替代功能名 from 模块名 import 功能名 as 别名 注意：import 模块名/import 模块名 as 别名 与 from 模块名 import * 使用区别的。使用 import 的导入模块，在使用模块中的功能时，必须以模块名.功能名的形式调用。
+使用 as 别名 来导入时，给模块重新命名一个名字，可能是因为防止名称重复，也可能是为了方便书写。
+以导入并使用 math 模块为例：
+# 使用 import 语句导入 math 模块 import math # 使用 math 模块中的π的值， print(math.pi) # 使用 math 函数中的 三角函数 print(math.sin(math.pi / 2)) # 使用 mport 模块名 as 别名,导入 math 模块 import math as m print(m.pi) print(m.sin(m.pi / 2)) # 使用 from 模块名 import * 导入 math 模块 from math import * print(pi) print(sin(pi / 2)) # 使用 from 模块名 import 类，变量，方法等 from math import pi, sin print(pi) print(sin(pi / 2)) # 使用 from 模块名 import 功能名 as 别名 from math import pi as pai from math import sin as sine print(pai) print(sine(pai / 2)) 2. 自定义模块 Python 中已经帮我们实现了很多模块，但是有些时候，我们还需要一些个性化的模块，这时就可以通过自定义模块实现。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-22T13:29:19+08:00">
+    <meta property="article:modified_time" content="2024-10-22T13:29:19+08:00">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">
+            「Python」模块和包
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>Python 提供了强大的模块支持，主要体现在，不仅 Python 标准库中包含了大量的模块（称为标准模块），还有大量的第三方模块，开发者自己也可以开发自定义模块。通过这些强大的模块可以极大地提高开发者的开发效率。</p>
+<p>那么，模块到底指的是什么呢？Python 模块(Module)，是一个 Python 文件，以 .py 结尾，也就是 Python 程序的后缀名。 模块能定义函数，类和变量，模块里也能包含可执行的代码。用作模块的程序与其他的程序并没有什么区别。</p>
+<p><strong>模块的作用</strong>: python中有很多各种不同的模块, 每一个模块都可以帮助我们快速的实现一些功能, 比如实现与数学相关的功能就可以使用 math 模块，我们可以这样理解，每个变量，函数，类都是一个工具，而模块则是一个工具箱，里面可以放很多工具。当我们想要使用某个工具的时候，我们不需要现场制造（写新的代码），只需要拿出来含有相对应工具的工具箱即可（导入相对应的模块）。</p>
+<h1 id="1-模块的导入方式">1. 模块的导入方式</h1>
+<p>在 Python 中，模块使用前需要先导入，导入语法如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 将整个模块导入</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> 模块名
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 将整个模块导入，并且在程序中用别名代替模块名</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> 模块名 <span style="color:#66d9ef">as</span> 别名
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 导入模块名中的某个类，变量，方法</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> 模块名 <span style="color:#f92672">import</span> 类<span style="color:#960050;background-color:#1e0010">，</span>变量<span style="color:#960050;background-color:#1e0010">，</span>方法等
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 导入整个模块</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> 模块名 <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 导入模块的某个功能，并用别名替代功能名</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> 模块名 <span style="color:#f92672">import</span> 功能名 <span style="color:#66d9ef">as</span> 别名
+</span></span></code></pre></div><p>注意：<code>import 模块名/import 模块名 as 别名</code> 与 <code>from 模块名 import *</code> 使用区别的。使用 import 的导入模块，在使用模块中的功能时，必须以<code>模块名.功能名</code>的形式调用。</p>
+<p>使用 <code>as 别名</code> 来导入时，给模块重新命名一个名字，可能是因为防止名称重复，也可能是为了方便书写。</p>
+<p>以导入并使用 math 模块为例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 使用 import 语句导入 math 模块</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> math
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用 math 模块中的π的值，</span>
+</span></span><span style="display:flex;"><span>print(math<span style="color:#f92672">.</span>pi)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用 math 函数中的 三角函数</span>
+</span></span><span style="display:flex;"><span>print(math<span style="color:#f92672">.</span>sin(math<span style="color:#f92672">.</span>pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用 mport 模块名 as 别名,导入 math 模块</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> math <span style="color:#66d9ef">as</span> m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(m<span style="color:#f92672">.</span>pi)
+</span></span><span style="display:flex;"><span>print(m<span style="color:#f92672">.</span>sin(m<span style="color:#f92672">.</span>pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用 from 模块名 import * 导入 math 模块</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(pi)
+</span></span><span style="display:flex;"><span>print(sin(pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用 from 模块名 import 类，变量，方法等</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> pi, sin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(pi)
+</span></span><span style="display:flex;"><span>print(sin(pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用 from 模块名 import 功能名 as 别名</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> pi <span style="color:#66d9ef">as</span> pai
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> sin <span style="color:#66d9ef">as</span> sine
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(pai)
+</span></span><span style="display:flex;"><span>print(sine(pai <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>))
+</span></span></code></pre></div><h1 id="2-自定义模块">2. 自定义模块</h1>
+<p>Python 中已经帮我们实现了很多模块，但是有些时候，我们还需要一些个性化的模块，这时就可以通过自定义模块实现。</p>
+<p>自己编写的模块其实和平常写 Python 程序是相同的，他既可以是一个解决某个问题的独立程序，也可以是几个函数构成。而模块名就是代码保存的文件名。</p>
+<p>示例</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 创建一个 .py 文件，命名为 my_module</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 定义一个变量 </span>
+</span></span><span style="display:flex;"><span>test_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;自定义模块测试变量名&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 定义一个函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_function</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;自定义模块测试函数&#39;</span>)
+</span></span></code></pre></div><p>然后，在同一路径下的另一个文件中导入该模块</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> my_module
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(my_module<span style="color:#f92672">.</span>test_name)
+</span></span><span style="display:flex;"><span>my_module<span style="color:#f92672">.</span>test_function()
+</span></span></code></pre></div><p>注意：当导入多个模块的时候，且模块内有同名功能，当调用这个同名功能的时候，调用到的是后面导入的模块的功能。</p>
+<p>示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 模块1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_a</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;module_1中的test_a函数&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 模块2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_a</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;module_2中的test_a函数&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> module_1 <span style="color:#f92672">import</span> test_a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>test_a()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> module_2 <span style="color:#f92672">import</span> test_a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>test_a()
+</span></span></code></pre></div><h3 id="21-模块位置">2.1. 模块位置</h3>
+<p>编写好的模块只有被 Python 找到才能导入。上面的示例因为编写的模块与调用模块的程序位于同一目录中，因此不需要进行设置就能被 Python 找到并导入。如果在该目录下新建一个 module 目录，并且把 my_module.py 剪切至 module 中，继续使用上述代码就会报错 ImportError，找不到要导入的模块。</p>
+<p>ImportError 表示：Python解释器没有找到 my_module 模块。在导入模块时，Python 解释器首先在当前目录中查找要导入的模块。如果没有找到，会从 sys 模块中的 path 变量指定的目录查找导入模块。如果依然没有找到，则会引发 ImportError 错误。</p>
+<p>一般来说，Python 解释器在运行程序前将当前目录添加到 sys.path 路径列表中，所以导入模块时首先查找的路径是当前目录下的模块。</p>
+<p>因此，你可以将自定义模块的路径添加到 sys.path 中，然后使用 import。</p>
+<p>用法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sys	<span style="color:#75715e"># 导入 sys 模块</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(sys<span style="color:#f92672">.</span>path)		<span style="color:#75715e"># 输出当前模块查找路径</span>
+</span></span><span style="display:flex;"><span>sys<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;自定义模块路径&#39;</span>)	<span style="color:#75715e"># 添加自定义模块路径为模块查找路径</span>
+</span></span></code></pre></div><p>示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sys	<span style="color:#75715e"># 导入 sys 模块</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(sys<span style="color:#f92672">.</span>path)		<span style="color:#75715e"># 输出当前模块查找路径</span>
+</span></span><span style="display:flex;"><span>sys<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>append(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;D:\PythonBasisTutorial\module&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> my_module
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(my_module<span style="color:#f92672">.</span>test_name)
+</span></span><span style="display:flex;"><span>my_module<span style="color:#f92672">.</span>test_function()
+</span></span></code></pre></div><p>实际上这种方法并不常用，因为不符合 Python 的代码规范，在 Python 代码规范中，import 语句要求放在程序开始，但是如果你不添加到 sys.path，你就无法引入 my_module 模块。而且，如果有多个文件需要引入时，你无法确定你是否已经将自定义模块添加到 sys.path 中。</p>
+<p>因此，还有一种更简单通用的写法，<code>同级目录名.模块名</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> module <span style="color:#f92672">import</span> my_module
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(my_module<span style="color:#f92672">.</span>test_name)
+</span></span><span style="display:flex;"><span>my_module<span style="color:#f92672">.</span>test_function()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或者</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> module.my_module
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(module<span style="color:#f92672">.</span>my_module<span style="color:#f92672">.</span>test_name)
+</span></span><span style="display:flex;"><span>module<span style="color:#f92672">.</span>my_module<span style="color:#f92672">.</span>test_function()
+</span></span></code></pre></div><p>此时的目录名，我们也称之为<strong>包</strong>。</p>
+<h3 id="22-__all__">2.2. <strong>all</strong></h3>
+<p>如果一个模块文件中有 <code>__all__</code> 变量时，导入时，只能导入这个列表中的元素。</p>
+<p>示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># my_module 模块</span>
+</span></span><span style="display:flex;"><span>__all__ <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;test_function&#39;</span>, <span style="color:#e6db74">&#39;test_name&#39;</span>, <span style="color:#e6db74">&#39;test_a&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 定义一个变量</span>
+</span></span><span style="display:flex;"><span>test_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;自定义模块测试变量名&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 定义一个函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_function</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;自定义模块测试函数&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_a</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;my_module中的test_a函数&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_b</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;my_module中的test_b函数&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> my_module <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>test_a()
+</span></span><span style="display:flex;"><span>test_b()
+</span></span></code></pre></div><p>运行结果</p>
+<pre tabindex="0"><code>my_module中的test_a函数
+Traceback (most recent call last):
+  File &#34;D:/PythonBasisTutorial/Chapter1.py&#34;, line 4, in &lt;module&gt;
+    test_b()
+NameError: name &#39;test_b&#39; is not defined
+</code></pre><h3 id="23-具有独立运行能力的模块">2.3. 具有独立运行能力的模块</h3>
+<p>每个 Python 程序在运行时都有一个 <code>__name__</code> 属性。在程序中通过对 <code>__name__</code> 属性值的判断，可以让程序在作为导入模块和独立运行时都可以正确运行。</p>
+<p>在 Python 中，如果程序作为模块导入，则其 <code>__name__</code> 属性被设置为模块名。如果程序独立运行，则其 <code>__name__</code> 属性被设置为 <code>__main__</code>。因此，可以通过 <code>__name__</code> 属性来判断程序的运行状态。</p>
+<p>对上段代码进行修改，使它既可以独立运行，又可以作为模块被其他程序导入使用，修改后代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>__all__ <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;test_function&#39;</span>, <span style="color:#e6db74">&#39;test_name&#39;</span>, <span style="color:#e6db74">&#39;test_a&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 定义一个变量</span>
+</span></span><span style="display:flex;"><span>test_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;自定义模块测试变量名&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 定义一个函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_function</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;自定义模块测试函数&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_a</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;my_module中的test_a函数&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_b</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;my_module中的test_b函数&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    test_a()
+</span></span></code></pre></div><p>一般来说，将模块的主要功能以实例的形式放在这个 if 语句中，可以方便测试模块是否正常运行，或者发现模块的错误。这是一个好习惯。</p>
+<h1 id="3-包">3. 包</h1>
+<p>当应用程序或项目具有较多的功能模块时，如果把他们都放在同一个文件夹下，就显得不合理了，这时，可以使用 Python 中提供的包来管理较多的功能模块。使用包的好处在于可以有效避免名字冲突，便于包的维护管理。</p>
+<h3 id="31-自定义包">3.1. 自定义包</h3>
+<p>包其实就是一个文件夹或目录，但其中必须包含一个名为 <code>__init__.py</code>(init 的前后均是两条下划线)的文件。<code>__init__.py</code> 可以是一个空文件，仅用于表示该目录是一个包。此外，包还可以嵌套，即把子包放在某个包中。包可以看做处于同一目录中的模块。在 Python 中 首先使用目录名，然后使用模块名导入需要的模块。</p>
+<p>使用如下：</p>
+<ul>
+<li>新建包 <code>my_package</code></li>
+<li>新建包内模块：<code>my_module_1</code> 和 <code>my_module_2</code>，并添加功能</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> my_packages <span style="color:#f92672">import</span> my_module_1, my_module_2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_module_1<span style="color:#f92672">.</span>print_info_1()
+</span></span><span style="display:flex;"><span>my_module_2<span style="color:#f92672">.</span>print_info_2()
+</span></span></code></pre></div><p>如果我们想要控制允许用户导入的模块列表，就需要在 <code>__init__.py</code> 文件中添加 <code>__all__ = []</code>。</p>
+<p>示例，如果我们在 my_packages 的 <code>__init__.py</code> 中添加</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>__all__ <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;my_module_1&#39;</span>]
+</span></span></code></pre></div><p>我们再调用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> my_packages <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_module_1<span style="color:#f92672">.</span>print_info_1()
+</span></span><span style="display:flex;"><span>my_module_2<span style="color:#f92672">.</span>print_info_2()
+</span></span></code></pre></div><p>运行结果：</p>
+<pre tabindex="0"><code>NameError: name &#39;my_module_2&#39; is not define
+</code></pre><p>注意：__all__针对的是 <code>from ... import *</code> 这种方式对 <code>import xxx</code> 这种方式无效。例如：</p>
+<pre tabindex="0"><code>from my_packages import my_module_2, my_module_1
+
+my_module_1.print_info_1()
+my_module_2.print_info_2()
+</code></pre><p>依然可以正常使用。</p>
+<h3 id="32-第三方包">3.2. 第三方包</h3>
+<p>在Python程序的生态中，有许多非常多的第三方包（非Python官方），可以极大的帮助我们提高开发效率，</p>
+<ul>
+<li>科学计算中常用的：numpy包</li>
+<li>数据分析中常用的：pandas包</li>
+<li>Web开发常用的包：Django, Flask, Fast-API</li>
+<li>游戏开发常用的包：PyGame</li>
+<li>人工智能包：TensorFlow</li>
+</ul>
+<p>这些第三方的包，极大的丰富了Python的生态，提高了开发效率。<br>
+但是由于是第三方，所以Python没有内置，所以我们需要安装它们才可以导入使用哦。<br>
+第三方包的安装非常简单，我们只需要使用Python内置的pip程序即可。<br>
+打开我们许久未见的：命令提示符程序，在里面输入：</p>
+<pre tabindex="0"><code>pip install &#39;包名称==版本号&#39;
+</code></pre><p>注意：版本号与双等号可以省略不写，默认安装最新版</p>
+<p>由于pip是连接的国外的网站进行包的下载，所以有的时候会速度很慢。</p>
+<p>我们可以通过如下命令，让其连接国内的网站进行包的安装：</p>
+<pre tabindex="0"><code>pip install -i https://pypi.douban.com/simple/ `包名称==版本号`
+</code></pre>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

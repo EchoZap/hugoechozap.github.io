@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               Linux &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="Linux">
+    <meta itemprop="description" content="Linux - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/categories/linux/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="Linux">
+  <meta property="og:description" content="Bilberry Premium Theme for Hugo.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+
+    
+
+
+    
+    <link href="https://blog.ronan.us.kg/categories/linux/index.xml" rel="alternate" type="application/rss+xml" title="Ronan Blog" />
+    <link href="https://blog.ronan.us.kg/categories/linux/index.xml" rel="feed" type="application/rss+xml" title="Ronan Blog" />
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/categories/linux/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/%E5%90%84%E7%A7%8D%E6%91%B8%E4%B8%8D%E7%9D%80%E5%A4%B4%E8%84%91%E6%84%8F%E5%A4%96%E4%BF%AE%E6%94%B9path%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/%E5%90%84%E7%A7%8D%E6%91%B8%E4%B8%8D%E7%9D%80%E5%A4%B4%E8%84%91%E6%84%8F%E5%A4%96%E4%BF%AE%E6%94%B9path%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">
+            「各种摸不着头脑」意外修改PATH(环境变量)
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/linux/">Linux</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1 id="1-检查sudo是否已经安装">1. <strong>检查sudo是否已经安装</strong></h1>
+<p>确保 <strong>sudo</strong> 已经正确地安装在你的系统中。你可以通过运行 <code>which sudo</code> 来检查它的路径。这应该会出现以下内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>❯ which sudo
+</span></span><span style="display:flex;"><span>/usr/bin/sudo
+</span></span></code></pre></div><p>如果它没有返回任何内容，那么你需要安装 <strong>sudo</strong>。在大多数 Linux 发行版上，你可以使用包管理器来安装 <strong>sudo</strong>。例如，在 Ubuntu 上，你可以使用以下命令安装：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt-get install sudo
+</span></span></code></pre></div><p>在其他发行版上，你可能需要使用不同的命令来安装 <strong>sudo</strong>。</p>
+<h1 id="2手动指定sudo命令的路径">2.<strong>手动指定sudo命令的路径</strong></h1>
+<p>如果你知道 <strong>sudo</strong> 命令的确切路径，你可以在使用时直接指定它的路径。例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>/usr/bin/sudo /usr/bin/vim .bashrc
+</span></span></code></pre></div><p><strong>修复PATH环境变量</strong>：更彻底的解决方法是修复 <strong>PATH</strong> 环境变量，使得系统能够找到 <strong>sudo</strong> 命令。你可以编辑你的  <strong>.bashrc</strong> 文件，将正确的路径添加到 <strong>PATH</strong> 环境变量中。你可以使用下面的命令来编辑  <strong>.bashrc</strong> 文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:/usr/bin
+</span></span></code></pre></div><p>然后保存文件并重新启动终端，或者运行 <strong>source ~/.bashrc</strong> 来使修改生效。</p>
+<h1 id="3-重启系统针对一些linux系统macos通常不需要">3. <strong>重启系统(针对一些Linux系统，macOS通常不需要)</strong>：</h1>
+<p>在修改了环境变量之后，可能需要重启系统才能使其生效。</p>
+
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/linux%E6%9F%A5%E7%9C%8B%E6%88%96%E4%BF%AE%E6%94%B9%E4%B8%BB%E6%9C%BA%E5%90%8D/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/linux%E6%9F%A5%E7%9C%8B%E6%88%96%E4%BF%AE%E6%94%B9%E4%B8%BB%E6%9C%BA%E5%90%8D/">
+            Linux查看或修改主机名
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/linux/">Linux</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1 id="1查看当前主机名">1查看当前主机名</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>hostname
+</span></span></code></pre></div><p>这将会显示当前的主机名，或者</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cat /etc/hostname
+</span></span></code></pre></div><h1 id="2修改主机名">2修改主机名</h1>
+<p>使用以下命令设置新主机名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>sudo hostnamectl set-hostname &lt;new_hostname&gt;
+</span></span></code></pre></div><p>之后在文件中找到包含旧主机名的行，并将其替换为新主机名。确保将新主机名映射到正确的 IP 地址上。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo vim /etc/hosts
+</span></span></code></pre></div><p>将旧主机名替换为新主机名 <em>(可选)</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>127.0.0.1   localhost
+</span></span><span style="display:flex;"><span>127.0.1.1   &lt;your-new-hostname&gt;
+</span></span></code></pre></div><p>最后，重启一下网络服务</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>sudo systemctl restart networking
+</span></span></code></pre></div><p><strong>注意：如果是通过ssh登录的，在完成以上步骤之后可能需要退出后重新登录才可看到主机名刷新！！！</strong></p>
+
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="https://blog.ronan.us.kg/posts/shell-%E7%BC%96%E7%A8%8B/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/shell-%E7%BC%96%E7%A8%8B/">
+            shell 编程
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/linux/">Linux</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        <h1 id="一运算符">一、运算符</h1>
+<h2 id="1算术运算符">1、算术运算符</h2>
+<p>下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 为 20：</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">运算符</th>
+          <th style="text-align: center">说明</th>
+          <th style="text-align: center">举例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">+</td>
+          <td style="text-align: center">加法</td>
+          <td style="text-align: center"><code>expr $a + $b</code> 结果为 30。</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">-</td>
+          <td style="text-align: center">减法</td>
+          <td style="text-align: center"><code>expr $a - $b</code> 结果为 -10。</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">*</td>
+          <td style="text-align: center">乘法</td>
+          <td style="text-align: center"><code>expr $a \* $b</code> 结果为  200。</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">/</td>
+          <td style="text-align: center">除法</td>
+          <td style="text-align: center"><code>expr $b / $a</code> 结果为 2。</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">%</td>
+          <td style="text-align: center">取余</td>
+          <td style="text-align: center"><code>expr $b % $a</code> 结果为 0。</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">=</td>
+          <td style="text-align: center">赋值</td>
+          <td style="text-align: center">a=$b 把变量 b 的值赋给 a。</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">==</td>
+          <td style="text-align: center">相等。用于比较两个数字，相同则返回 true。</td>
+          <td style="text-align: center">[ $a ==$b ] 返回 false。</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">!=</td>
+          <td style="text-align: center">不相等。用于比较两个数字，不相同则返回 true。</td>
+          <td style="text-align: center">[ $a !=$b ] 返回 true。</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>注意：</strong> 条件表达式要放在方括号之间，并且要有空格，例如:  <strong>[<strong>​</strong>$a==$<strong>​</strong>b]</strong>  是错误的，必须写成  <strong>[ <strong>​</strong>$a ==$<strong>​</strong>b ]</strong> 。</p>
+
+        
+            <a href="https://blog.ronan.us.kg/posts/shell-%E7%BC%96%E7%A8%8B/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+
+    
+    <div class="paginator">
+        
+            <a href="/categories/linux/page/3/" class="older"><i class="fa fa-angle-double-left"></i> Older posts</a>
+        
+
+        
+            <a href="/categories/linux/" class="newer">Newer posts <i class="fa fa-angle-double-right"></i></a>
+        
+    </div>
+
+
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            -
+            <a href="https://blog.ronan.us.kg/categories/linux/index.xml">rss</a>
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

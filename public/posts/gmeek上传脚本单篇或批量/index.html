@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               「Gmeek」上传脚本(单篇或批量) &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="「Gmeek」上传脚本(单篇或批量)">
+    <meta itemprop="description" content="「Gmeek」上传脚本(单篇或批量) - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="「Gmeek」上传脚本(单篇或批量)">
+  <meta property="og:description" content="[!caution]
+注意： 该脚本仅适用于通过Gmeek项目搭建的博客网站 在开始使用之前，需要创建 github 的个人 Token
+1.创建github个人Token 1.在 GitHub 上任何页面的右上角，单击您的个人资料照片，然后单击 Settings。
+2.在左侧边栏中，单击 Developer settings（开发人员设置）。
+3.在左侧边栏中的 Personal access tokens （个人访问令牌） 下，单击 Tokens （classic）。
+4.选择 Generate new token（生成新令牌），然后单击 Generate new token （classic）。
+5.在 Note 字段中，为您的令牌指定一个描述性名称。
+6.要为您的令牌指定过期时间，请选择 Expiration（过期），然后选择默认选项或单击 Custom（自定义）以输入日期。
+7.选择要授予此令牌的范围。要使用令牌从命令行访问存储库，请选择 repo ( 这里一定要打上勾！！！ ) 。没有分配范围的令牌只能访问公共信息。
+8.滑动到底部，单击 Generate token
+9.将新令牌复制到剪贴板并且保管好，令牌只出现一次，一定要保管好！一定要保管好！一定要保管好！。
+2.使用方法 以下有两个方法，分为sh脚本和python脚本：
+[!tip] 建议： Linux与mac系统使用 sh 脚本，Windows使用py脚本体验更佳 也可根据喜好自行采用
+2.1配置脚本 对于 sh 脚本 [!important]
+使用前需确认以下：
+系统已安装curl 系统已安装jq 系统可使用bash curl、jq 安装方法由于系统不同，方法多样，所以具体安装方法可以自行查找…
+在代码开始的前几行，找到以下几个值，在引号里填入自己的信息：
+TOKEN 为自己创建的Token值 OWNER 为自己的github用户名 REPO 为自己的Gmeek博客仓库名，一般是 xxx.github.io 对于 py 脚本 1.在开始使用之前，需要安装 requests 模块">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-22T13:29:23+08:00">
+    <meta property="article:modified_time" content="2024-10-22T13:29:23+08:00">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">
+            「Gmeek」上传脚本(单篇或批量)
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <blockquote>
+<p>[!caution]</p>
+<p><strong>注意：</strong> 该脚本仅适用于通过Gmeek项目搭建的博客网站
+在开始使用之前，需要创建 github 的个人 Token</p>
+</blockquote>
+<h1 id="1创建github个人token">1.创建github个人Token</h1>
+<p>1.在 GitHub 上任何页面的<strong>右上角</strong>，单击您的<code>个人资料照片</code>，然后单击 <code>Settings</code>。<br>
+2.在左侧边栏中，单击 <code>Developer settings（开发人员设置）</code>。<br>
+3.在左侧边栏中的 <strong>Personal access tokens （个人访问令牌）</strong> 下，单击 <code>Tokens （classic）</code>。<br>
+4.选择 <code>Generate new token（生成新令牌）</code>，然后单击 <code>Generate new token （classic）</code>。<br>
+5.在 <strong>Note</strong> 字段中，为您的令牌指定一个描述性名称。<br>
+6.要为您的令牌指定过期时间，请选择 <strong>Expiration（过期）</strong>，然后选择默认选项或单击 Custom（自定义）以输入日期。<br>
+7.选择要授予此令牌的范围。要使用令牌从命令行访问存储库，请选择 <code>repo</code> ( <strong>这里一定要打上勾！！！</strong> ) 。没有分配范围的令牌只能访问公共信息。<br>
+8.滑动到底部，单击 <code>Generate token</code><br>
+9.<strong>将新令牌复制到剪贴板并且保管好，令牌只出现一次，一定要保管好！一定要保管好！一定要保管好！</strong>。</p>
+<h1 id="2使用方法">2.使用方法</h1>
+<p>以下有两个方法，分为sh脚本和python脚本：</p>
+<blockquote>
+<p>[!tip]
+<strong>建议：</strong>
+Linux与mac系统使用 sh 脚本，Windows使用py脚本体验更佳
+也可根据喜好自行采用</p>
+</blockquote>
+<h2 id="21配置脚本">2.1配置脚本</h2>
+<h3 id="对于-sh-脚本">对于 sh 脚本</h3>
+<blockquote>
+<p>[!important]</p>
+<p>使用前需确认以下：</p>
+<ul>
+<li>系统已安装curl</li>
+<li>系统已安装jq</li>
+<li>系统可使用bash</li>
+</ul>
+</blockquote>
+<p>curl、jq 安装方法由于系统不同，方法多样，所以具体安装方法可以自行查找&hellip;</p>
+<p>在代码开始的前几行，找到以下几个值，在引号里填入自己的信息：</p>
+<ul>
+<li><code>TOKEN</code>  为自己创建的Token值</li>
+<li><code>OWNER</code> 为自己的github用户名</li>
+<li><code>REPO</code> 为自己的Gmeek博客仓库名，一般是 <code>xxx.github.io</code></li>
+</ul>
+<h3 id="对于-py-脚本">对于 py 脚本</h3>
+<p>1.在开始使用之前，需要安装 <code>requests</code> 模块</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip3 install requests
+</span></span></code></pre></div><p>2.找到代码最后几行，在引号里面填入：</p>
+<ul>
+<li>
+<p><code>token</code> 为自己创建的Token值</p>
+</li>
+<li>
+<p><code>owner</code> 为自己的github用户名</p>
+</li>
+<li>
+<p><code>repo</code> 为自己的Gmeek博客仓库名，一般是 <code>xxx.github.io</code></p>
+</li>
+<li>
+<p>sh 脚本代码</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>TOKEN<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>OWNER<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>REPO<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上传主程序</span>
+</span></span><span style="display:flex;"><span>main_upload_program<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local title<span style="color:#f92672">=</span>$1
+</span></span><span style="display:flex;"><span>    local content<span style="color:#f92672">=</span>$2
+</span></span><span style="display:flex;"><span>    local labels<span style="color:#f92672">=</span>$3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 将标签转换成 JSON 数组格式</span>
+</span></span><span style="display:flex;"><span>    labels_json<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$labels<span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#39;s/,/&#34;,&#34;/g&#39;</span> | sed <span style="color:#e6db74">&#39;s/^/[&#34;/&#39;</span> | sed <span style="color:#e6db74">&#39;s/$/&#34;]/&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 构建 JSON 数据</span>
+</span></span><span style="display:flex;"><span>    json_data<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>jq -n <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --arg title <span style="color:#e6db74">&#34;</span>$title<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --arg body <span style="color:#e6db74">&#34;</span>$content<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --argjson labels <span style="color:#e6db74">&#34;</span>$labels_json<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">&#39;{title: $title, body: $body, labels: $labels}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 发送 POST 请求</span>
+</span></span><span style="display:flex;"><span>    status_code<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>    curl -L <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --silent <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --output /dev/null <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --write-out <span style="color:#e6db74">&#34;%{http_code}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        -X POST <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        -H <span style="color:#e6db74">&#34;Accept: application/vnd.github+json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        -H <span style="color:#e6db74">&#34;Authorization: Bearer </span>$TOKEN<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        -H <span style="color:#e6db74">&#34;X-GitHub-Api-Version: 2022-11-28&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        https://api.github.com/repos/$OWNER/$REPO/issues <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        -d <span style="color:#e6db74">&#34;</span>$json_data<span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> $status_code in
+</span></span><span style="display:flex;"><span>        201<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            echo
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;返回码：</span>$status_code<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;上传成功&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        400<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            echo
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;返回码：</span>$status_code<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Bad Request, 错误请求&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        403<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            echo
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;返回码：</span>$status_code<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Forbidden&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        404<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            echo
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;返回码：</span>$status_code<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Resource not found&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        410<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            echo
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;返回码：</span>$status_code<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Gone&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        422<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            echo
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;返回码：</span>$status_code<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Validation failed, or the endpoint has been spammed. \n 验证失败，或终结点已收到垃圾邮件。&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        502<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            echo
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;返回码：</span>$status_code<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Service unavailable, 服务不可用&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上传单篇文章</span>
+</span></span><span style="display:flex;"><span>upload_single_post<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    read -p <span style="color:#e6db74">&#34;请输入文章路径：&#34;</span> file_path
+</span></span><span style="display:flex;"><span>    read -p <span style="color:#e6db74">&#34;请输入文章标签(多个标签请用,隔开)：&#34;</span> labels
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> echo <span style="color:#e6db74">&#34;</span>$file_path<span style="color:#e6db74">&#34;</span> | grep -E <span style="color:#e6db74">&#39;\.(md|txt)$&#39;</span> &gt; /dev/null; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 提取文件名并去掉扩展名</span>
+</span></span><span style="display:flex;"><span>        file_name<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$file_path<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        title<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$file_name<span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#39;s/\.[^.]*$//&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 获取文章内容</span>
+</span></span><span style="display:flex;"><span>        content<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>sed <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#e6db74">&#34;</span>$file_path<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        main_upload_program <span style="color:#e6db74">&#34;</span>$title<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$content<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$labels<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 批量上传</span>
+</span></span><span style="display:flex;"><span>upload_batch_posts<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    read -p <span style="color:#e6db74">&#34;请输入要上传的文件目录(绝对、相对路径皆可)：&#34;</span> file_path
+</span></span><span style="display:flex;"><span>    read -p <span style="color:#e6db74">&#34;请输入文章标签(多个标签请用,隔开)：&#34;</span> labels
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> file in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/*
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> echo <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> | grep -E <span style="color:#e6db74">&#39;\.(md|txt)$&#39;</span> &gt; /dev/null; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 提取文件名并去掉扩展名</span>
+</span></span><span style="display:flex;"><span>            file_name<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>            title<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$file_name<span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#39;s/\.[^.]*$//&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 获取文章内容</span>
+</span></span><span style="display:flex;"><span>            content<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>sed <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            main_upload_program <span style="color:#e6db74">&#34;</span>$title<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$content<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$labels<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> true;<span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34; -----Made by Ronan----- &#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34; 在键盘上按下对应数字即可选择相应设置&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;————————————————————————————————————————————————————&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34; 1. 上传单篇文章&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34; 2. 批量上传&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34; Q. 退出本程序&#34;</span>
+</span></span><span style="display:flex;"><span>    echo
+</span></span><span style="display:flex;"><span>    read -p <span style="color:#e6db74">&#34;请选择一个选项: &#34;</span> status
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> $status in
+</span></span><span style="display:flex;"><span>        1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            upload_single_post
+</span></span><span style="display:flex;"><span>            break
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            upload_batch_posts
+</span></span><span style="display:flex;"><span>            break
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        q | Q<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;退出&#34;</span>
+</span></span><span style="display:flex;"><span>            exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>        *<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;无效选项，请重新选择。&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><ul>
+<li>py 脚本代码</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GitHubIssueUploader</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, owner<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, repo<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, token<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>owner <span style="color:#f92672">=</span> owner
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>repo <span style="color:#f92672">=</span> repo
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>token <span style="color:#f92672">=</span> token
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 检查是否提供了必要的参数</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>owner <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>repo <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>token:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;必须指定 owner, repo 和 token&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>start_upload()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_issue</span>(self, title, content, labels):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://api.github.com/repos/</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>owner<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>repo<span style="color:#e6db74">}</span><span style="color:#e6db74">/issues&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        headers <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Accept&#34;</span>: <span style="color:#e6db74">&#34;application/vnd.github+json&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Authorization&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Bearer </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>token<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;X-GitHub-Api-Version&#34;</span>: <span style="color:#e6db74">&#34;2022-11-28&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        data <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;title&#34;</span>: title,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;body&#34;</span>: content,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;labels&#34;</span>: labels
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url<span style="color:#f92672">=</span>url, headers<span style="color:#f92672">=</span>headers, json<span style="color:#f92672">=</span>data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">match</span> response<span style="color:#f92672">.</span>status_code:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">201</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Created, 上传成功&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">400</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Bad Request, 错误请求&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">403</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Forbidden&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">404</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Resource not found&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">410</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Gone&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">422</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Validation failed, or the endpoint has been spammed. </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 验证失败，或终结点已收到垃圾邮件。&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">502</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Service unavailable, 服务不可用&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_single_post</span>(self, file_path, labels):
+</span></span><span style="display:flex;"><span>        title <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>basename(file_path))[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(file_path, <span style="color:#e6db74">&#39;r&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            content <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>create_issue(title, content, labels)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_batch_posts</span>(self, directory, labels):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> filename <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(directory):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.md&#39;</span>) <span style="color:#f92672">or</span> filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.txt&#39;</span>):
+</span></span><span style="display:flex;"><span>                file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(directory, filename)
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>upload_single_post(file_path, labels)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">start_upload</span>(self):
+</span></span><span style="display:flex;"><span>        status <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 1.上传单篇文章 </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 2.批量上传 </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> 按下对应数字并回车可选择相应功能：&#34;</span>)
+</span></span><span style="display:flex;"><span>        labels <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入标签，用,隔开：&#34;</span>)
+</span></span><span style="display:flex;"><span>        labels <span style="color:#f92672">=</span> [word<span style="color:#f92672">.</span>strip() <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> labels<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;,&#39;</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> status <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;1&#34;</span>:
+</span></span><span style="display:flex;"><span>            file_path <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入文件路径：&#34;</span>)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>upload_single_post(file_path, labels)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> status <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;2&#34;</span>:
+</span></span><span style="display:flex;"><span>            directory <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;请输入目录路径：&#34;</span>)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>upload_batch_posts(directory, labels)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;已退出程序...&#34;</span>)
+</span></span><span style="display:flex;"><span>            exit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    uploader <span style="color:#f92672">=</span> GitHubIssueUploader(
+</span></span><span style="display:flex;"><span>        owner <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;xxxx&#34;</span>,
+</span></span><span style="display:flex;"><span>        repo <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;xxxx.github.io&#34;</span>,
+</span></span><span style="display:flex;"><span>        token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;xxxx&#34;</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span></code></pre></div><h2 id="22运行脚本">2.2运行脚本</h2>
+<ul>
+<li>对于sh脚本</li>
+</ul>
+<p>将以上脚本代码保存为 <code>blog_upload.sh</code> ，在终端里进入到改脚本所在位置，键入 <code>chmod 777 blog_upload.sh</code> ，然后通过 <code>./blog_upload.sh</code> 运行，之后根据提示进行即可。</p>
+<ul>
+<li>对于py脚本</li>
+</ul>
+<p>将脚本代码保存为 <code>blog_upload.py</code> ，在终端里进入到改脚本所在位置，然后通过以下命令运行，之后根据提示进行即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>python3 blog_upload<span style="color:#f92672">.</span>py
+</span></span></code></pre></div><p>你问我配置完了脚本怎么用？你运行起来有步骤引导你的～～～</p>
+<!-- raw HTML omitted -->
+
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>

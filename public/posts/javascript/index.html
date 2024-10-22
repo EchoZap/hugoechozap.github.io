@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://blog.ronan.us.kg/">
+    <meta name="author" content="Ronan">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.136.2">
+    <title>
+        
+           
+               JavaScript &vert; Ronan Blog
+           
+        
+    </title>
+    <meta itemprop="name" content="JavaScript">
+    <meta itemprop="description" content="JavaScript - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Ronan Blog">
+
+    <meta property="og:url" content="https://blog.ronan.us.kg/posts/javascript/">
+  <meta property="og:site_name" content="Ronan Blog">
+  <meta property="og:title" content="JavaScript">
+  <meta property="og:description" content="对象概述 什么是对象？对象（object）是 JavaScript 语言的核心概念，也是最重要的数据类型
+简单说，对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合
+var user = { name: &#39;itbaizhan&#39;, age: &#39;13&#39; }; 对象的每一个键名又称为“属性”（property），它的“键
+值”可以是任何数据类型。如果一个属性的值为函数，通常把这个属性称为“方法”，它可以像函数那样调用
+var user = { getName: function (name) { return name; } }; user.getName(&#34;itbaizhan&#34;) // itbaizhan 如果属性的值还是一个对象，就形成了链式引用
+var user = { name:&#34;itbaizhan&#34;, age:13, container:{ frontEnd:[&#34;Web前端&#34;,&#34;Android&#34;,&#34;iOS&#34;], backEnd:[&#34;Java&#34;,&#34;Python&#34;] } } user.container.frontEnd // [&#34;Web前端&#34;,&#34;Android&#34;,&#34;iOS&#34;] Math对象 Math是 JavaScript 的原生对象，提供各种数****学功能。
+Math.abs() Math.abs方法返回参数值的绝对值
+Math.abs(1) // 1 Math.abs(-1) // 1 Math.max()，Math.min() Math.max方法返回参数之中最大的那个值，Math.min返回最小的那个值。如果参数为空, Math.min返回Infinity, Math.max返回-Infinity。
+Math.max(2, -1, 5) // 5 Math.min(2, -1, 5) // -1 Math.min() // Infinity Math.max() // -Infinity Math.floor()，Math.ceil() Math.floor方法返回小于参数值的最大整数
+Math.floor(3.2) // 3 Math.floor(-3.2) // -4 Math.ceil方法返回大于参数值的最小整数
+Math.ceil(3.2) // 4 Math.ceil(-3.2) // -3 Math.random() Math.random()返回0到1之间的一个伪随机数，可能等于0，但是一定小于1">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-22T13:28:50+08:00">
+    <meta property="article:modified_time" content="2024-10-22T13:28:50+08:00">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="https://blog.ronan.us.kg/posts/javascript/">
+    
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://blog.ronan.us.kg/theme.min.8125c5e195258aa61b74485a7c4accfba7efc242481cb11437cb6d93789d00e7.css" integrity="sha256-gSXF4ZUliqYbdEhafErM&#43;6fvwkJIHLEUN8ttk3idAOc=" media="screen" crossorigin="anonymous">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+        </ul>
+
+        
+            <div id="search-box" class="search">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search ...">
+            </div>
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="https://imgs.ronan.us.kg/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Ronan Blog
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">「向前每多走一步，热爱和勇气就会多一分。」</span>
+            
+        </div>
+        <div class="selectors">
+          
+          
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://blog.ronan.us.kg/posts/javascript/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://blog.ronan.us.kg/posts/javascript/">
+            JavaScript
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://blog.ronan.us.kg/categories/docs/">Docs</a>
+                    
+                
+            </span>
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="https://blog.ronan.us.kg/author/ronan/">Ronan</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <h1 id="对象概述">对象概述</h1>
+<p>什么是对象？对象（object）是 JavaScript 语言的核心概念，也是最重要的数据类型</p>
+<p>简单说，对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合</p>
+<p>
+<a href="https://imgs.ronan.us.kg/js1.png" data-dimbox data-dimbox-caption="img">
+  <img alt="img" src="https://imgs.ronan.us.kg/js1.png"/>
+</a>
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;itbaizhan&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;13&#39;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>对象的每一个键名又称为“属性”（property），它的“键</p>
+<p>值”可以是任何数据类型。如果一个属性的值为函数，通常把这个属性称为“方法”，它可以像函数那样调用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">name</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">getName</span>(<span style="color:#e6db74">&#34;itbaizhan&#34;</span>) <span style="color:#75715e">// itbaizhan
+</span></span></span></code></pre></div><p>如果属性的值还是一个对象，就形成了链式引用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;itbaizhan&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">13</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">container</span><span style="color:#f92672">:</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">frontEnd</span><span style="color:#f92672">:</span>[<span style="color:#e6db74">&#34;Web前端&#34;</span>,<span style="color:#e6db74">&#34;Android&#34;</span>,<span style="color:#e6db74">&#34;iOS&#34;</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">backEnd</span><span style="color:#f92672">:</span>[<span style="color:#e6db74">&#34;Java&#34;</span>,<span style="color:#e6db74">&#34;Python&#34;</span>]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">container</span>.<span style="color:#a6e22e">frontEnd</span> <span style="color:#75715e">// [&#34;Web前端&#34;,&#34;Android&#34;,&#34;iOS&#34;]
+</span></span></span></code></pre></div><h1 id="math对象">Math对象</h1>
+<p>Math是 JavaScript 的原生对象，提供各种数****学功能。</p>
+<h3 id="mathabs">Math.abs()</h3>
+<p><strong><code>Math.abs</code>方法返回参数值的绝对值</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>Math.<span style="color:#a6e22e">abs</span>(<span style="color:#ae81ff">1</span>) <span style="color:#75715e">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Math.<span style="color:#a6e22e">abs</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#75715e">// 1
+</span></span></span></code></pre></div><h3 id="mathmaxmathmin">Math.max()，Math.min()</h3>
+<p><code>Math.max</code>方法返回参数之中最大的那个值，<code>Math.min</code>返回最小的那个值。如果参数为空, <code>Math.min</code>返回<code>Infinity</code>, <code>Math.max</code>返回<code>-Infinity</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>Math.<span style="color:#a6e22e">max</span>(<span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Math.<span style="color:#a6e22e">min</span>(<span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// -1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Math.<span style="color:#a6e22e">min</span>() <span style="color:#75715e">// Infinity
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Math.<span style="color:#a6e22e">max</span>() <span style="color:#75715e">// -Infinity
+</span></span></span></code></pre></div><h3 id="mathfloormathceil">Math.floor()，Math.ceil()</h3>
+<p><code>Math.floor</code>方法返回小于参数值的最大整数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>Math.<span style="color:#a6e22e">floor</span>(<span style="color:#ae81ff">3.2</span>) <span style="color:#75715e">// 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Math.<span style="color:#a6e22e">floor</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3.2</span>) <span style="color:#75715e">// -4
+</span></span></span></code></pre></div><p><code>Math.ceil</code>方法返回大于参数值的最小整数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>Math.<span style="color:#a6e22e">ceil</span>(<span style="color:#ae81ff">3.2</span>) <span style="color:#75715e">// 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Math.<span style="color:#a6e22e">ceil</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3.2</span>) <span style="color:#75715e">// -3
+</span></span></span></code></pre></div><h3 id="mathrandom">Math.random()</h3>
+<p><code>Math.random()</code>返回0到1之间的一个伪随机数，可能等于0，但是一定小于1</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>Math.<span style="color:#a6e22e">random</span>() <span style="color:#75715e">// 0.28525367438365223
+</span></span></span></code></pre></div><p>任意范围的随机数生成函数如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getRandomArbitrary</span>(<span style="color:#a6e22e">min</span>, <span style="color:#a6e22e">max</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> (<span style="color:#a6e22e">max</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">min</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">getRandomArbitrary</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>)
+</span></span></code></pre></div><p><strong>实时效果反馈</strong></p>
+<p><strong>1. 下列代码获得一个正整数，横线处应该填写的内容是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ToInteger</span>(<span style="color:#a6e22e">x</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> Number(<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">___</span>(<span style="color:#a6e22e">___</span>(<span style="color:#a6e22e">x</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ToInteger</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">10.4</span>); <span style="color:#75715e">// 向下取整：10
+</span></span></span></code></pre></div><h1 id="date对象">Date对象</h1>
+<p><code>Date</code>对象是 JavaScript 原生的时间库。它以1970年1月1日00:00:00作为时间的零点，可以表示的时间范围是前后各1亿天（单位为毫秒）</p>
+<h3 id="datenow">Date.now()</h3>
+<p><code>Date.now</code>方法返回当前时间距离时间零点（1970年1月1日 00:00:00 UTC）的毫秒数，相当于 Unix 时间戳乘以1000</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>Date.<span style="color:#a6e22e">now</span>();   <span style="color:#75715e">// 1635216733395
+</span></span></span></code></pre></div><h3 id="时间戳">时间戳</h3>
+<p>时间戳是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。</p>
+<p>格林威治和北京时间就是时区的不同</p>
+<p>Unix是20世纪70年代初出现的一个操作系统，Unix认为1970年1月1日0点是时间纪元。JavaScript也就遵循了这一约束</p>
+<p><code>Date</code>对象提供了一系列<code>get*</code>方法，用来获取实例对象某个方面的值</p>
+<blockquote>
+<p><strong>实例方法get类</strong></p>
+<p>getTime()：返回实例距离1970年1月1日00:00:00的毫秒数
+getDate()：返回实例对象对应每个月的几号（从1开始）
+getDay()：返回星期几，星期日为0，星期一为1，以此类推
+getYear()：返回距离1900的年数
+getFullYear()：返回四位的年份
+getMonth()：返回月份（0表示1月，11表示12月）
+getHours()：返回小时（0-23）
+getMilliseconds()：返回毫秒（0-999）
+getMinutes()：返回分钟（0-59）
+getSeconds()：返回秒（0-59）</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#e6db74">&#39;January 6, 2022&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getDate</span>() <span style="color:#75715e">// 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#75715e">// 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getYear</span>() <span style="color:#75715e">// 122
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getFullYear</span>() <span style="color:#75715e">// 2022
+</span></span></span></code></pre></div><p>编写函数获得本年度剩余天数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">leftDays</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">today</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">endYear</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">today</span>.<span style="color:#a6e22e">getFullYear</span>(), <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">59</span>, <span style="color:#ae81ff">59</span>, <span style="color:#ae81ff">999</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">msPerDay</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">round</span>((<span style="color:#a6e22e">endYear</span>.<span style="color:#a6e22e">getTime</span>() <span style="color:#f92672">-</span> <span style="color:#a6e22e">today</span>.<span style="color:#a6e22e">getTime</span>()) <span style="color:#f92672">/</span> <span style="color:#a6e22e">msPerDay</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>实时效果反馈</strong></p>
+<p><strong>1. 下列代码计算本年度剩余天数，划横线处应该填写代码是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">leftDays</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">today</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">endYear</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">today</span>.<span style="color:#a6e22e">___</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">59</span>, <span style="color:#ae81ff">59</span>, <span style="color:#ae81ff">999</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">msPerDay</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">round</span>((<span style="color:#a6e22e">endYear</span>.<span style="color:#a6e22e">___</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">today</span>.<span style="color:#a6e22e">___</span>) <span style="color:#f92672">/</span> <span style="color:#a6e22e">msPerDay</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="dom概述">DOM概述</h1>
+<p>DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如对元素增删内容）</p>
+<p>浏览器会根据 DOM 模型，将结构化文档HTML解析成一系列的节点，再由这些节点组成一个树状结构（DOM Tree）。所有的节点和最终的树状结构，都有规范的对外接口</p>
+<p>DOM 只是一个接口规范，可以用各种语言实现。所以严格地说，DOM 不是 JavaScript 语法的一部分，但是 DOM 操作是 JavaScript 最常见的任务，离开了 DOM，JavaScript 就无法控制网页。另一方面，JavaScript 也是最常用于 DOM 操作的语言</p>
+<h3 id="节点">节点</h3>
+<p>DOM 的最小组成单位叫做节点（node）。文档的树形结构（DOM 树），就是由各种不同类型的节点组成。每个节点可以看作是文档树的一片叶子</p>
+<!-- raw HTML omitted -->
+<p>节点的类型有七种</p>
+<blockquote>
+<p>Document：整个文档树的顶层节点
+DocumentType：doctype标签
+Element：网页的各种HTML标签
+Attribute：网页元素的属性（比如class=&ldquo;right&rdquo;）
+Text：标签之间或标签包含的文本
+Comment：注释
+DocumentFragment：文档的片段</p>
+</blockquote>
+<h3 id="节点树">节点树</h3>
+<p>一个文档的所有节点，按照所在的层级，可以抽象成一种树状结构。这种树状结构就是 DOM 树。它有一个顶层节点，下一层都是顶层节点的子节点，然后子节点又有自己的子节点，就这样层层衍生出一个金字塔结构，倒过来就像一棵树</p>
+<p>浏览器原生提供document节点，代表整个文档</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>document
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 整个文档树
+</span></span></span></code></pre></div><p>除了根节点，其他节点都有三种层级关系</p>
+<blockquote>
+<p>父节点关系（parentNode）：直接的那个上级节点
+子节点关系（childNodes）：直接的下级节点
+同级节点关系（sibling）：拥有同一个父节点的节点</p>
+</blockquote>
+<h3 id="nodenodetype属性">Node.nodeType属性</h3>
+<p>不同节点的nodeType属性值和对应的常量如下</p>
+<blockquote>
+<p>文档节点（document）：9，对应常量Node.DOCUMENT_NODE
+元素节点（element）：1，对应常量Node.ELEMENT_NODE
+属性节点（attr）：2，对应常量Node.ATTRIBUTE_NODE
+文本节点（text）：3，对应常量Node.TEXT_NODE
+文档片断节点（DocumentFragment）：11，对应常量Node.DOCUMENT_FRAGMENT_NODE</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>document.<span style="color:#a6e22e">nodeType</span> <span style="color:#75715e">// 9
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">nodeType</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">Node</span>.<span style="color:#a6e22e">DOCUMENT_NODE</span> <span style="color:#75715e">// true
+</span></span></span></code></pre></div><h2 id="document对象_方法获取元素">document对象_方法/获取元素</h2>
+<h3 id="documentgetelementsbytagname">document.getElementsByTagName()</h3>
+<p><code>document.getElementsByTagName</code>方法搜索 HTML 标签名，返回符合条件的元素。它的返回值是一个类似数组对象（<code>HTMLCollection</code>实例），可以实时反映 HTML 文档的变化。如果没有任何匹配的元素，就返回一个空集</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">paras</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;p&#39;</span>);
+</span></span></code></pre></div><p>如果传入<code>*</code>，就可以返回文档中所有 HTML 元素</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">allElements</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;*&#39;</span>);
+</span></span></code></pre></div><h3 id="documentgetelementsbyclassname">document.getElementsByClassName()</h3>
+<p><code>document.getElementsByClassName</code>方法返回一个类似数组的对象（<code>HTMLCollection</code>实例），包括了所有<code>class</code>名字符合指定条件的元素，元素的变化实时反映在返回结果中</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#a6e22e">names</span>);
+</span></span></code></pre></div><p>由于<code>class</code>是保留字，所以 JavaScript 一律使用<code>className</code>表示 CSS 的<code>class</code></p>
+<p>参数可以是多个<code>class</code>，它们之间使用空格分隔</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#39;foo bar&#39;</span>);
+</span></span></code></pre></div><h3 id="documentgetelementsbyname">document.getElementsByName()</h3>
+<p><code>document.getElementsByName</code>方法用于选择拥有<code>name</code>属性的 HTML 元素（比如<code>&lt;form&gt;</code>、<code>&lt;radio&gt;</code>、<code>&lt;img&gt;</code>等），返回一个类似数组的的对象（<code>NodeList</code>实例），因为<code>name</code>属性相同的元素可能不止一个</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 表单为 &lt;form name=&#34;itbaizhan&#34;&gt;&lt;/form&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">forms</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByName</span>(<span style="color:#e6db74">&#39;itbaizhan&#39;</span>);
+</span></span></code></pre></div><h3 id="documentgetelementbyid">document.getElementById()</h3>
+<p><code>document.getElementById</code>方法返回匹配指定<code>id</code>属性的元素节点。如果没有发现匹配的节点，则返回<code>null</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elem</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;para1&#39;</span>);
+</span></span></code></pre></div><p>注意，该方法的参数是大小写敏感的。比如，如果某个节点的<code>id</code>属性是<code>main</code>，那么<code>document.getElementById('Main')</code>将返回<code>null</code></p>
+<h3 id="documentqueryselector">document.querySelector()</h3>
+<p><code>document.querySelector</code>方法接受一个 CSS 选择器作为参数，返回匹配该选择器的元素节点。如果有多个节点满足匹配条件，则返回第一个匹配的节点。如果没有发现匹配的节点，则返回<code>null</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">el1</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.myclass&#39;</span>);
+</span></span></code></pre></div><h3 id="documentqueryselectorall">document.querySelectorAll()</h3>
+<p><code>document.querySelectorAll</code>方法与<code>querySelector</code>用法类似，区别是返回一个<code>NodeList</code>对象，包含所有匹配给定选择器的节点</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elementList</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.myclass&#39;</span>);
+</span></span></code></pre></div><h2 id="document对象_方法创建元素">document对象_方法/创建元素</h2>
+<h3 id="documentcreateelement">document.createElement()</h3>
+<p><code>document.createElement</code>方法用来生成元素节点，并返回该节点</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newDiv</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+</span></span></code></pre></div><h3 id="documentcreatetextnode">document.createTextNode()</h3>
+<p><code>document.createTextNode</code>方法用来生成文本节点（<code>Text</code>实例），并返回该节点。它的参数是文本节点的内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newDiv</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newContent</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createTextNode</span>(<span style="color:#e6db74">&#39;Hello&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">newDiv</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">newContent</span>);
+</span></span></code></pre></div><h3 id="documentcreateattribute">document.createAttribute()</h3>
+<p><code>document.createAttribute</code>方法生成一个新的属性节点（<code>Attr</code>实例），并返回它</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">attribute</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createAttribute</span>(<span style="color:#a6e22e">name</span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">it</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createAttribute</span>(<span style="color:#e6db74">&#39;itbaizhan&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">it</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;it&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">setAttributeNode</span>(<span style="color:#a6e22e">it</span>);
+</span></span></code></pre></div><p><strong>实时效果反馈</strong></p>
+<p><strong>1. 下列代码是创建元素，并添加内容，横线处应该填写的内容是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newDiv</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newContent</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">____</span>(<span style="color:#e6db74">&#39;Hello&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">newDiv</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">newContent</span>);
+</span></span></code></pre></div><h2 id="element对象_属性">Element对象_属性</h2>
+<p>Element对象对应网页的 HTML 元素。每一个 HTML 元素，在 DOM 树上都会转化成一个Element节点对象（以下简称元素节点）</p>
+<h3 id="elementid">Element.id</h3>
+<p><code>Element.id</code>属性返回指定元素的<code>id</code>属性，该属性可读写</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// HTML 代码为 &lt;p id=&#34;foo&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;p&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">id</span> <span style="color:#75715e">// &#34;foo&#34;
+</span></span></span></code></pre></div><h3 id="elementclassname">Element.className</h3>
+<p><code>className</code>属性用来读写当前元素节点的<code>class</code>属性。它的值是一个字符串，每个<code>class</code>之间用空格分割</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// HTML 代码 &lt;div class=&#34;one two three&#34; id=&#34;myDiv&#34;&gt;&lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">className</span>
+</span></span></code></pre></div><h3 id="elementclasslist">Element.classList</h3>
+<p><code>classList</code>对象有下列方法</p>
+<blockquote>
+<ul>
+<li><code>add()</code>：增加一个 class。</li>
+<li><code>remove()</code>：移除一个 class。</li>
+<li><code>contains()</code>：检查当前元素是否包含某个 class。</li>
+<li><code>toggle()</code>：将某个 class 移入或移出当前元素。</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;myCssClass&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;foo&#39;</span>, <span style="color:#e6db74">&#39;bar&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;myCssClass&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#39;myCssClass&#39;</span>); <span style="color:#75715e">// 如果 myCssClass 不存在就加入，否则移除
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;myCssClass&#39;</span>); <span style="color:#75715e">// 返回 true 或者 false
+</span></span></span></code></pre></div><h3 id="elementinnerhtml">Element.innerHTML</h3>
+<p><code>Element.innerHTML</code>属性返回一个字符串，等同于该元素包含的所有 HTML 代码。该属性可读写，常用来设置某个节点的内容。它能改写所有元素节点的内容，包括<code>&lt;HTML&gt;</code>和<code>&lt;body&gt;</code>元素</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span></code></pre></div><h3 id="elementinnertext">Element.innerText</h3>
+<p><code>innerText</code>和<code>innerHTML</code>类似，不同的是<code>innerText</code>无法识别元素，会直接渲染成字符串</p>
+<p><strong>实时效果反馈</strong></p>
+<p><strong>1. 下列代码为div元素动态添加一个class，画横线处应该填写的内容是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myDiv&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">___</span>(<span style="color:#e6db74">&#39;myCssClass&#39;</span>);
+</span></span></code></pre></div><h2 id="element获取元素位置">Element获取元素位置</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">属性</th>
+          <th style="text-align: center">描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">clientHeight</td>
+          <td style="text-align: center">获取元素高度包括<code>padding</code>部分，但是不包括<code>border</code>、<code>margin</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">clientWidth</td>
+          <td style="text-align: center">获取元素宽度包括<code>padding</code>部分，但是不包括<code>border</code>、<code>margin</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">scrollHeight</td>
+          <td style="text-align: center">元素总高度，它包括<code>padding</code>，但是不包括<code>border</code>、<code>margin</code>包括溢出的不可见内容</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">scrollWidth</td>
+          <td style="text-align: center">元素总宽度，它包括<code>padding</code>，但是不包括<code>border</code>、<code>margin</code>包括溢出的不可见内容</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">scrollLeft</td>
+          <td style="text-align: center">元素的水平滚动条向右滚动的像素数量</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">scrollTop</td>
+          <td style="text-align: center">元素的垂直滚动条向下滚动的像素数量</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">offsetHeight</td>
+          <td style="text-align: center">元素的 CSS 垂直高度（单位像素），包括元素本身的高度、padding 和 border</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">offsetWidth</td>
+          <td style="text-align: center">元素的 CSS 水平宽度（单位像素），包括元素本身的高度、padding 和 border</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">offsetLeft</td>
+          <td style="text-align: center">到定位父级左边界的间距</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">offsetTop</td>
+          <td style="text-align: center">到定位父级上边界的间距</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="elementclientheightelementclientwidth">Element.clientHeight，Element.clientWidth</h3>
+<p><code>Element.clientHeight</code>属性返回一个整数值，表示元素节点的 CSS 高度（单位像素），只对块级元素生效，对于行内元素返回<code>0</code>。如果块级元素没有设置 CSS 高度，则返回实际高度</p>
+<p>除了元素本身的高度，它还包括<code>padding</code>部分，但是不包括<code>border</code>、<code>margin</code>。如果有水平滚动条，还要减去水平滚动条的高度。注意，这个值始终是整数，如果是小数会被四舍五入。</p>
+<p><code>Element.clientWidth</code>属性返回元素节点的 CSS 宽度，同样只对块级元素有效，也是只包括元素本身的宽度和<code>padding</code>，如果有垂直滚动条，还要减去垂直滚动条的宽度。</p>
+<p><code>document.documentElement</code>的<code>clientHeight</code>属性，返回当前视口的高度（即浏览器窗口的高度）。<code>document.body</code>的高度则是网页的实际高度。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 视口高度
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 网页总高度
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">clientHeight</span>
+</span></span></code></pre></div><h3 id="elementscrollheightelementscrollwidth">Element.scrollHeight，Element.scrollWidth</h3>
+<p><code>Element.scrollHeight</code>属性返回一个整数值（小数会四舍五入），表示当前元素的总高度（单位像素），它包括<code>padding</code>，但是不包括<code>border</code>、<code>margin</code>以及水平滚动条的高度（如果有水平滚动条的话）</p>
+<p><code>Element.scrollWidth</code>属性表示当前元素的总宽度（单位像素），其他地方都与<code>scrollHeight</code>属性类似。这两个属性只读</p>
+<p>整张网页的总高度可以从<code>document.documentElement</code>或<code>document.body</code>上读取</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 返回网页的总高度
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollHeight</span>
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollHeight</span>
+</span></span></code></pre></div><h3 id="elementscrollleftelementscrolltop">Element.scrollLeft，Element.scrollTop</h3>
+<p><code>Element.scrollLeft</code>属性表示当前元素的水平滚动条向右侧滚动的像素数量，<code>Element.scrollTop</code>属性表示当前元素的垂直滚动条向下滚动的像素数量。对于那些没有滚动条的网页元素，这两个属性总是等于0</p>
+<p>如果要查看整张网页的水平的和垂直的滚动距离，要从<code>document.documentElement</code>元素上读取</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollLeft</span>
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span>
+</span></span></code></pre></div><h3 id="elementoffsetheightelementoffsetwidth">Element.offsetHeight，Element.offsetWidth</h3>
+<p><code>Element.offsetHeight</code>属性返回一个整数，表示元素的 CSS 垂直高度（单位像素），包括元素本身的高度、padding 和 border，以及水平滚动条的高度（如果存在滚动条）。</p>
+<p><code>Element.offsetWidth</code>属性表示元素的 CSS 水平宽度（单位像素），其他都与<code>Element.offsetHeight</code>一致。</p>
+<p>这两个属性都是只读属性，只比<code>Element.clientHeight</code>和<code>Element.clientWidth</code>多了边框的高度或宽度。如果元素的 CSS 设为不可见（比如<code>display: none;</code>），则返回<code>0</code></p>
+<h3 id="elementoffsetleftelementoffsettop">Element.offsetLeft，Element.offsetTop</h3>
+<p><code>Element.offsetLeft</code>返回当前元素左上角相对于<code>Element.offsetParent</code>节点的水平位移，<code>Element.offsetTop</code>返回垂直位移，单位为像素。通常，这两个值是指相对于父节点的位移</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">parent</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">box</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">yellow</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">box</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;box&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">offsetLeft</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">offsetTop</span>);
+</span></span></code></pre></div><p><strong>实时效果反馈</strong></p>
+<p><strong>1. 下面是获得整个视口的宽度和高度：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">___</span>
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">___</span>
+</span></span></code></pre></div><h1 id="css操作">CSS操作</h1>
+<h3 id="html-元素的-style-属性"><code>HTML</code> 元素的 <code>style</code> 属性</h3>
+<p>操作 CSS 样式最简单的方法，就是使用网页元素节点的<code>setAttribute</code>方法直接操作网页元素的<code>style</code>属性</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">setAttribute</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;style&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;background-color:red;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;border:1px solid black;&#39;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h3 id="元素节点的style属性">元素节点的<code>style</code>属性</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">divStyle</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;div&#39;</span>).<span style="color:#a6e22e">style</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">divStyle</span>.<span style="color:#a6e22e">backgroundColor</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;red&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">divStyle</span>.<span style="color:#a6e22e">border</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1px solid black&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">divStyle</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;100px&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">divStyle</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;100px&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">divStyle</span>.<span style="color:#a6e22e">fontSize</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;10em&#39;</span>;
+</span></span></code></pre></div><h3 id="csstext属性"><code>cssText</code>属性</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">divStyle</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;div&#39;</span>).<span style="color:#a6e22e">style</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">divStyle</span>.<span style="color:#a6e22e">cssText</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;background-color: red;&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;border: 1px solid black;&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;height: 100px;&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;width: 100px;&#39;</span>;
+</span></span></code></pre></div><p><strong>实时效果反馈</strong></p>
+<p><strong>1. 下列是设置样式的代码，横线处应该填写的代码是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">divStyle</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">divStyle</span>.<span style="color:#a6e22e">___</span>.<span style="color:#a6e22e">backgroundColor</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;red&#39;</span>;
+</span></span></code></pre></div><h1 id="事件处理程序">事件处理程序</h1>
+<p>事件处理程序分为：</p>
+<ol>
+<li>HTML事件处理</li>
+<li>DOM0级事件处理</li>
+<li>DOM2级事件处理</li>
+</ol>
+<h3 id="html事件">HTML事件</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">head</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">title</span>&gt;Js事件详解--事件处理&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn1&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demo()&#34;</span>&gt;按钮&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">demo</span>(){
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;hello html事件处理&#34;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h3 id="dom0级事件处理">DOM0级事件处理</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn1&#34;</span>&gt;按钮&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">btn1</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;btn1&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">btn1</span>.<span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(){<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Hello DOM0级事件处理程序1&#34;</span>);}<span style="color:#75715e">//被覆盖掉
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">btn1</span>.<span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(){<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Hello DOM0级事件处理程序2&#34;</span>);}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span></code></pre></div><h3 id="dom2级事件处理">DOM2级事件处理</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn1&#34;</span>&gt;按钮&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">btn1</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;btn1&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">btn1</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>,<span style="color:#a6e22e">demo1</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">btn1</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>,<span style="color:#a6e22e">demo2</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">btn1</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>,<span style="color:#a6e22e">demo3</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">demo1</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;DOM2级事件处理程序1&#34;</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">demo2</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;DOM2级事件处理程序2&#34;</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">demo3</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;DOM2级事件处理程序3&#34;</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">btn1</span>.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>,<span style="color:#a6e22e">demo2</span>);
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span></code></pre></div><p><strong>实时效果反馈</strong></p>
+<p><strong>1. 下列代码，是属于哪种事件处理方式：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">btn2</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>,<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;触发事件&#34;</span>);
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><h1 id="事件类型之鼠标事件">事件类型之鼠标事件</h1>
+<h3 id="鼠标事件">鼠标事件</h3>
+<p>鼠标事件指与鼠标相关的事件，具体的事件主要有以下一些</p>
+<ol>
+<li>click：按下鼠标时触发</li>
+<li>dblclick：在同一个元素上双击鼠标时触发</li>
+<li>mousedown：按下鼠标键时触发</li>
+<li>mouseup：释放按下的鼠标键时触发</li>
+<li>mousemove：当鼠标在节点内部移动时触发。当鼠标持续移动时，该事件会连触发。</li>
+<li>mouseenter：鼠标进入一个节点时触发，进入子节点不会触发这个事件</li>
+<li>mouseleave：鼠标离开一个节点时触发，离开父节点不会触发这个事件</li>
+<li>mouseover：鼠标进入一个节点时触发，进入子节点会再一次触发这个事件</li>
+<li>mouseout：鼠标离开一个节点时触发，离开父节点也会触发这个事件</li>
+<li>wheel：滚动鼠标的滚轮时触发</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">btn1</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;btn1&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">btn1</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;click事件&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p><strong>温馨提示</strong></p>
+<p>这些方法在使用的时候，除了DOM2级事件，都需要添加前缀<code>on</code></p>
+</blockquote>
+<p><strong>实时效果反馈</strong></p>
+<p><strong>1. 下列代码是鼠标事件，划横线处应该填写的是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 需求：鼠标在元素内移动，会一直触发事件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">box</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;box&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">___</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;事件在元素上会一直触发&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="event事件对象">Event事件对象</h1>
+<p>事件发生以后，会产生一个事件对象，作为参数传给监听函数。</p>
+<h3 id="event对象属性">Event对象属性</h3>
+<ol>
+<li>Event.Target</li>
+<li>Event.type</li>
+</ol>
+<h4 id="eventtarget">Event.target</h4>
+<p>Event.target属性返回事件当前所在的节点</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// HTML代码为
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt;p id=&#34;para&#34;&gt;Hello&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setColor</span>(<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;red&#39;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">para</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#a6e22e">setColor</span>);
+</span></span></code></pre></div><h4 id="eventtype">Event.type</h4>
+<p>Event.type属性返回一个字符串，表示事件类型。事件的类型是在生成事件的时候。该属性只读</p>
+<h3 id="event对象方法">Event对象方法</h3>
+<ol>
+<li>Event.preventDefault()</li>
+<li>Event.stopPropagation()</li>
+</ol>
+<h4 id="eventpreventdefault">Event.preventDefault</h4>
+<p>Event.preventDefault方法取消浏览器对当前事件的默认行为。比如点击链接后，浏览器默认会跳转到另一个页面，使用这个方法以后，就不会跳转了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>(); <span style="color:#75715e">// 阻止默认事件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;点击A标签&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="eventstoppropagation">Event.stopPropagation()</h4>
+<p>stopPropagation方法阻止事件在 DOM 中继续传播，防止再触发定义在别的节点上的监听函数，但是不包括在当前节点上其他的事件监听函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">stopPropagation</span>(); <span style="color:#75715e">// 阻止事件冒泡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;btn&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="事件类型之键盘事件">事件类型之键盘事件</h1>
+<p>键盘事件由用户击打键盘触发，主要有keydown、keypress、keyup三个事件</p>
+<ol>
+<li>keydown：按下键盘时触发。</li>
+<li>keypress：按下有值的键时触发，即按下 Ctrl、Alt、Shift、Meta 这样无值的键，这个事件不会触发。对于有值的键，按下时先触发keydown事件，再触发这个事件。</li>
+<li>keyup：松开键盘时触发该事件</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">username</span>.<span style="color:#a6e22e">onkeypress</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;keypress事件&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="event对象">event对象</h3>
+<p>keyCode:唯一标识</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">username</span>.<span style="color:#a6e22e">onkeydown</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">13</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;回车&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="事件类型之表单事件">事件类型之表单事件</h1>
+<p>表单事件是在使用表单元素及输入框元素可以监听的一系列事件</p>
+<ol>
+<li>input事件</li>
+<li>select事件</li>
+<li>Change事件</li>
+<li>reset事件</li>
+<li>submit事件</li>
+</ol>
+<h3 id="input事件">input事件</h3>
+<p>input事件当<code>&lt;input&gt;、&lt;select&gt;、&lt;textarea&gt;</code>的值发生变化时触发。对于复选框（<code>&lt;input type=checkbox&gt;</code>）或单选框（<code>&lt;input type=radio&gt;</code>），用户改变选项时，也会触发这个事件</p>
+<p>input事件的一个特点，就是会连续触发，比如用户每按下一次按键，就会触发一次input事件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">username</span>.<span style="color:#a6e22e">oninput</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="select事件">select事件</h3>
+<p>select事件当在<code>&lt;input&gt;、&lt;textarea&gt;</code>里面选中文本时触发</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// HTML 代码如下
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt;input id=&#34;test&#34; type=&#34;text&#34; value=&#34;Select me!&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elem</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;test&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">elem</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;select&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">type</span>); <span style="color:#75715e">// &#34;select&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}, <span style="color:#66d9ef">false</span>);
+</span></span></code></pre></div><h3 id="change-事件">Change 事件</h3>
+<p>Change事件当<code>&lt;input&gt;、&lt;select&gt;、&lt;textarea&gt;</code>的值发生变化时触发。它与input事件的最大不同，就是不会连续触发，只有当全部修改完成时才会触发</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;email&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">email</span>.<span style="color:#a6e22e">onchange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="reset-事件submit-事件">reset 事件，submit 事件</h3>
+<p>这两个事件发生在表单对象<code>&lt;form&gt;</code>上，而不是发生在表单的成员上。</p>
+<p>reset事件当表单重置（所有表单成员变回默认值）时触发。</p>
+<p>submit事件当表单数据向服务器提交时触发。注意，submit事件的发生对象是<code>&lt;form&gt;</code>元素，而不是<code>&lt;button&gt;</code>元素，因为提交的是表单，而不是按钮</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm&#34;</span> <span style="color:#a6e22e">onsubmit</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submitHandle&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;resetHandle&#34;</span>&gt;重置数据&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span>&gt;提交&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myForm</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;myForm&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">resetHandle</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">myForm</span>.<span style="color:#a6e22e">reset</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">submitHandle</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;提交&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>实时效果反馈</strong></p>
+<p><strong>1. 下列代码中，横线处应该填写的内容是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 需求：用户每次输入都需要触发的事件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">username</span>.<span style="color:#a6e22e">___</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="事件代理事件委托">事件代理(事件委托)</h1>
+<p>由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件。这种方法叫做事件的代理（delegation）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ul</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;ul&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ul</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">tagName</span>.<span style="color:#a6e22e">toLowerCase</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;li&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// some code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p><strong>实时效果反馈</strong></p>
+<p><strong>1. 下列是关于事件代理的处理，横线处应该填写的代码是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">parent</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;parent&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">___</span>.<span style="color:#a6e22e">tagName</span>.<span style="color:#a6e22e">___</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;li&#39;</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">innerHTML</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><h1 id="定时器之settimeout">定时器之<code>setTimeout()</code></h1>
+<p>JavaScript 提供定时执行代码的功能，叫做定时器（timer），主要由<code>setTimeout()</code>和<code>setInterval()</code>这两个函数来完成。它们向任务队列添加定时任务</p>
+<p><code>setTimeout</code>函数用来指定某个函数或某段代码，在多少毫秒之后执行。它返回一个整数，表示定时器的编号，以后可以用来取消这个定时器。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">timerId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">func</span><span style="color:#f92672">|</span><span style="color:#a6e22e">code</span>, <span style="color:#a6e22e">delay</span>);
+</span></span></code></pre></div><p><code>setTimeout</code>函数接受两个参数，第一个参数<code>func|code</code>是将要推迟执行的函数名或者一段代码，第二个参数<code>delay</code>是推迟执行的毫秒数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;定时器&#34;</span>)
+</span></span><span style="display:flex;"><span>},<span style="color:#ae81ff">1000</span>)
+</span></span></code></pre></div><blockquote>
+<p><strong>温馨提示</strong></p>
+<p>还有一个需要注意的地方，如果回调函数是对象的方法，那么<code>setTimeout</code>使得方法内部的<code>this</code>关键字指向全局环境，而不是定义时所在的那个对象</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sxt&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;itbaizhan&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>        },<span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">getName</span>();
+</span></span></code></pre></div><p>解决方案</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sxt&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;itbaizhan&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">that</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>        },<span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">getName</span>();
+</span></span></code></pre></div><p>定时器可以进行取消</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">f</span>, <span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clearTimeout</span>(<span style="color:#a6e22e">id</span>);
+</span></span></code></pre></div><p><strong>实时效果反馈</strong></p>
+<p><strong>1. 以下是关于定时器<code>setTimeout</code>代码，运行结果是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sxt&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;itbaizhan&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">that</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>        },<span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">getName</span>();
+</span></span></code></pre></div><h1 id="定时器之setinterval">定时器之<code>setInterval()</code></h1>
+<p><code>setInterval</code>函数的用法与<code>setTimeout</code>完全一致，区别仅仅在于<code>setInterval</code>指定某个任务每隔一段时间就执行一次，也就是无限次的定时执行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setInterval</span>(<span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>}, <span style="color:#ae81ff">1000</span>)
+</span></span></code></pre></div><p>通过setInterval方法实现网页动画</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>		#someDiv{
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;someDiv&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;someDiv&#39;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">opacity</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fader</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setInterval</span>(<span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>		  <span style="color:#a6e22e">opacity</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">0.05</span>;
+</span></span><span style="display:flex;"><span>		  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">opacity</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		    <span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">opacity</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">opacity</span>;
+</span></span><span style="display:flex;"><span>		  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>		    <span style="color:#a6e22e">clearInterval</span>(<span style="color:#a6e22e">fader</span>);
+</span></span><span style="display:flex;"><span>		  }
+</span></span><span style="display:flex;"><span>		}, <span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>定时器可以进行取消</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">f</span>, <span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clearInterval</span>(<span style="color:#a6e22e">id</span>);
+</span></span></code></pre></div><p><strong>实时效果反馈</strong></p>
+<p><strong>1. 以下是关于定时器<code>setInterval</code>代码，每秒打印当前时间，横线处填写代码是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">___</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">toLocaleTimeString</span>());
+</span></span><span style="display:flex;"><span>},<span style="color:#ae81ff">1000</span>)
+</span></span></code></pre></div><h1 id="防抖debounce">防抖(debounce)</h1>
+<p>防抖严格算起来应该属于性能优化的知识，但实际上遇到的频率相当高，处理不当或者放任不管就容易引起浏览器卡死。</p>
+<p>从滚动条监听的例子说起</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">showTop</span>  () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;滚动条位置：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">scrollTop</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">onscroll</span>  <span style="color:#f92672">=</span> <span style="color:#a6e22e">showTop</span>
+</span></span></code></pre></div><p>在运行的时候会发现存在一个问题：这个函数的默认执行频率，太！高！了！。 高到什么程度呢？以chrome为例，我们可以点击选中一个页面的滚动条，然后点击一次键盘的【向下方向键】，会发现函数执行了8-9次！</p>
+<p>然而实际上我们并不需要如此高频的反馈，毕竟浏览器的性能是有限的，不应该浪费在这里，所以接着讨论如何优化这种场景。</p>
+<p>基于上述场景，首先提出第一种思路：在第一次触发事件时，不立即执行函数，而是给出一个期限值比如200ms，然后</p>
+<ol>
+<li>如果在200ms内没有再次触发滚动事件，那么就执行函数</li>
+<li>如果在200ms内再次触发滚动事件，那么当前的计时取消，重新开始计时</li>
+</ol>
+<p>效果：如果短时间内大量触发同一事件，只会执行一次函数</p>
+<p>实现：既然前面都提到了计时，那实现的关键就在于setTimeout这个函数，由于还需要一个变量来保存计时，考虑维护全局纯净，可以借助闭包来实现</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">debounce</span>(<span style="color:#a6e22e">fn</span>,<span style="color:#a6e22e">delay</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span> <span style="color:#75715e">//借助闭包
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">timer</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">clearTimeout</span>(<span style="color:#a6e22e">timer</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">fn</span>,<span style="color:#a6e22e">delay</span>) <span style="color:#75715e">// 简化写法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 然后是旧代码
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">showTop</span>  () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;滚动条位置：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">scrollTop</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">onscroll</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">debounce</span>(<span style="color:#a6e22e">showTop</span>,<span style="color:#ae81ff">300</span>)
+</span></span></code></pre></div><p>到这里，已经把防抖实现了</p>
+<blockquote>
+<p><strong>防抖定义</strong></p>
+<p>对于短时间内连续触发的事件（上面的滚动事件），防抖的含义就是让某个时间期限（如上面的1000毫秒）内，事件处理函数只执行一次</p>
+</blockquote>
+<p><strong>实时效果反馈</strong></p>
+<p><strong>1. 以下是关于定时器防抖代码，横线处填写代码是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">debounce</span>(<span style="color:#a6e22e">fn</span>,<span style="color:#a6e22e">delay</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">timer</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">_2_</span>(<span style="color:#a6e22e">timer</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_1_</span>(<span style="color:#a6e22e">fn</span>,<span style="color:#a6e22e">delay</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">showTop</span>  () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;滚动条位置：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">scrollTop</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">onscroll</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">debounce</span>(<span style="color:#a6e22e">showTop</span>,<span style="color:#ae81ff">300</span>)
+</span></span></code></pre></div><h1 id="节流throttle">节流(throttle)</h1>
+<p>节流严格算起来应该属于性能优化的知识，但实际上遇到的频率相当高，处理不当或者放任不管就容易引起浏览器卡死</p>
+<p>继续思考，使用上面的防抖方案来处理问题的结果是</p>
+<p>如果在限定时间段内，不断触发滚动事件（比如某个用户闲着无聊，按住滚动不断的拖来拖去），只要不停止触发，理论上就永远不会输出当前距离顶部的距离</p>
+<p>但是如果产品同学的期望处理方案是：即使用户不断拖动滚动条，也能在某个时间间隔之后给出反馈呢？</p>
+<p>其实很简单：我们可以设计一种类似控制阀门一样定期开放的函数，也就是让函数执行一次后，在某个时间段内暂时失效，过了这段时间后再重新激活（类似于技能冷却时间）</p>
+<p>效果：如果短时间内大量触发同一事件，那么在函数执行一次之后，该函数在指定的时间期限内不再工作，直至过了这段时间才重新生效</p>
+<p><strong>实现</strong></p>
+<p>这里借助setTimeout来做一个简单的实现，加上一个状态位valid来表示当前函数是否处于工作状态</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">throttle</span>(<span style="color:#a6e22e">fn</span>,<span style="color:#a6e22e">delay</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">valid</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">valid</span>){
+</span></span><span style="display:flex;"><span>           <span style="color:#75715e">//休息时间 暂不接客
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>           <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>       <span style="color:#75715e">// 工作时间，执行函数并且在间隔期内把状态位设为无效
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">valid</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">fn</span>()
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">valid</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>        }, <span style="color:#a6e22e">delay</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">showTop</span>  () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;滚动条位置：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">scrollTop</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">onscroll</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">throttle</span>(<span style="color:#a6e22e">showTop</span>,<span style="color:#ae81ff">300</span>)
+</span></span></code></pre></div><p>如果一直拖着滚动条进行滚动，那么会以300ms的时间间隔，持续输出当前位置和顶部的距离</p>
+<p>讲完了这两个技巧，下面介绍一下平时开发中常遇到的场景:</p>
+<ol>
+<li>搜索框input事件，例如要支持输入实时搜索可以使用节流方案（间隔一段时间就必须查询相关内容），或者实现输入间隔大于某个值（如500ms），就当做用户输入完成，然后开始搜索，具体使用哪种方案要看业务需求</li>
+<li>页面resize事件，常见于需要做页面适配的时候。需要根据最终呈现的页面情况进行dom渲染（这种情形一般是使用防抖，因为只需要判断最后一次的变化情况）</li>
+</ol>
+<p><strong>实时效果反馈</strong></p>
+<p><strong>1. 以下是关于定时器节流代码，横线处填写代码是：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">throttle</span>(<span style="color:#a6e22e">fn</span>,<span style="color:#a6e22e">delay</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">valid</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">_1_</span>){
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">valid</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">_2_</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">fn</span>()
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">valid</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>        }, <span style="color:#a6e22e">delay</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pyinstaller%E5%B0%86python%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E4%B8%BAandroid%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">PyInstaller将Python应用打包为Android应用程序</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/gmeek%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E5%8D%95%E7%AF%87%E6%88%96%E6%89%B9%E9%87%8F/">「Gmeek」上传脚本(单篇或批量)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/platformioprintf-%E9%87%8D%E6%98%A0%E5%83%8F%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE/">「platformIO」printf 重映像、串口打印数据</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">「Python」模块和包</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/pythonconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">「python」Conda虚拟环境</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/python%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90requirements.txt%E7%9A%84%E5%BA%93/">「python」一个快速生成requirements.txt的库</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.ronan.us.kg/posts/orbstackmac-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%BF%AB%E7%9A%84-docker-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7%E5%8F%AF%E5%AE%8C%E5%85%A8%E6%9B%BF%E4%BB%A3-docker-desktop/">「OrbStack」Mac 系统中一个更快的 Docker 可视化工具，可完全替代 Docker Desktop</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://blog.ronan.us.kg/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/docs/">Docs (38)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/linux/">Linux (11)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/macos/">Macos (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/tools/">Tools (5)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://blog.ronan.us.kg/categories/vscode/">Vscode (4)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://weibo.com/u/5995159469" target="_blank" rel="me"><em class="fab fa-weibo"></em></a>
+                
+                <a href="https://github.com/EchoZap" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+                <a href="https://blog.ronan.us.kg/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/echozap" target="_blank">
+                &copy;
+                
+                2024
+                
+                by Ronan
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    <script src="https://blog.ronan.us.kg/theme.min.15a051027515397e36946f37800e8a370e44f72ac97de37ae55b55087e3b0b59.js" integrity="sha256-FaBRAnUVOX42lG83gA6KNw5E9yrJfeN65VtVCH47C1k=" crossorigin="anonymous"></script>
+
+
+
+    
+
+
+
+    
+        <div id="activate-algolia-search" class="hidden">
+  <input type="hidden" id="algolia-search-appId" value="GT5UPRMBE6">
+  <input type="hidden" id="algolia-search-apiKey" value="9499608ea45258a283445ca59ad50c14">
+  <input type="hidden" id="algolia-search-indexName" value="hugo">
+  <input type="hidden" id="algolia-search-noSearchResults" value="Nothing found.">
+
+  
+  <input type="hidden" id="algolia-search-currentLanguageOnly">
+  
+</div>
+
+    
+
+    
+</body>
+
+</html>
