@@ -45,6 +45,13 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+
+      - name: Clear Algolia Index
+        run: 
+          curl -X POST "https://GT5UPRMBE6.algolia.net/1/indexes/blog/clear" \
+          -H "X-Algolia-API-Key: 87644968371f1a5022cab82884d45462" \
+          -H "X-Algolia-Application-Id: GT5UPRMBE6"
+      
       - name: Build Hugo
         run: |
           cd ${{ github.workspace }}
