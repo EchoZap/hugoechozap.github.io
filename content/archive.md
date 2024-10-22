@@ -1,6 +1,7 @@
 ---
-title: "Archive Page"
+title: "Archive"
 type: archive
 menu: topnav
+weight: 20
 excludeFromIndex: true
 ---
