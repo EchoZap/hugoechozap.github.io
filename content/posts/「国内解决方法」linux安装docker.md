@@ -8,13 +8,13 @@ author: "Ronan"
 
 一键安装命令
 
-```
+```zsh
 sudo curl -fsSL https://github.com/tech-shrimp/docker_installer/releases/download/latest/linux.sh| bash -s docker --mirror Aliyun
 ```
 
 > 备用（如果Github访问不了，可以使用Gitee的链接）<br>
 
-```
+```shell
 sudo curl -fsSL https://gitee.com/tech-shrimp/docker_installer/releases/download/latest/linux.sh| bash -s docker --mirror Aliyun
 ```
 
