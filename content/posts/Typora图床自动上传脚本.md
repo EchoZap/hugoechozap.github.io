@@ -4,7 +4,6 @@ date: 2024-10-22T13:23:53+08:00
 categories: ['Tools']
 author: "Ronan"
 ---
-> [!caution]
 > typroa的图片上传脚本，针对[Telegraph-Image](https://github.com/cf-pages/Telegraph-Image)项目，适用于macOS和Linux系统。
 
 以下准备了两种方法，分别是python脚本以及bash脚本，由于Windows通常对于bash没有很好的支持，而macOS以及Linux常常内置了完整的bash，所以大家根据自己实际情况选用合适自己的方式：
@@ -15,13 +14,13 @@ author: "Ronan"
 
 - macOS
 
-```
+```shell
 brew install jq
 ```
 
 - Linux：
 
-```
+```shell
 # Debian/Ubuntu
 apt install jq -y
 ```
@@ -33,7 +32,7 @@ apt install jq -y
 
 在桌面(可随意指定自己想要放置的目录)新建一个 ui.sh 文件，将以下代码复制并保存到sh文件中，在sh代码中找到这一行并且在引号里填入自己的图床url：
 
-```
+```shell
 # 自定义URL部分
 base_url=""
 ```
